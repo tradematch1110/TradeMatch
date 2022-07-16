@@ -1,0 +1,3347 @@
+debug: -------------- request body -------------- 
+debug: {
+   "age": 70,
+   "idNumber": 33512922,
+   "company": "clal",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounselingOrMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": true,
+   "adviceNoTime": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1640263216,
+      "nanoseconds": 367000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "clal": 22,
+   "phoenix": 26,
+   "harel": 30,
+   "megdal": 25
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: clal, price: 17.94 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": 70,
+   "idNumber": 33512922,
+   "company": "harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounselingOrMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": true,
+   "adviceNoTime": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1640263216,
+      "nanoseconds": 367000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "clal": 22,
+   "phoenix": 26,
+   "harel": 30,
+   "megdal": 25
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": 70,
+   "idNumber": 33512922,
+   "company": "harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounselingOrMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "adviceNoTime": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1640263216,
+      "nanoseconds": 367000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "clal": 22,
+   "phoenix": 26,
+   "harel": 30,
+   "megdal": 25
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: undefined 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: undefined 
+debug: -------------- request body -------------- 
+debug: {
+   "age": 69,
+   "idNumber": 33512922,
+   "company": "harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounselingOrMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "adviceNoTime": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1640263216,
+      "nanoseconds": 367000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: menora, price: 14.3 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": 70,
+   "idNumber": 33512922,
+   "company": "harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounselingOrMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "adviceNoTime": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1640263216,
+      "nanoseconds": 367000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "clal": 22,
+   "phoenix": 26,
+   "harel": 30,
+   "megdal": 25
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: undefined 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: undefined 
+debug: -------------- request body -------------- 
+debug: {
+   "age": 70,
+   "idNumber": 33512922,
+   "company": "harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounselingOrMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "adviceNoTime": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1640263216,
+      "nanoseconds": 367000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "clal": 22,
+   "phoenix": 26,
+   "harel": 30,
+   "megdal": 25
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: undefined 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: undefined 
+debug: -------------- request body -------------- 
+debug: {
+   "age": 70,
+   "idNumber": 33512922,
+   "company": "harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounselingOrMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "adviceNoTime": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1640263216,
+      "nanoseconds": 367000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "clal": 21.5,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 24
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": 75,
+   "idNumber": 33512922,
+   "company": "harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounselingOrMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "adviceNoTime": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1640263216,
+      "nanoseconds": 367000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "clal": 21.5,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 24
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": 76,
+   "idNumber": 33512922,
+   "company": "harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounselingOrMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "adviceNoTime": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1640263216,
+      "nanoseconds": 367000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "clal": 22,
+   "phoenix": 26,
+   "megdal": 25
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": 76,
+   "idNumber": 33512922,
+   "company": "phoniex",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounselingOrMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "adviceNoTime": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1640263216,
+      "nanoseconds": 367000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "clal": 22,
+   "phoenix": 26,
+   "megdal": 25
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": 76,
+   "idNumber": 33512922,
+   "company": "phoenix",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounselingOrMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "adviceNoTime": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1640263216,
+      "nanoseconds": 367000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "clal": 22,
+   "phoenix": 26,
+   "megdal": 25
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: phoenix, price: 16.5 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: phoenix, price: 16.5 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Menora",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounselingOrMedicationCounselingOrDietitian": true,
+   "isChildrenUnderEighteen": true,
+   "adviceNoTime": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1640535784,
+      "nanoseconds": 751000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Phoenix",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounselingOrMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": true,
+   "adviceNoTime": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1640611090,
+      "nanoseconds": 824000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: menora, price: 14.3 
+debug: company: phoenix, price: 16.5 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: phoenix, price: 16.5 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounselingOrMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": true,
+   "adviceNoTime": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1640611463,
+      "nanoseconds": 620000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: menora, price: 14.3 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: menora, price: 14.3 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Phoenix",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounselingOrMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": true,
+   "adviceNoTime": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1640779718,
+      "nanoseconds": 342000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: menora, price: 14.3 
+debug: company: phoenix, price: 16.5 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: phoenix, price: 16.5 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounselingOrMedicationCounselingOrDietitian": true,
+   "isChildrenUnderEighteen": true,
+   "adviceNoTime": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1640780035,
+      "nanoseconds": 431000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounselingOrMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": true,
+   "adviceNoTime": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1641109389,
+      "nanoseconds": 502000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: menora, price: 14.3 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: menora, price: 14.3 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounselingOrMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": true,
+   "adviceNoTime": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1641112955,
+      "nanoseconds": 756000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: menora, price: 14.3 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: menora, price: 14.3 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Menora",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounselingOrMedicationCounselingOrDietitian": true,
+   "isChildrenUnderEighteen": true,
+   "adviceNoTime": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1641122602,
+      "nanoseconds": 595000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Megdal",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounselingOrMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": true,
+   "adviceNoTime": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1641123164,
+      "nanoseconds": 0
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: menora, price: 14.3 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: menora, price: 14.3 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Menora",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounselingOrMedicationCounselingOrDietitian": true,
+   "isChildrenUnderEighteen": true,
+   "adviceNoTime": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1641123239,
+      "nanoseconds": 306000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Megdal",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounselingOrMedicationCounselingOrDietitian": true,
+   "isChildrenUnderEighteen": true,
+   "adviceNoTime": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1641123741,
+      "nanoseconds": 295000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Phoenix",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounselingOrMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "adviceNoTime": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1641123939,
+      "nanoseconds": 688000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: menora, price: 14.3 
+debug: company: phoenix, price: 16.5 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: phoenix, price: 16.5 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Menora",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounselingOrMedicationCounselingOrDietitian": true,
+   "isChildrenUnderEighteen": true,
+   "adviceNoTime": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1641124291,
+      "nanoseconds": 303000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Menora",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounselingOrMedicationCounselingOrDietitian": true,
+   "isChildrenUnderEighteen": true,
+   "adviceNoTime": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1641124972,
+      "nanoseconds": 15000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Menora",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounselingOrMedicationCounselingOrDietitian": true,
+   "isChildrenUnderEighteen": true,
+   "adviceNoTime": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643184171,
+      "nanoseconds": 187000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Menora",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": false,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643190155,
+      "nanoseconds": 759000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: menora, price: 14.3 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: menora, price: 14.3 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191889,
+      "nanoseconds": 406000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Menora",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": true,
+   "isChildrenUnderEighteen": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643562094,
+      "nanoseconds": 47000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": 44,
+   "idNumber": "33512922",
+   "company": "Menora",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": true,
+   "isChildrenUnderEighteen": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1644837359,
+      "nanoseconds": 342000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": 44,
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1644841352,
+      "nanoseconds": 134000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": 44,
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1644841638,
+      "nanoseconds": 864000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": 44,
+   "idNumber": "33512922",
+   "company": "Menora",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounseling": false,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1644842343,
+      "nanoseconds": 997000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: menora, price: 14.3 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: menora, price: 14.3 
+debug: -------------- request body -------------- 
+debug: {
+   "age": 44,
+   "idNumber": "33512922",
+   "company": "Megdal",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounseling": false,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1644842544,
+      "nanoseconds": 339000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: menora, price: 14.3 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: menora, price: 14.3 
+debug: -------------- request body -------------- 
+debug: {
+   "age": 44,
+   "idNumber": "33512922",
+   "company": "Clal",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounseling": false,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1644854033,
+      "nanoseconds": 623000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: menora, price: 14.3 
+debug: company: clal, price: 17.94 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: menora, price: 14.3 
+debug: -------------- request body -------------- 
+debug: {
+   "age": 44,
+   "idNumber": "33512922",
+   "company": "Menora",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounseling": false,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1644855864,
+      "nanoseconds": 6000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: menora, price: 14.3 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: menora, price: 14.3 
+debug: -------------- request body -------------- 
+debug: {
+   "age": 44,
+   "idNumber": "33512922",
+   "company": "Phoenix",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": false,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1644911040,
+      "nanoseconds": 919000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: menora, price: 14.3 
+debug: company: phoenix, price: 16.5 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: phoenix, price: 16.5 
+debug: -------------- request body -------------- 
+debug: {
+   "age": 44,
+   "idNumber": "33512922",
+   "company": "Menora",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": false,
+   "isOnlineMedicationCounselingOrDietitian": true,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1644914837,
+      "nanoseconds": 366000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": 44,
+   "idNumber": "33512922",
+   "company": "Menora",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": false,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1644916566,
+      "nanoseconds": 299000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: menora, price: 14.3 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: menora, price: 14.3 
+debug: -------------- request body -------------- 
+debug: {
+   "age": 44,
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounseling": false,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1644920071,
+      "nanoseconds": 507000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: menora, price: 14.3 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: menora, price: 14.3 
+debug: -------------- request body -------------- 
+debug: {
+   "age": 44,
+   "idNumber": "33512922",
+   "company": "Phoenix",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1645000700,
+      "nanoseconds": 330000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": 44,
+   "idNumber": "33512922",
+   "company": "Megdal",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounseling": false,
+   "isOnlineMedicationCounselingOrDietitian": true,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1645047551,
+      "nanoseconds": 957000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": 44,
+   "idNumber": "33512922",
+   "company": "Menora",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": true,
+   "isChildrenUnderEighteen": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1645097901,
+      "nanoseconds": 905000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": 44,
+   "idNumber": "33512922",
+   "company": "Menora",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounseling": false,
+   "isOnlineMedicationCounselingOrDietitian": true,
+   "isChildrenUnderEighteen": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1645098902,
+      "nanoseconds": 432000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": 44,
+   "idNumber": "33512922",
+   "company": "Menora",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": true,
+   "isChildrenUnderEighteen": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1645099023,
+      "nanoseconds": 862000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- finalResult -------------- 
+debug: {} 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- finalResult -------------- 
+debug: {} 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1643191982,
+      "nanoseconds": 117000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Menora",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": true,
+   "isChildrenUnderEighteen": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1645440390,
+      "nanoseconds": 502000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Menora",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": true,
+   "isChildrenUnderEighteen": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1645440564,
+      "nanoseconds": 174000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Menora",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": true,
+   "isChildrenUnderEighteen": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1645440658,
+      "nanoseconds": 766000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": true,
+   "isChildrenUnderEighteen": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1645442852,
+      "nanoseconds": 820000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Menora",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": true,
+   "isChildrenUnderEighteen": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1645443739,
+      "nanoseconds": 699000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Menora",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": true,
+   "isChildrenUnderEighteen": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1645450062,
+      "nanoseconds": 555000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Menora",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounseling": false,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1645455689,
+      "nanoseconds": 398000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: menora, price: 14.3 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: menora, price: 14.3 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "Menora",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": true,
+   "isChildrenUnderEighteen": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1645456672,
+      "nanoseconds": 799000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "033512922",
+   "company": "Menora",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": true,
+   "isChildrenUnderEighteen": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1645456855,
+      "nanoseconds": 82000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "No",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": false,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1645631614,
+      "nanoseconds": 101000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: menora, price: 14.3 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: menora, price: 14.3 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "33512922",
+   "company": "No",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": true,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": true,
+   "isChildrenUnderEighteen": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1645635360,
+      "nanoseconds": 131000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: megdal, price: 19.9 
+debug: -------------- request body -------------- 
+debug: {
+   "age": "44",
+   "idNumber": "033512922",
+   "company": "Harel",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounseling": true,
+   "isOnlineMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1646062637,
+      "nanoseconds": 811000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "menora": 24.5,
+   "clal": 21,
+   "phoenix": 26,
+   "harel": 34.5,
+   "megdal": 23
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: harel, price: 15.04 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: harel, price: 15.04 
+debug: -------------- request body -------------- 
+debug: {
+   "age": 76,
+   "idNumber": 33512922,
+   "company": "phoenix",
+   "isPsychiatryGeriatricsLungAndInfectiousDisease": false,
+   "isOnlinePsychologicalCounselingOrMedicationCounselingOrDietitian": false,
+   "isChildrenUnderEighteen": false,
+   "adviceNoTime": true,
+   "currentUserId": "tmD8kZvACAhBZxblPic06Ppq75s1",
+   "creationTime": {
+      "seconds": 1640263216,
+      "nanoseconds": 367000000
+   },
+   "serviceNmae": "online doctor"
+} 
+debug: -------------- companiesRate -------------- 
+debug: {
+   "clal": 22,
+   "phoenix": 26,
+   "megdal": 25
+} 
+debug: -------------- Companies that have reached the final stage -------------- 
+debug: company: phoenix, price: 16.5 
+debug: company: megdal, price: 19.9 
+debug: -------------- result -------------- 
+debug: company: phoenix, price: 16.5 
+error: ReferenceError: validate is not defined
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:18:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:275:10) 
+error: ReferenceError: validate is not defined
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:18:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:275:10) 
+error: ReferenceError: validate is not defined
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:18:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:275:10) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:18:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:18:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:19:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:19:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:19:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:19:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: MongoServerError: E11000 duplicate key error collection: devst.users index: email_1 dup key: { email: "kaldi10@gmail.com" }
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\operations\insert.js:51:33
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\cmap\connection_pool.js:272:25
+    at handleOperationResult (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\sdam\server.js:363:9)
+    at MessageStream.messageHandler (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\cmap\connection.js:479:9)
+    at MessageStream.emit (node:events:526:28)
+    at processIncomingData (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\cmap\message_stream.js:108:16)
+    at MessageStream._write (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\cmap\message_stream.js:28:9)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at MessageStream.Writable.write (node:internal/streams/writable:334:10) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:19:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:19:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:19:19
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: MongoServerError: E11000 duplicate key error collection: devst.users index: email_1 dup key: { email: "kaldi10@gmail.com" }
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\operations\insert.js:51:33
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\cmap\connection_pool.js:272:25
+    at handleOperationResult (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\sdam\server.js:363:9)
+    at MessageStream.messageHandler (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\cmap\connection.js:479:9)
+    at MessageStream.emit (node:events:526:28)
+    at processIncomingData (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\cmap\message_stream.js:108:16)
+    at MessageStream._write (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\cmap\message_stream.js:28:9)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at MessageStream.Writable.write (node:internal/streams/writable:334:10) 
+error: MongoServerError: E11000 duplicate key error collection: devst.users index: email_1 dup key: { email: "kaldi10@gmail.com" }
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\operations\insert.js:51:33
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\cmap\connection_pool.js:272:25
+    at handleOperationResult (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\sdam\server.js:363:9)
+    at MessageStream.messageHandler (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\cmap\connection.js:479:9)
+    at MessageStream.emit (node:events:526:28)
+    at processIncomingData (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\cmap\message_stream.js:108:16)
+    at MessageStream._write (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\cmap\message_stream.js:28:9)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at MessageStream.Writable.write (node:internal/streams/writable:334:10) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:19:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: MongoServerError: E11000 duplicate key error collection: devst.users index: email_1 dup key: { email: "kaldi10@gmail.com" }
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\operations\insert.js:51:33
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\cmap\connection_pool.js:272:25
+    at handleOperationResult (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\sdam\server.js:363:9)
+    at MessageStream.messageHandler (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\cmap\connection.js:479:9)
+    at MessageStream.emit (node:events:526:28)
+    at processIncomingData (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\cmap\message_stream.js:108:16)
+    at MessageStream._write (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\cmap\message_stream.js:28:9)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at MessageStream.Writable.write (node:internal/streams/writable:334:10) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:19:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:19:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:19:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:19:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:19:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:19:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:19:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:19:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:19:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:19:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:19:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:19:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:19:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:19:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:19:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:20:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:20:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:20:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:20:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: ReferenceError: error is not defined
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:21:15
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:275:10) 
+error: ReferenceError: error is not defined
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:21:15
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:275:10) 
+error: ReferenceError: Cannot access 'user' before initialization
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:19:8
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:275:10) 
+error: ReferenceError: Cannot access 'user' before initialization
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:19:8
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:275:10) 
+error: ReferenceError: Cannot access 'user' before initialization
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:19:8
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:275:10) 
+error: ReferenceError: Cannot access 'user' before initialization
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:19:8
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:275:10) 
+error: ReferenceError: Cannot access 'user' before initialization
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:19:8
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:275:10) 
+error: ReferenceError: Cannot access 'user' before initialization
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:19:8
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:275:10) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:25:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: TypeError: Joi.validate is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:61:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:20:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: Error: Invalid message options
+    at new module.exports (C:\Users\Kaldi\Documents\tradematch\api\node_modules\@hapi\hoek\lib\error.js:23:19)
+    at module.exports (C:\Users\Kaldi\Documents\tradematch\api\node_modules\@hapi\hoek\lib\assert.js:20:11)
+    at Object.exports.compile (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\messages.js:30:5)
+    at Object.exports.preferences (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\common.js:165:36)
+    at Object.exports.entry (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\validator.js:24:27)
+    at internals.Base.validate (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\base.js:548:26)
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:51:17)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:20:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5) 
+error: Error: Invalid message options
+    at new module.exports (C:\Users\Kaldi\Documents\tradematch\api\node_modules\@hapi\hoek\lib\error.js:23:19)
+    at module.exports (C:\Users\Kaldi\Documents\tradematch\api\node_modules\@hapi\hoek\lib\assert.js:20:11)
+    at Object.exports.compile (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\messages.js:30:5)
+    at Object.exports.preferences (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\common.js:165:36)
+    at Object.exports.entry (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\validator.js:24:27)
+    at internals.Base.validate (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\base.js:548:26)
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:51:17)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:20:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5) 
+error: Error: Invalid message options
+    at new module.exports (C:\Users\Kaldi\Documents\tradematch\api\node_modules\@hapi\hoek\lib\error.js:23:19)
+    at module.exports (C:\Users\Kaldi\Documents\tradematch\api\node_modules\@hapi\hoek\lib\assert.js:20:11)
+    at Object.exports.compile (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\messages.js:30:5)
+    at Object.exports.preferences (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\common.js:165:36)
+    at Object.exports.entry (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\validator.js:24:27)
+    at internals.Base.validate (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\base.js:548:26)
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:51:17)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:20:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5) 
+error: Error: Invalid encoding: מינימום 2 אותיות
+    at new module.exports (C:\Users\Kaldi\Documents\tradematch\api\node_modules\@hapi\hoek\lib\error.js:23:19)
+    at module.exports (C:\Users\Kaldi\Documents\tradematch\api\node_modules\@hapi\hoek\lib\assert.js:20:11)
+    at Object.internals.length (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\types\string.js:818:5)
+    at internals.Base.method [as min] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\types\string.js:504:34)
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:50:8)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:22:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3) 
+error: Error: Invalid encoding: מינימום 2 אותיות
+    at new module.exports (C:\Users\Kaldi\Documents\tradematch\api\node_modules\@hapi\hoek\lib\error.js:23:19)
+    at module.exports (C:\Users\Kaldi\Documents\tradematch\api\node_modules\@hapi\hoek\lib\assert.js:20:11)
+    at Object.internals.length (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\types\string.js:818:5)
+    at internals.Base.method [as min] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\types\string.js:504:34)
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:50:8)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:22:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3) 
+error: Error: Invalid encoding: מינימום 2 אותיות
+    at new module.exports (C:\Users\Kaldi\Documents\tradematch\api\node_modules\@hapi\hoek\lib\error.js:23:19)
+    at module.exports (C:\Users\Kaldi\Documents\tradematch\api\node_modules\@hapi\hoek\lib\assert.js:20:11)
+    at Object.internals.length (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\types\string.js:818:5)
+    at internals.Base.method [as min] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\types\string.js:504:34)
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:50:8)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:22:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3) 
+error: Error: Invalid encoding: מינימום 2 אותיות
+    at new module.exports (C:\Users\Kaldi\Documents\tradematch\api\node_modules\@hapi\hoek\lib\error.js:23:19)
+    at module.exports (C:\Users\Kaldi\Documents\tradematch\api\node_modules\@hapi\hoek\lib\assert.js:20:11)
+    at Object.internals.length (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\types\string.js:818:5)
+    at internals.Base.method [as min] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\types\string.js:504:34)
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:50:8)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:22:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3) 
+error: Error: Invalid encoding: מינימום 2 אותיות
+    at new module.exports (C:\Users\Kaldi\Documents\tradematch\api\node_modules\@hapi\hoek\lib\error.js:23:19)
+    at module.exports (C:\Users\Kaldi\Documents\tradematch\api\node_modules\@hapi\hoek\lib\assert.js:20:11)
+    at Object.internals.length (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\types\string.js:818:5)
+    at internals.Base.method [as min] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\types\string.js:504:34)
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:65:8)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:22:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3) 
+error: Error: Invalid encoding: מינימום 2 אותיות
+    at new module.exports (C:\Users\Kaldi\Documents\tradematch\api\node_modules\@hapi\hoek\lib\error.js:23:19)
+    at module.exports (C:\Users\Kaldi\Documents\tradematch\api\node_modules\@hapi\hoek\lib\assert.js:20:11)
+    at Object.internals.length (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\types\string.js:818:5)
+    at internals.Base.method [as min] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\types\string.js:504:34)
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:65:8)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:22:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3) 
+error: Error: Invalid encoding: מינימום 2 אותיות
+    at new module.exports (C:\Users\Kaldi\Documents\tradematch\api\node_modules\@hapi\hoek\lib\error.js:23:19)
+    at module.exports (C:\Users\Kaldi\Documents\tradematch\api\node_modules\@hapi\hoek\lib\assert.js:20:11)
+    at Object.internals.length (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\types\string.js:818:5)
+    at internals.Base.method [as min] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\types\string.js:504:34)
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:65:8)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:22:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3) 
+error: Error: Invalid encoding: מינימום 2 אותיות
+    at new module.exports (C:\Users\Kaldi\Documents\tradematch\api\node_modules\@hapi\hoek\lib\error.js:23:19)
+    at module.exports (C:\Users\Kaldi\Documents\tradematch\api\node_modules\@hapi\hoek\lib\assert.js:20:11)
+    at Object.internals.length (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\types\string.js:818:5)
+    at internals.Base.method [as min] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\types\string.js:504:34)
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:65:8)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:22:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3) 
+error: ValidationError: User validation failed: name: Path `name` is required.
+    at model.Document.invalidate (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\document.js:2907:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\document.js:2698:17
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\schematype.js:1280:9
+    at processTicksAndRejections (node:internal/process/task_queues:78:11) 
+error: ValidationError: User validation failed: name: Path `name` is required.
+    at model.Document.invalidate (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\document.js:2907:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\document.js:2698:17
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\schematype.js:1280:9
+    at processTicksAndRejections (node:internal/process/task_queues:78:11) 
+error: ValidationError: User validation failed: name: Path `name` is required.
+    at model.Document.invalidate (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\document.js:2907:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\document.js:2698:17
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\schematype.js:1280:9
+    at processTicksAndRejections (node:internal/process/task_queues:78:11) 
+error: Error: Invalid encoding: מינימום 2 אותיות
+    at new module.exports (C:\Users\Kaldi\Documents\tradematch\api\node_modules\@hapi\hoek\lib\error.js:23:19)
+    at module.exports (C:\Users\Kaldi\Documents\tradematch\api\node_modules\@hapi\hoek\lib\assert.js:20:11)
+    at Object.internals.length (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\types\string.js:818:5)
+    at internals.Base.method [as min] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\joi\lib\types\string.js:504:34)
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:65:8)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:22:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3) 
+error: TypeError: Joi.string(...).min(...).max(...).matches is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:67:8)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:22:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: TypeError: Joi.string(...).min(...).max(...).matches is not a function
+    at validateUser (C:\Users\Kaldi\Documents\tradematch\api\models\user.js:67:8)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:22:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12) 
+error: TypeError: validateLogin is not a function
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:65:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:275:10) 
+error: TypeError: validateLogin is not a function
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:65:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:275:10) 
+error: TypeError: validateLogin is not a function
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:65:21
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\route.js:112:3)
+    at newFn (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:275:10) 
+error: SyntaxError: Unexpected token } in JSON at position 60
+    at JSON.parse (<anonymous>)
+    at parse (C:\Users\Kaldi\Documents\tradematch\api\node_modules\body-parser\lib\types\json.js:89:19)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\body-parser\lib\read.js:121:18
+    at invokeCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\raw-body\index.js:224:16)
+    at done (C:\Users\Kaldi\Documents\tradematch\api\node_modules\raw-body\index.js:213:7)
+    at IncomingMessage.onEnd (C:\Users\Kaldi\Documents\tradematch\api\node_modules\raw-body\index.js:273:7)
+    at IncomingMessage.emit (node:events:538:35)
+    at endReadableNT (node:internal/streams/readable:1345:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) 
+error: Error: invalid expiresIn option for string payload
+    at Object.module.exports [as sign] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\jsonwebtoken\sign.js:128:22)
+    at generateToken (C:\Users\Kaldi\Documents\tradematch\api\models\token.js:14:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:81:27 
+error: Error: invalid expiresIn option for string payload
+    at Object.module.exports [as sign] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\jsonwebtoken\sign.js:128:22)
+    at generateToken (C:\Users\Kaldi\Documents\tradematch\api\models\token.js:14:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:81:27 
+error: Error: invalid expiresIn option for string payload
+    at Object.module.exports [as sign] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\jsonwebtoken\sign.js:128:22)
+    at generateToken (C:\Users\Kaldi\Documents\tradematch\api\models\token.js:14:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:81:27 
+error: Error: invalid expiresIn option for string payload
+    at Object.module.exports [as sign] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\jsonwebtoken\sign.js:128:22)
+    at generateToken (C:\Users\Kaldi\Documents\tradematch\api\models\token.js:14:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:81:27 
+error: Error: invalid expiresIn option for string payload
+    at Object.module.exports [as sign] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\jsonwebtoken\sign.js:128:22)
+    at generateToken (C:\Users\Kaldi\Documents\tradematch\api\models\token.js:14:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:81:27 
+error: Error: invalid expiresIn option for string payload
+    at Object.module.exports [as sign] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\jsonwebtoken\sign.js:128:22)
+    at generateToken (C:\Users\Kaldi\Documents\tradematch\api\models\token.js:14:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:81:27 
+error: Error: invalid expiresIn option for string payload
+    at Object.module.exports [as sign] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\jsonwebtoken\sign.js:128:22)
+    at generateToken (C:\Users\Kaldi\Documents\tradematch\api\models\token.js:14:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:82:27 
+error: Error: invalid expiresIn option for string payload
+    at Object.module.exports [as sign] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\jsonwebtoken\sign.js:128:22)
+    at generateToken (C:\Users\Kaldi\Documents\tradematch\api\models\token.js:15:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:82:27 
+error: Error: invalid expiresIn option for string payload
+    at Object.module.exports [as sign] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\jsonwebtoken\sign.js:128:22)
+    at generateToken (C:\Users\Kaldi\Documents\tradematch\api\models\token.js:20:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:82:27 
+error: Error: invalid expiresIn option for string payload
+    at Object.module.exports [as sign] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\jsonwebtoken\sign.js:128:22)
+    at generateToken (C:\Users\Kaldi\Documents\tradematch\api\models\token.js:20:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:82:27 
+error: Error: invalid expiresIn option for string payload
+    at Object.module.exports [as sign] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\jsonwebtoken\sign.js:128:22)
+    at generateToken (C:\Users\Kaldi\Documents\tradematch\api\models\token.js:20:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:82:27 
+error: ReferenceError: accessToken is not defined
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:91:24 
+error: ReferenceError: accessToken is not defined
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:91:24 
+error: Error: invalid expiresIn option for string payload
+    at Object.module.exports [as sign] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\jsonwebtoken\sign.js:128:22)
+    at generateToken (C:\Users\Kaldi\Documents\tradematch\api\models\token.js:20:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:82:27 
+error: Error: invalid expiresIn option for string payload
+    at Object.module.exports [as sign] (C:\Users\Kaldi\Documents\tradematch\api\node_modules\jsonwebtoken\sign.js:128:22)
+    at generateToken (C:\Users\Kaldi\Documents\tradematch\api\models\token.js:20:14)
+    at C:\Users\Kaldi\Documents\tradematch\api\routes\users.js:82:27 
