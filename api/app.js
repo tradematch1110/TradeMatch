@@ -21,6 +21,7 @@ const logger = require("./startup/logger");
 
 // temp ////////////////////////////////////////////////////
 const { OnlineService } = require("./models/onlineService");
+const { Category, validateCategory } = require("./models/category");
 
 ///////////////////////////////////////////////////
 // init the app const to use the required services 
@@ -35,6 +36,28 @@ app.use(morgan("tiny"));
 logger.info("morgan enabled");
 logger.info(app.get("env"));
 
+
+///////////////////////////////////////////////////
+
+app.get("/add-category", (req, res) => {
+  const categories = new Category(
+    {
+    name: "מוצרי חשמל",
+    id: "1",
+    subCategories: ["תנור", "מחשב", "מסך", "טלוויזיה" ],
+  }
+  );
+
+  categories
+    .save()
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+///////////////////////////////////////////////////
 
 // init (isdocker, routes, db moudles)
 require("./startup/routes")(app);
