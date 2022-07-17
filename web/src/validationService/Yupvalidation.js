@@ -41,6 +41,52 @@ export const FORM_LOGIN_VALIDATION = Yup.object().shape({
     .matches(/[a-zA-Z0-9]/, "אותיות באנגלית"),
 });
 
+////////////////////FORM_PRODUCT_VALIDATION////////////////////
+const SUPPORTED_FORMATS = ["image/jpg", "image/jpeg", "image/png"];
+
+export const FORM_PRODUCT_VALIDATION = Yup.object().shape({
+  produectTitle: Yup.string()
+    .min(2, "מינימום 2 אותיות")
+    .max(20, "מקסימום 20 אותיות")
+    .required("שדה חובה"),
+  images: Yup.mixed()
+    .test(
+      "Fichier taille",
+      "upload file",
+      (value) => !value || (value && value.size <= 1024 * 1024)
+    )
+    .test(
+      "format",
+      "upload file",
+      (value) => !value || (value && SUPPORTED_FORMATS.includes(value.type))
+    ),
+  descriptions: Yup.string()
+    .min(2, "מינימום 2 אותיות")
+    .max(100, "מקסימום 100 אותיות")
+    .required("שדה חובה"),
+  category: Yup.string()
+    .min(2, "מינימום 2 אותיות")
+    .max(20, "מקסימום 20 אותיות")
+    .required("שדה חובה"),
+  subCategory: Yup.string()
+    .min(2, "מינימום 2 אותיות")
+    .max(20, "מקסימום 20 אותיות")
+    .required("שדה חובה"),
+  condition: Yup.string()
+    .min(2, "מינימום 2 אותיות")
+    .max(100, "מקסימום 100 אותיות")
+    .required("שדה חובה"),
+  replaceableCategory: Yup.string()
+    .min(2, "מינימום 2 אותיות")
+    .max(20, "מקסימום 20 אותיות"),
+  replaceableSubCategory: Yup.string()
+    .min(2, "מינימום 2 אותיות")
+    .max(20, "מקסימום 20 אותיות"),
+});
+
+
+
+
 // ////////////////////FORM_CODE_VALIDATION////////////////////
 // export const FORM_CODE_VALIDATION = Yup.object({
 //   code: Yup.number()
