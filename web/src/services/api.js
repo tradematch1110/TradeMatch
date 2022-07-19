@@ -18,6 +18,14 @@ export const loginUser = async (formValues) => {
   return await helper(url, method, headerToken, data);
 };
 
+export const getCategoriesNames = async () => {
+  const url = "getCategoriesNames";
+  const method = "post";
+  const headerToken = null;
+  const data = null;
+  return await helper(url, method, headerToken, data);
+};
+
 
 export const getAuthToken = async (sessionId) => {
   const url = "session";

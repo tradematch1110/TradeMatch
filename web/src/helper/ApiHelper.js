@@ -63,6 +63,9 @@ const getUrl = (urlType) => {
     case "users/login":
       url += "/api/users/login";
       break;
+    case "getCategoriesNames":
+      url += "/api/categories/getCategoriesNames";
+      break;
     default:
       result.status = "error";
       result.statusId = 2;

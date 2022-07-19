@@ -20,6 +20,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { prefixer } from "stylis";
 import { useNavigate } from "react-router-dom";
 import Select from "../FormsUI/Select";
+import { getCategoriesNames } from './../services/api';
 const cacheLtr = createCache({
   key: "muiltr",
 });
@@ -86,6 +87,28 @@ const ProductForm = () => {
   const [loading, setLoading] = useState("");
   const { currentUserName, setCurrentUserName, isLogged, setIsLogged } =
     useContext(authContext);
+ const [categoriesNames, setCategoriesNames] = useState("");
+
+ useEffect( () => {
+   async function fetchData() {
+     const res = await getCategoriesNames();
+     console.log("res: ", res);
+     switch (res.statusId) {
+       case 1:
+         setCategoriesNames(res.value.categoriesNames);
+         console.log(res.value.categoriesNames);
+         break;
+       case 2:
+         setError(res.value);
+         setTimeout(() => {
+           setError("");
+         }, 5000);
+         break;
+       default:
+     }
+   }
+    fetchData();
+ }, [categoriesNames]);
   // route consts
   //   const history = useHistory();
   //   const location = useLocation();
@@ -240,7 +263,7 @@ const ProductForm = () => {
                       <Select
                         name="category"
                         label="קטגוריה ראשית"
-                        options={["מחשב", "תנור"]}
+                        options={categoriesNames && categoriesNames}
                       ></Select>
                     </Grid>
                   </Grid>
@@ -274,7 +297,7 @@ const ProductForm = () => {
                       <Select
                         name="replaceableCategory"
                         label="קטגוריה ראשית להחלפה"
-                        options={["חמור", "שזלון"]}
+                        options={categoriesNames && categoriesNames}
                       ></Select>
                     </Grid>
                   </Grid>

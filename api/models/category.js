@@ -15,12 +15,9 @@ const categorySchema = new Schema(
       required: true,
       unique: true,
     },
-    subCategories: {
-        type: Array,
-        required: true,
-        unique: true,
-        
-    }
+    subCategories: [
+      
+    ],
   },
   { timestamps: true }
 );
