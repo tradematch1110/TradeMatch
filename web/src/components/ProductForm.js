@@ -21,6 +21,7 @@ import { prefixer } from "stylis";
 import { useNavigate } from "react-router-dom";
 import Select from "../FormsUI/Select";
 import { getCategoriesNames } from './../services/api';
+import { useTradeContext } from "../hooks/useTradeContext";
 const cacheLtr = createCache({
   key: "muiltr",
 });
@@ -54,6 +55,7 @@ const INITIAL_FORM_STATE = {
 
 /// ---------------------------------- LoginFormM component-----------------------------
 const ProductForm = () => {
+  
   const [isRtl, setIsRtl] = useState(true);
   useLayoutEffect(() => {
     document.body.setAttribute("dir", isRtl ? "rtl" : "ltr");
@@ -87,28 +89,50 @@ const ProductForm = () => {
   const [loading, setLoading] = useState("");
   const { currentUserName, setCurrentUserName, isLogged, setIsLogged } =
     useContext(authContext);
- const [categoriesNames, setCategoriesNames] = useState("");
-
+//  const [categoriesNames, setCategoriesNames] = useState("");
+  const {categories,dispatch} =useTradeContext()
  useEffect( () => {
+  //  async function fetchData() {
+  //    const res = await getCategoriesNames();
+  //    const json=await res.json()
+  //    console.log("res: ", res);
+  //    switch (res.statusId) {
+  //      case 1:
+  //       dispatch({type: 'SET_CATEGORIES', payload: json})
+  //       //  setCategoriesNames(res.value.categoriesNames);
+  //       //  console.log(res.value.categoriesNames);
+        
+  //        break;
+  //      case 2:
+  //        setError(res.value);
+  //        setTimeout(() => {
+  //          setError("");
+  //        }, 5000);
+  //        break;
+  //      default:
+  //    }
+  //  }
    async function fetchData() {
-     const res = await getCategoriesNames();
-     console.log("res: ", res);
-     switch (res.statusId) {
-       case 1:
-         setCategoriesNames(res.value.categoriesNames);
-         console.log(res.value.categoriesNames);
-         break;
-       case 2:
-         setError(res.value);
-         setTimeout(() => {
-           setError("");
-         }, 5000);
-         break;
-       default:
-     }
-   }
+    const res = await getCategoriesNames();
+    console.log("res: ", res);
+    switch (res.statusId) {
+      case 1:
+        // setCategoriesNames(res.value.categoriesNames);
+        dispatch({type: 'SET_CATEGORIES', payload: res.value})
+        console.log(res.value.categoriesNames);
+        break;
+      case 2:
+        setError(res.value);
+        setTimeout(() => {
+          setError("");
+        }, 5000);
+        break;
+      default:
+    }
+  }
+   
     fetchData();
- }, [categoriesNames]);
+ }, [dispatch]);
   // route consts
   //   const history = useHistory();
   //   const location = useLocation();
@@ -148,6 +172,7 @@ const ProductForm = () => {
     <CacheProvider value={isRtl ? cacheRtl : cacheLtr}>
       <ThemeProvider theme={isRtl ? rtlTheme : ltrTheme}>
         <CssBaseline />
+        {categories &&(
         <Grid
           className="formWrapper"
           container
@@ -259,13 +284,14 @@ const ProductForm = () => {
                     item
                     xs={12}
                   >
+                    {
                     <Grid item xs={12} className="input">
                       <Select
                         name="category"
                         label="קטגוריה ראשית"
-                        options={categoriesNames && categoriesNames}
+                        options={categories.categoriesNames  }
                       ></Select>
-                    </Grid>
+                    </Grid>}
                   </Grid>
                   <Grid
                     direction="row"
@@ -292,12 +318,11 @@ const ProductForm = () => {
                     item
                     xs={12}
                   >
-                    {/* <Gr> */}
                     <Grid item xs={12} className="input">
                       <Select
                         name="replaceableCategory"
                         label="קטגוריה ראשית להחלפה"
-                        options={categoriesNames && categoriesNames}
+                        options={categories.categoriesNames   }
                       ></Select>
                     </Grid>
                   </Grid>
@@ -333,7 +358,8 @@ const ProductForm = () => {
               </Form>
             </Formik>
           </Grid>
-        </Grid>
+          </Grid>
+        )}
       </ThemeProvider>
     </CacheProvider>
   );

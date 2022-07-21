@@ -46,8 +46,6 @@ const SUPPORTED_FORMATS = ["image/jpg", "image/jpeg", "image/png"];
 
 export const FORM_PRODUCT_VALIDATION = Yup.object().shape({
   produectTitle: Yup.string()
-    .min(2, "מינימום 2 אותיות")
-    .max(20, "מקסימום 20 אותיות")
     .required("שדה חובה"),
   images: Yup.mixed()
     .test(
@@ -65,23 +63,17 @@ export const FORM_PRODUCT_VALIDATION = Yup.object().shape({
     .max(100, "מקסימום 100 אותיות")
     .required("שדה חובה"),
   category: Yup.string()
-    .min(2, "מינימום 2 אותיות")
-    .max(20, "מקסימום 20 אותיות")
     .required("שדה חובה"),
   subCategory: Yup.string()
-    .min(2, "מינימום 2 אותיות")
-    .max(20, "מקסימום 20 אותיות")
     .required("שדה חובה"),
   condition: Yup.string()
     .min(2, "מינימום 2 אותיות")
     .max(100, "מקסימום 100 אותיות")
     .required("שדה חובה"),
   replaceableCategory: Yup.string()
-    .min(2, "מינימום 2 אותיות")
-    .max(20, "מקסימום 20 אותיות"),
+  .required("שדה חובה"),
   replaceableSubCategory: Yup.string()
-    .min(2, "מינימום 2 אותיות")
-    .max(20, "מקסימום 20 אותיות"),
+  .required("שדה חובה"),
 });
 
 

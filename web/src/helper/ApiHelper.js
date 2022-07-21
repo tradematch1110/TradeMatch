@@ -8,6 +8,7 @@
 const result = { status: null, value: null, statusId: null };
 
 export const helper = async (urlType, method, token, data) => {
+
   const url = getUrl(urlType);
   const initParam = getInitParam(method, token, data);
   // console.log("initparam", initParam);
@@ -29,6 +30,7 @@ export const helper = async (urlType, method, token, data) => {
             result.status = "success";
             result.statusId = 1;
             result.value = json;
+            
             return result;
           } else {
             result.status = "error";
