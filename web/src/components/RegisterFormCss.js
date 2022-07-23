@@ -1,6 +1,4 @@
 import {
-  ThemeProvider,
-  createMuiTheme,
   makeStyles,
 } from "@material-ui/core/styles";
 

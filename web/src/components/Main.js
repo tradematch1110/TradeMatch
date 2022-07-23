@@ -12,15 +12,17 @@ import Home from './Home';
 import Login from './Login';
 import Register from './Register';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import CreateProduct from './CreateProduct';
 
 const Main = () => {
 
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Home/>}></Route>
-        <Route path="/login" element={<Login/>}></Route>
-        <Route path="/register" element={<Register/>}></Route>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/register" element={<Register />}></Route>
+        <Route path="/create_product" element={<CreateProduct />}></Route>
       </Routes>
     </div>
   );

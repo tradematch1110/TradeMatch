@@ -211,29 +211,6 @@ const CssTextField = styled(TextField)(({ theme }) => ({
     color: "#9b9b9b",
   },
 
-  "& label.Mui-focused": {
-    [theme.breakpoints.up("md")]: {
-      // padding: theme.spacing(8),
-      fontSize: "22px",
-      fontWeight: "300",
-    },
-    fontFamily: "Assistant",
-    fontSize: "18px",
-    color: "#9b9b9b",
-  },
-
-  "& label": {
-    [theme.breakpoints.up("md")]: {
-      // padding: theme.spacing(8),
-      fontSize: "22px",
-      fontWeight: "300",
-    },
-    display: "inline-block",
-    fontFamily: "Assistant",
-    fontWeight: "normal",
-    fontSize: "18px",
-    color: "#9b9b9b",
-  },
 
   "& .MuiInput-underline:after": {
     "& fieldset": {

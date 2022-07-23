@@ -3,6 +3,11 @@ import { Formik, Form } from "formik";
 import { registerNewUser } from "../services/api";
 // import CircularIndeterminate from "./common/Circular";
 import { Grid, Hidden } from "@mui/material";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+
 import Textfield from "./TextFeild/index1";
 import Button from "./Button";
 // import { useHistory, useLocation } from "react-router";
@@ -19,9 +24,16 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { prefixer } from "stylis";
 import { useNavigate } from "react-router-dom";
-import Select from "../FormsUI/Select";
-import { getCategoriesNames } from './../services/api';
+// import Select from "../FormsUI/Select";
+import { getCategoriesNames } from "./../services/api";
 import { useTradeContext } from "../hooks/useTradeContext";
+
+import { allCategories } from "../resourcees/categories";
+import { useRef } from "react";
+import { useField, useFormikContext } from "formik";
+
+
+
 const cacheLtr = createCache({
   key: "muiltr",
 });
@@ -55,19 +67,14 @@ const INITIAL_FORM_STATE = {
 
 /// ---------------------------------- LoginFormM component-----------------------------
 const ProductForm = () => {
-  
-  const [isRtl, setIsRtl] = useState(true);
-  useLayoutEffect(() => {
-    document.body.setAttribute("dir", isRtl ? "rtl" : "ltr");
-  }, [isRtl]);
-
   const classes = useStyles();
+  const { setFieldValue } = useFormikContext();
 
   // initialize context
 
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  // useLayoutEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, []);
 
   // initialize validation
 
@@ -84,55 +91,95 @@ const ProductForm = () => {
     replaceableCategory: "",
     replaceableSubCategory: "",
   });
-
   const [error, setError] = useState("");
   const [loading, setLoading] = useState("");
+  const [selectedMain, setSelectedMain] = useState("");
+  const [selectedMainReplaceable, setSelectedMainReplaceable] = useState("");
+
+  // setSelectedMain
   const { currentUserName, setCurrentUserName, isLogged, setIsLogged } =
     useContext(authContext);
-//  const [categoriesNames, setCategoriesNames] = useState("");
-  const {categories,dispatch} =useTradeContext()
- useEffect( () => {
-  //  async function fetchData() {
-  //    const res = await getCategoriesNames();
-  //    const json=await res.json()
-  //    console.log("res: ", res);
-  //    switch (res.statusId) {
-  //      case 1:
-  //       dispatch({type: 'SET_CATEGORIES', payload: json})
-  //       //  setCategoriesNames(res.value.categoriesNames);
-  //       //  console.log(res.value.categoriesNames);
-        
-  //        break;
-  //      case 2:
-  //        setError(res.value);
-  //        setTimeout(() => {
-  //          setError("");
-  //        }, 5000);
-  //        break;
-  //      default:
-  //    }
-  //  }
-   async function fetchData() {
-    const res = await getCategoriesNames();
-    console.log("res: ", res);
-    switch (res.statusId) {
-      case 1:
-        // setCategoriesNames(res.value.categoriesNames);
-        dispatch({type: 'SET_CATEGORIES', payload: res.value})
-        console.log(res.value.categoriesNames);
-        break;
-      case 2:
-        setError(res.value);
-        setTimeout(() => {
-          setError("");
-        }, 5000);
-        break;
-      default:
-    }
+  const [categoriesNames, setCategoriesNames] = useState("");
+  const [subCategories, setSubCategories] = useState("");
+  const [replaceSubCategories, setReplaceSubCategories] = useState("")
+  const categoriesRef = useRef("");
+
+  const handleChangeMainCategory = (e) => {
+    console.log("subCategories: ", subCategories);
+    console.log("e: ", e.target.value);
+    setFieldValue("category", e.target.value);
+
+    allCategories.find((subCategory) => {
+      if (subCategory.name == e.target.value) {
+        //  console.log(subCategory.subCategories);
+        setSubCategories(subCategory.subCategories);
+      }
+    });
+  };
+  const handleChangeSubCategory = (e) => {
+    console.log("subcategory evalue: ", e.target.value);
+    setFieldValue("subcategory", e.target.value);
+
+  };
+
+  const handleChangeMainReplaceableCategory = (e) => {
+    console.log("e: ", e.target.value);
+        setFieldValue("replaceableCategory", e.target.value);
+
+   allCategories.find((subCategory) => {
+     if (subCategory.name == e.target.value) {
+       //  console.log(subCategory.subCategories);
+       setReplaceSubCategories(subCategory.subCategories);
+     }
+   });
+  };
+
+  const handleChangeReplaceSubCategory = (e) => {
+        console.log("replaceableSubCategory", e.target.value);
   }
-   
-    fetchData();
- }, [dispatch]);
+  //  handleChangeMainReplaceableCategory
+
+  // const { categories, dispatch } = useTradeContext();
+  useEffect(() => {
+    // async function fetchData() {
+    //   const res = await getCategoriesNames();
+    //   console.log("res: ", res);
+    //   switch (res.statusId) {
+    //     case 1:
+    //       // setCategoriesNames(res.value.categoriesNames);
+    //       dispatch({ type: "SET_CATEGORIES", payload: res.value });
+    //       console.log(res.value.categoriesNames);
+    //       break;
+    //     case 2:
+    //       setError(res.value);
+    //       setTimeout(() => {
+    //         setError("");
+    //       }, 5000);
+    //       break;
+    //     default:
+    //   }
+    // }
+    // fetchData();
+    let tempCategoriesNames = [];
+    allCategories.forEach((category) => {
+      tempCategoriesNames.push(category.name);
+    });
+    setCategoriesNames(tempCategoriesNames);
+    // console.log(tempCategoriesNames);
+  }, []);
+
+  // useEffect(() => {
+  //   // categoriesRef.current = categoriesNames
+  //   allCategories.find((subCategory) => {
+  //     // console.log(subCategory);
+  //     if (subCategory.name == selectedMain){console.log(subCategory.subCategories);
+  //       setSubCategories(subCategory.subCategories);
+  //     }
+  //   });
+  //   console.log("selectedMain :", selectedMain);
+
+  // }, [selectedMain]);
+
   // route consts
   //   const history = useHistory();
   //   const location = useLocation();
@@ -141,7 +188,8 @@ const ProductForm = () => {
   // send User Info To DB
   // handle Submit - register form
   const handleSubmit = async (values) => {
-    console.log(values);
+    console.log("values: ", values);
+    setFormValues(values);
     setLoading(true);
     // const res = await registerNewUser(values);
     // console.log(res);
@@ -169,21 +217,21 @@ const ProductForm = () => {
   // handle Submit - code form
 
   return (
-    <CacheProvider value={isRtl ? cacheRtl : cacheLtr}>
-      <ThemeProvider theme={isRtl ? rtlTheme : ltrTheme}>
+    <CacheProvider value={cacheRtl}>
+      <ThemeProvider theme={rtlTheme}>
         <CssBaseline />
-        {categories &&(
-        <Grid
-          className="formWrapper"
-          container
-          direction="row"
-          maxwidth="xs"
-          item
-          justifyContent="center"
-        >
-          <Grid direction="column" container item xs={12} md={6}>
-            <Grid direction="row" container justifyContent="center">
-              {/* <Link to="/">
+        {categoriesNames && (
+          <Grid
+            className="formWrapper"
+            container
+            direction="row"
+            maxwidth="xs"
+            item
+            justifyContent="center"
+          >
+            <Grid direction="column" container item xs={12} md={6}>
+              <Grid direction="row" container justifyContent="center">
+                {/* <Link to="/">
             <Hidden smDown>
               <MainLogo
                 width={192}
@@ -199,165 +247,254 @@ const ProductForm = () => {
               />
             </Hidden>
           </Link> */}
-            </Grid>
-            {/* {loading && !error} */}
-            <Formik
-              initialValues={{
-                ...INITIAL_FORM_STATE,
-              }}
-              validationSchema={FORM_PRODUCT_VALIDATION}
-              onSubmit={(values, onSubmitProps) => {
-                handleSubmit(values, onSubmitProps);
-              }}
-            >
-              <Form>
-                <Grid container item xs={12}>
-                  <Hidden smUp>
-                    <Grid
-                      dir="column"
-                      container
-                      item
-                      xs={12}
-                      md={6}
-                      justifyContent="center"
-                      className={classes.image}
-                    ></Grid>
-                  </Hidden>
-                  <Grid container item xs={12} justifyContent="center">
-                    <p className={classes.title} />
-                  </Grid>
-                  {error && (
-                    <Grid
-                      className="input"
-                      item
-                      xs={12}
-                      justifyContent="center"
-                    >
-                      {/* <h1 className={classes.errorMassage}>{error}</h1>{" "} */}
-                      <h1>{error}</h1>{" "}
-                    </Grid>
-                  )}
-                  <Grid
-                    direction="row"
-                    container
-                    justifyContent="center"
-                    item
-                    className="input"
-                    xs={12}
-                  >
-                    <Grid item xs={12} className="input">
-                      {" "}
-                      <Textfield name="produectTitle" label="שם המוצר" />
-                    </Grid>
-                  </Grid>
-                  <Grid
-                    direction="row"
-                    container
-                    justifyContent="center"
-                    className="input"
-                    item
-                    xs={12}
-                  >
-                    {/* <Gr> */}
-                    <Grid item xs={12} className="input">
-                      <Textfield name="descriptions" label="תאור" />
-                    </Grid>{" "}
-                  </Grid>
-                  <Grid
-                    direction="row"
-                    container
-                    justifyContent="center"
-                    className="input"
-                    item
-                    xs={12}
-                  >
-                    {/* <Gr> */}
-                    <Grid item xs={12} className="input">
-                      <Textfield name="condition" label="מצב" />
-                    </Grid>{" "}
-                  </Grid>
-                  <Grid
-                    direction="row"
-                    container
-                    justifyContent="center"
-                    className="input"
-                    item
-                    xs={12}
-                  >
-                    {
-                    <Grid item xs={12} className="input">
-                      <Select
-                        name="category"
-                        label="קטגוריה ראשית"
-                        options={categories.categoriesNames  }
-                      ></Select>
-                    </Grid>}
-                  </Grid>
-                  <Grid
-                    direction="row"
-                    container
-                    justifyContent="center"
-                    className="input"
-                    item
-                    xs={12}
-                  >
-                    <Grid item xs={12} className="input">
-                      <Select
-                        name="category"
-                        label="קטגוריה משנית"
-                        options={["חמור", "שזלון"]}
-                      ></Select>
-                    </Grid>
-                  </Grid>
+              </Grid>
+              {/* {loading && !error} */}
+              <Formik
+                initialValues={{
+                  ...INITIAL_FORM_STATE,
+                }}
+                validationSchema={FORM_PRODUCT_VALIDATION}
+                onSubmit={(values, onSubmitProps) => {
+                  handleSubmit(values, onSubmitProps);
+                }}
+              >
+                {({ setFieldValue, dirty, isValid }) => (
+                  <Form>
+                    <Grid container item xs={12}>
+                      <Hidden smUp>
+                        <Grid
+                          dir="column"
+                          container
+                          item
+                          xs={12}
+                          md={6}
+                          justifyContent="center"
+                          className={classes.image}
+                        ></Grid>
+                      </Hidden>
+                      <Grid container item xs={12} justifyContent="center">
+                        <p className={classes.title} />
+                      </Grid>
+                      {error && (
+                        <Grid
+                          className="input"
+                          item
+                          xs={12}
+                          justifyContent="center"
+                        >
+                          {/* <h1 className={classes.errorMassage}>{error}</h1>{" "} */}
+                          <h1>{error}</h1>{" "}
+                        </Grid>
+                      )}
+                      <Grid
+                        direction="row"
+                        container
+                        justifyContent="center"
+                        item
+                        className="input"
+                        xs={12}
+                      >
+                        <Grid item xs={12} className="input">
+                          {" "}
+                          <Textfield name="produectTitle" label="שם המוצר" />
+                        </Grid>
+                      </Grid>
+                      <Grid
+                        direction="row"
+                        container
+                        justifyContent="center"
+                        className="input"
+                        item
+                        xs={12}
+                      >
+                        {/* <Gr> */}
+                        <Grid item xs={12} className="input">
+                          <Textfield name="descriptions" label="תאור" />
+                        </Grid>{" "}
+                      </Grid>
+                      <Grid
+                        direction="row"
+                        container
+                        justifyContent="center"
+                        className="input"
+                        item
+                        xs={12}
+                      >
+                        {/* <Gr> */}
+                        <Grid item xs={12} className="input">
+                          <Textfield name="condition" label="מצב" />
+                        </Grid>{" "}
+                      </Grid>
+                      <Grid
+                        direction="row"
+                        container
+                        justifyContent="center"
+                        className="input"
+                        item
+                        xs={12}
+                      >
+                        {
+                          <Grid item xs={12} className="input">
+                            <FormControl fullWidth>
+                              <InputLabel id="demo-simple-select-label">
+                                קטגוריה ראשית
+                              </InputLabel>
+                              <Select
+                                labelId="demo-simple-select-label"
+                                id="category"
+                                name="category"
+                                label="קטגוריה ראשית"
+                                onChange={handleChangeMainCategory}
+                              >
+                                {categoriesNames.map((item) => {
+                                  return (
+                                    <MenuItem key={item} value={item}>
+                                      {item}
+                                    </MenuItem>
+                                  );
+                                })}
+                              </Select>
+                            </FormControl>
+                            {/* <Select
+                              id="category"
+                              name="category"
+                              label="קטגוריה ראשית"
+                              options={categoriesNames}
+                              setSelectedMain={setSelectedMain}
+                            ></Select> */}
+                          </Grid>
+                        }
+                      </Grid>
+                      <Grid
+                        direction="row"
+                        container
+                        justifyContent="center"
+                        className="input"
+                        item
+                        xs={12}
+                      >
+                        {subCategories && (
+                          <Grid item xs={12} className="input">
+                            <FormControl fullWidth>
+                              <InputLabel id="demo-simple-select-label">
+                                קטגוריה משנית
+                              </InputLabel>
+                              <Select
+                                labelId="demo-simple-select-label"
+                                id="subCategory"
+                                name="subCategory"
+                                label="קטגוריה משנית"
+                                onChange={handleChangeSubCategory}
+                              >
+                                {subCategories.map((item) => {
+                                  return (
+                                    <MenuItem key={item} value={item}>
+                                      {item}
+                                    </MenuItem>
+                                  );
+                                })}
+                              </Select>
+                            </FormControl>
+                            {/* <Select
+                            name="subCategory"
+                            label="קטגוריה משנית"
+                            // options={subCategories && subCategories}
+                            options={subCategories}
+                          ></Select> */}
+                          </Grid>
+                        )}
+                      </Grid>
 
-                  <Grid
-                    direction="row"
-                    container
-                    justifyContent="center"
-                    className="input"
-                    item
-                    xs={12}
-                  >
-                    <Grid item xs={12} className="input">
-                      <Select
-                        name="replaceableCategory"
-                        label="קטגוריה ראשית להחלפה"
-                        options={categories.categoriesNames   }
-                      ></Select>
+                      <Grid
+                        direction="row"
+                        container
+                        justifyContent="center"
+                        className="input"
+                        item
+                        xs={12}
+                      >
+                        <Grid item xs={12} className="input">
+                          <FormControl fullWidth>
+                            <InputLabel id="demo-simple-select-label">
+                              קטגוריה ראשית להחלפה
+                            </InputLabel>
+                            <Select
+                              id="replaceableCategory"
+                              name="replaceableCategory"
+                              label="קטגוריה ראשית להחלפה"
+                              onChange={handleChangeMainReplaceableCategory}
+                            >
+                              {categoriesNames.map((item) => {
+                                return (
+                                  <MenuItem key={item} value={item}>
+                                    {item}
+                                  </MenuItem>
+                                );
+                              })}
+                            </Select>
+                          </FormControl>
+                          {/* <Select
+                            name="replaceableCategory"
+                            label="קטגוריה ראשית להחלפה"
+                            options={categoriesNames}
+                            setSelectedMainReplaceable={
+                              setSelectedMainReplaceable
+                            }
+                          ></Select> */}
+                        </Grid>
+                      </Grid>
+                      <Grid
+                        direction="row"
+                        container
+                        justifyContent="center"
+                        className="input"
+                        item
+                        xs={12}
+                      >
+                        {replaceSubCategories && (
+                        <Grid item xs={12} className="input">
+                          <FormControl fullWidth>
+                            <InputLabel id="demo-simple-select-label">
+                              קטגוריה משנית להחלפה
+                            </InputLabel>
+                            <Select
+                              name="replaceableSubCategory"
+                              label="קטגוריה משנית להחלפה"
+                              onChange={handleChangeReplaceSubCategory}
+                            >
+                              {replaceSubCategories.map((item) => {
+                                return (
+                                  <MenuItem key={item} value={item}>
+                                    {item}
+                                  </MenuItem>
+                                );
+                              })}
+                            </Select>
+                          </FormControl>
+                          {/* <Select
+                            name="replaceableSubCategory"
+                            label="קטגוריה משנית להחלפה"
+                            options={["חמור", "שזלון"]}
+                          ></Select> */}
+                        </Grid>
+                        )}
+                      </Grid>
+                      <Grid
+                        //   className={classes.btnWrapper}
+                        container
+                        item
+                        xs={12}
+                        alignItems="center"
+                        justifyContent="center"
+                        // style={{ minHeight: '10vh' }}
+                      >
+                        <Button error={error}>נקסט</Button>
+                      </Grid>
                     </Grid>
-                  </Grid>
-                  <Grid
-                    direction="row"
-                    container
-                    justifyContent="center"
-                    className="input"
-                    item
-                    xs={12}
-                  >
-                    {/* <Gr> */}
-                    <Grid item xs={12} className="input">
-                      <Select
-                        name="replaceableSubCategory"
-                        label="קטגוריה משנית להחלפה"
-                        options={["חמור", "שזלון"]}
-                      ></Select>
-                    </Grid>
-                  </Grid>
-                  <Grid
-                    //   className={classes.btnWrapper}
-                    container
-                    item
-                    xs={12}
-                    alignItems="center"
-                    justifyContent="center"
-                    // style={{ minHeight: '10vh' }}
-                  >
-                    <Button error={error}>נקסט</Button>
-                  </Grid>
-                </Grid>
-              </Form>
-            </Formik>
-          </Grid>
+                  </Form>
+                )}
+              </Formik>
+            </Grid>
           </Grid>
         )}
       </ThemeProvider>
