@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import { styled } from '@mui/material/styles';
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
@@ -8,32 +7,30 @@ import CardActions from "@mui/material/CardActions";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import { red } from "@mui/material/colors";
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import IconButton from '@mui/material/IconButton';
-import Collapse from '@mui/material/Collapse';
+import { useTheme } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import MobileStepper from '@mui/material/MobileStepper';
+import Paper from '@mui/material/Paper';
+import Button from '@mui/material/Button';
+import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
+import SwipeableViews from 'react-swipeable-views';
+import { autoPlay } from 'react-swipeable-views-utils';
+const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+
 export default function CustomCard(props) {
-  const ulStyle = { border: "0.5px solid #66666",
+  const ulStyle = { 
+    border: "0.5px solid #66666",
   borderRadius: 20,
   margin: 20,
   boxShadow: "0 1px 8px 0 #d0d0d0",
 
 };
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-  marginLeft: 'auto',
-  transition: theme.transitions.create('transform', {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
-const [expanded, setExpanded] = React.useState(false);
   const [cardValues, setCardValues] = useState({
     userAbbreviations: "",
     produectTitle: "",
     date: "",
-    images: "",
+    images: [],
     descriptions: "",
     category: "",
     subCategory: "",
@@ -41,9 +38,9 @@ const [expanded, setExpanded] = React.useState(false);
   const temp = {
     userAbbreviations: "א.ד",
     produectTitle: "טלוויזיה",
-    date: "12.4.2022",
-    images: require('../images/tv.jpeg'),
-    descriptions: `טלוויזיה אחלומניוקי חדשה.
+    date: "12.4.2022", 
+    images:['https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60','https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60' ],
+    descriptions: `טלוויזיה חדשה.
     42 אינץ.
     לא יורד אגורה.
     ומי שלא טוב לו יום טוב לו.`,
@@ -53,12 +50,25 @@ const [expanded, setExpanded] = React.useState(false);
   useEffect(() => {
     setCardValues(temp);
   }, [cardValues]);
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
+  const theme = useTheme();
+  const [activeStep, setActiveStep] = React.useState(0);
+  const maxSteps = cardValues.images.length;
+
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
+  const handleStepChange = (step) => {
+    setActiveStep(step);
   };
   return (
+    <div>
     <Card sx={{ maxWidth: 345 }} style={ulStyle}>
-      <CardHeader
+      <CardHeader style={{textAlign: "end"}}
         avatar={
           <Avatar sx={{ bgcolor: red[500], marginLeft: 2 }} aria-label="recipe">
             {cardValues && cardValues.userAbbreviations}
@@ -68,31 +78,90 @@ const [expanded, setExpanded] = React.useState(false);
         title={cardValues && cardValues.produectTitle}
         subheader={cardValues && cardValues.date}
       />
-      <CardMedia
+      <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
+      {/* <Paper
+        square
+        elevation={0}
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          height: 50,
+          pl: 2,
+          bgcolor: 'background.default',
+        }}
+      >
+      </Paper> */}
+      <AutoPlaySwipeableViews
+        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+        index={activeStep}
+        onChangeIndex={handleStepChange}
+        enableMouseEvents
+      >
+        {cardValues.images.map((step, index) => (
+          <div >
+            {Math.abs(activeStep - index) <= 2 ? (
+              <Box
+                component="img"
+                sx={{
+                  height: 255,
+                  display: 'block',
+                  maxWidth: 400,
+                  overflow: 'hidden',
+                  width: '100%',
+                }}
+                key={index}
+                src={cardValues.images[index]}
+              />
+            ) : null}
+          </div>
+        ))}
+      </AutoPlaySwipeableViews>
+      <MobileStepper
+        steps={maxSteps}
+        position="static"
+        activeStep={activeStep}
+        nextButton={
+          <Button
+            size="small"
+            onClick={handleNext}
+            disabled={activeStep === maxSteps - 1}
+          >
+            Next
+            {theme.direction === 'rtl' ? (
+              <KeyboardArrowLeft />
+            ) : (
+              <KeyboardArrowRight />
+            )}
+          </Button>
+        }
+        backButton={
+          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+            {theme.direction === 'rtl' ? (
+              <KeyboardArrowRight />
+            ) : (
+              <KeyboardArrowLeft />
+            )}
+            Back
+          </Button>
+        }
+      />
+    </Box>
+      {/* <CardMedia
         component="img"
         height="194"
         width="194"
         // image=""
-        image={cardValues && cardValues.images}
+        image={cardValues && cardValues.mainImage}
         alt="Tv"
-      />
-     
-          <ExpandMoreIcon expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"/>
-         
-          <Collapse in={expanded} timeout="auto" unmountOnExit>
-          <CardContent> 
-          <Typography paragraph>
+      /> */}
+      <CardContent>
+          <Typography variant="body1" color="text.secondary" style={{fontSize: "16px" ,color : "black"}}>
             {cardValues && cardValues.descriptions}
           </Typography>
-          </CardContent> 
-          </Collapse>
-          
-          
-          
-      {/* <CardActions disableSpacing></CardActions> */}
+      </CardContent>
+      <CardActions disableSpacing></CardActions>
     </Card>
+    
+  </div>
   );
 }

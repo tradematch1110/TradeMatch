@@ -9,9 +9,13 @@ export default function Home() {
   return (
     <Grid container justifyContent="center" className="create">
       <CustomCard />
-      <button className="create" onClick={() => navigate("/create_product")}>
+      <CustomCard />
+      <CustomCard />
+      <CustomCard />
+      <CustomCard />
+      {/* <button className="create" onClick={() => navigate("/create_product")}>
         העלה מוצר
-      </button>
+      </button> */}
     </Grid>
   );
 }
