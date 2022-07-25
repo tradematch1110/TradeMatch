@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router';
 export default function Home() {
    const navigate = useNavigate();
   return (
-    <Grid container justifyContent="center" className="create">
+    <Grid item container justifyContent="center" className="create" xs={12}  >
       <CustomCard />
       <CustomCard />
       <CustomCard />

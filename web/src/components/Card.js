@@ -16,16 +16,17 @@ import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
+import { Grid } from '@mui/material';
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 export default function CustomCard(props) {
-  const ulStyle = { 
+  const ulStyle = {
     border: "0.5px solid #66666",
-  borderRadius: 20,
-  margin: 20,
-  boxShadow: "0 1px 8px 0 #d0d0d0",
+    borderRadius: 20,
+    marginTop: 40,
 
-};
+    boxShadow: "0 1px 8px 0 #d0d0d0",
+  };
   const [cardValues, setCardValues] = useState({
     userAbbreviations: "",
     produectTitle: "",
@@ -66,20 +67,34 @@ export default function CustomCard(props) {
     setActiveStep(step);
   };
   return (
-    <div>
-    <Card sx={{ maxWidth: 345 }} style={ulStyle}>
-      <CardHeader style={{textAlign: "end"}}
-        avatar={
-          <Avatar sx={{ bgcolor: red[500], marginLeft: 2 }} aria-label="recipe">
-            {cardValues && cardValues.userAbbreviations}
-          </Avatar>
-        }
-        
-        title={cardValues && cardValues.produectTitle}
-        subheader={cardValues && cardValues.date}
-      />
-      <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
-      {/* <Paper
+    <Grid
+      item
+      container
+      justifyContent="center"
+      className="create"
+      xs={12}
+      sm={8}
+      md={6}
+      lg={4}
+      xl={3}
+      
+    >
+      <Card sx={{ width: 360 }} style={ulStyle} className="card">
+        <CardHeader
+          style={{ textAlign: "end" }}
+          avatar={
+            <Avatar
+              sx={{ bgcolor: red[500], marginLeft: 2 }}
+              aria-label="recipe"
+            >
+              {cardValues && cardValues.userAbbreviations}
+            </Avatar>
+          }
+          title={cardValues && cardValues.produectTitle}
+          subheader={cardValues && cardValues.date}
+        />
+        <Box sx={{ width: 360, flexGrow: 1 }}>
+          {/* <Paper
         square
         elevation={0}
         sx={{
@@ -91,62 +106,68 @@ export default function CustomCard(props) {
         }}
       >
       </Paper> */}
-      <AutoPlaySwipeableViews
-        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-        index={activeStep}
-        onChangeIndex={handleStepChange}
-        enableMouseEvents
-      >
-        {cardValues.images.map((step, index) => (
-          <div >
-            {Math.abs(activeStep - index) <= 2 ? (
-              <Box
-                component="img"
-                sx={{
-                  height: 255,
-                  display: 'block',
-                  maxWidth: 400,
-                  overflow: 'hidden',
-                  width: '100%',
-                }}
-                key={index}
-                src={cardValues.images[index]}
-              />
-            ) : null}
-          </div>
-        ))}
-      </AutoPlaySwipeableViews>
-      <MobileStepper
-        steps={maxSteps}
-        position="static"
-        activeStep={activeStep}
-        nextButton={
-          <Button
-            size="small"
-            onClick={handleNext}
-            disabled={activeStep === maxSteps - 1}
+          <AutoPlaySwipeableViews
+            axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+            index={activeStep}
+            onChangeIndex={handleStepChange}
+            enableMouseEvents
           >
-            Next
-            {theme.direction === 'rtl' ? (
-              <KeyboardArrowLeft />
-            ) : (
-              <KeyboardArrowRight />
-            )}
-          </Button>
-        }
-        backButton={
-          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-            {theme.direction === 'rtl' ? (
-              <KeyboardArrowRight />
-            ) : (
-              <KeyboardArrowLeft />
-            )}
-            Back
-          </Button>
-        }
-      />
-    </Box>
-      {/* <CardMedia
+            {cardValues.images.map((step, index) => (
+              <div>
+                {Math.abs(activeStep - index) <= 2 ? (
+                  <Box
+                    component="img"
+                    sx={{
+                      height: 255,
+                      display: "block",
+                      maxWidth: 360,
+                      overflow: "hidden",
+                      width: "100%",
+                    }}
+                    key={index}
+                    src={cardValues.images[index]}
+                  />
+                ) : null}
+              </div>
+            ))}
+          </AutoPlaySwipeableViews>
+          <MobileStepper
+            steps={maxSteps}
+            position="static"
+            activeStep={activeStep}
+            nextButton={
+              <Button
+                variant="text"
+                size="small"
+                onClick={handleNext}
+                disabled={activeStep === maxSteps - 1}
+              >
+                הבא
+                {theme.direction === "ltr" ? (
+                  <KeyboardArrowLeft />
+                ) : (
+                  <KeyboardArrowRight />
+                )}
+              </Button>
+            }
+            backButton={
+              <Button
+                variant="text"
+                size="small"
+                onClick={handleBack}
+                disabled={activeStep === 0}
+              >
+                {theme.direction === "ltr" ? (
+                  <KeyboardArrowRight />
+                ) : (
+                  <KeyboardArrowLeft />
+                )}
+                קודם
+              </Button>
+            }
+          />
+        </Box>
+        {/* <CardMedia
         component="img"
         height="194"
         width="194"
@@ -154,14 +175,17 @@ export default function CustomCard(props) {
         image={cardValues && cardValues.mainImage}
         alt="Tv"
       /> */}
-      <CardContent>
-          <Typography variant="body1" color="text.secondary" style={{fontSize: "16px" ,color : "black"}}>
+        <CardContent>
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            style={{ fontSize: "16px", color: "black" }}
+          >
             {cardValues && cardValues.descriptions}
           </Typography>
-      </CardContent>
-      <CardActions disableSpacing></CardActions>
-    </Card>
-    
-  </div>
+        </CardContent>
+        <CardActions disableSpacing></CardActions>
+      </Card>
+    </Grid>
   );
 }

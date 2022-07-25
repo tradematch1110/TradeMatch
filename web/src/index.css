@@ -70,7 +70,7 @@ code {
   color: #095d6d;
 }
 .create button {
-    direction: rtl;
+  direction: rtl;
   background: #0EACCB;
   width: 120px;
   max-height: 50px;
@@ -100,3 +100,24 @@ code {
 font-size: medium;
 color: #fff;
 text-align: right;}
+
+
+.card {
+  direction: rtl;
+  background: #0EACCB;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.card button {
+  direction: rtl;
+  background: #fff;
+  color: #0EACCB;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
