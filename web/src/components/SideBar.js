@@ -11,7 +11,19 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from "@mui/icons-material/Menu";
+import FileUploadIcon from '@mui/icons-material/FileUpload';
+import { useNavigate } from 'react-router';
+import LogoutIcon from '@mui/icons-material/Logout';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import ContactMailIcon from '@mui/icons-material/ContactMail';
 export default function SideBar() {
+    // const ulStyle = { 
+    //     text-align: right;
+
+      
+    
+    // };
+    const navigate = useNavigate();
   const [state, setState] = React.useState({
     top: false,
     left: false,
@@ -37,29 +49,54 @@ export default function SideBar() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+          <ListItem  disablePadding>
+            <ListItemButton onClick={() => navigate("/create_product")}>
+            <ListItemText primary={'העלת מוצר'} style={{textAlign: 'right'}}/>
+              <ListItemIcon style={{justifyContent: "left"}}>
+                <FileUploadIcon /> 
               </ListItemIcon>
-              <ListItemText primary={text} />
+              
             </ListItemButton>
           </ListItem>
-        ))}
+      
+      </List>
+      <List>
+          <ListItem  disablePadding>
+            <ListItemButton>
+            <ListItemText primary={'אזור אישי'} style={{textAlign: 'right'}}/>
+              <ListItemIcon style={{justifyContent: "left"}}>
+                <AccountCircleIcon /> 
+              </ListItemIcon>
+              
+            </ListItemButton>
+          </ListItem>
+      
+      </List>
+      <List>
+          <ListItem  disablePadding>
+            <ListItemButton>
+            <ListItemText primary={'התנתק'} style={{textAlign: 'right'}}/>
+              <ListItemIcon style={{justifyContent: "left"}}>
+                <LogoutIcon /> 
+              </ListItemIcon>
+              
+            </ListItemButton>
+          </ListItem>
+      
       </List>
       <Divider />
+      
       <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
+          <ListItem  disablePadding>
             <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+            <ListItemText primary={'צור קשר'} style={{textAlign: 'right'}}/>
+              <ListItemIcon style={{justifyContent: "left"}}>
+                <ContactMailIcon /> 
               </ListItemIcon>
-              <ListItemText primary={text} />
+              
             </ListItemButton>
           </ListItem>
-        ))}
+      
       </List>
     </Box>
   );
