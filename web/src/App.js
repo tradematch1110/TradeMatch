@@ -10,7 +10,6 @@ import AuthContextProvider from "./contexts/AuthContext";
 import Layout from "./components/Layout";
 import { BrowserRouter as Router } from "react-router-dom";
 import { TradeContextProvider } from "./contexts/TradeContexts";
-
 // const cacheLtr = createCache({
 //   key: "muiltr",
 // });

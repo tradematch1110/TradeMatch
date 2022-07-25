@@ -19,6 +19,7 @@ import { Link } from "react-router-dom";
 import { authContext } from "../contexts/AuthContext";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import SideBar from "./SideBar";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -62,9 +63,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function Header() {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [isDrawer, setIsDrawer] = React.useState(false);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const { currentUserName, setCurrentUserName, isLogged, setIsLogged } =
     React.useContext(authContext);
+
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -179,7 +182,8 @@ export default function Header() {
             aria-label="open drawer"
             sx={{ mr: 2 }}
           >
-            <MenuIcon />
+            
+            <SideBar/>
           </IconButton>
           <Typography
             variant="h6"
@@ -292,6 +296,8 @@ export default function Header() {
           </Box>
         </Toolbar>
       </AppBar>
+     
+
       {renderMobileMenu}
       {renderMenu}
     </Box>

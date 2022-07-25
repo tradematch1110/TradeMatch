@@ -3,4 +3,8 @@
 # dependencies
 /node_modules
 .env
+<<<<<<< HEAD
 *.log
+=======
+*.log
+>>>>>>> fdc91f5d518afa1a4bdf58105589028c95b2c8eb
