@@ -88,7 +88,13 @@ code {
   margin-bottom: 3px;
   font-size: 10px;
 }
-
+.create input {
+  text-align: right;
+  margin-top: 0px;
+  margin-bottom: 3px;
+  font-size: 10px;
+  display: inline;
+}
 .optionWrapper {
   padding: 5%;
   background: #0EACCB;
@@ -101,6 +107,36 @@ font-size: medium;
 color: #fff;
 text-align: right;}
 
+.inputWrapper {
+  width: 100%;
+  justify-content: right;
+  display: inline;
+}
+.inputWrapper  input{
+    width: 50%;
+    justify-content: right;
+    text-align: right;
+    margin-top: 0px;
+    margin-bottom: 3px;
+    font-size: 10px;
+    display: inline;
+}
+.inputWrapper img {
+  width: 25%;
+  text-align: right;
+  margin-top: 0px;
+  margin-bottom: 3px;
+  font-size: 10px;
+  display: inline;
+}
+.inputWrapper button {
+  width: 25%;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 3px;
+  font-size: 10px;
+  display: inline;
+}
 
 .card {
   direction: rtl;

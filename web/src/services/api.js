@@ -1,6 +1,6 @@
 // this api service contains functions with explicit name of the api service they provides.
 // The functions turn to a helper file with the request params
-import { helper } from './../helper/ApiHelper';
+import { helper } from "./../helper/ApiHelper";
 
 export const registerNewUser = async (formValues) => {
   const url = "users/register";
@@ -26,7 +26,23 @@ export const getCategoriesNames = async () => {
   return await helper(url, method, headerToken, data);
 };
 
+export const createProduct = async (values) => {
+  const url = "products/createProduct";
+  const method = "post";
+  const headerToken = values.token;
+  const data = values;
+  return await helper(url, method, headerToken, data);
+};
 
+export const getAllProducts = async () => {
+  const url = "products/getAllProducts";
+  const method = "post";
+  const headerToken = null;
+  const data = null;
+  return await helper(url, method, headerToken, data);
+};
+
+//getAllProducts
 export const getAuthToken = async (sessionId) => {
   const url = "session";
   const method = "post";
@@ -35,8 +51,7 @@ export const getAuthToken = async (sessionId) => {
   return await helper(url, method, headerToken, data);
 };
 
-export const getOfferPrice = async (url,method, token, formValues) => {
-
+export const getOfferPrice = async (url, method, token, formValues) => {
   return await helper(url, method, token, formValues);
 };
 

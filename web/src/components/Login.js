@@ -71,7 +71,7 @@ const Login = () => {
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState("");
-  const { currentUserName, setCurrentUserName, isLogged, setIsLogged } =
+  const { currentUser, setCurrentUser } =
     useContext(authContext);
   // route consts
   //   const history = useHistory();
@@ -88,15 +88,15 @@ const Login = () => {
     switch (res.statusId) {
       case 1:
         setFormValues(values);
-        setIsLogged(true);
-        setCurrentUserName(res.value.username);
+        setCurrentUser(res.value);
+        console.log(res)
+        localStorage.setItem("user", JSON.stringify(res.value));
         navigate("/");
         setLoading(false);
         break;
       case 2:
         setLoading(false);
-        setIsLogged(false);
-        setCurrentUserName(undefined);
+        setCurrentUser(undefined);
         setError(res.value);
         setTimeout(() => {
           setError("");

@@ -196,14 +196,12 @@ const ProductForm = () => {
     // switch (res.statusId) {
     //   case 1:
     //     setFormValues(values);
-    //     setIsLogged(true);
     //     setCurrentUserName(values.firstName);
     //     navigate("/");
     //     setLoading(false);
     //     break;
     //   case 2:
     //     setLoading(false);
-    //     setIsLogged(false);
     //     setCurrentUserName(undefined);
     //     setError(res.value);
     //     setTimeout(() => {

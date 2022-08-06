@@ -1,46 +1,85 @@
 const mongoose = require("mongoose");
 const Joi = require("joi");
-const {coverSchema} = require("./cover");
 const Schema = mongoose.Schema;
 
 const productSchema = new Schema(
   {
-    name: {
+    produectTitle: {
       type: String,
       required: true,
     },
-    cost: {
-      type: Number,
+    descriptions: {
+      type: String,
       required: true,
     },
-    expire_time: {
-      type: Number,
+    condition: {
+      type: String,
       required: true,
     },
-    service_rating: {
-      type: Number,
+    category: {
+      type: String,
       required: true,
     },
-    cover: {
-      type: coverSchema,
+    subCategory: {
+      type: String,
+      required: true,
+    },
+    images: {
+      type: Object,
+    },
+    replaceableCategoryNo1: {
+      type: String,
+      required: true,
+    },
+    replaceableSubCategoryNo1: {
+      type: String,
+      required: true,
+    },
+    replaceableCategoryNo2: {
+      type: String,
+    },
+    replaceableSubCategoryNo2: {
+      type: String,
+    },
+    replaceableCategoryNo3: {
+      type: String,
+    },
+    replaceableSubCategoryNo3: {
+      type: String,
+    },
+    date: {
+      type: Date,
+      required: true,
+    },
+    user: {
+      type: Object,
       required: true,
     },
   },
   { timestamps: true }
 );
+const Product = mongoose.model("Product", productSchema);
 
 function validateProduct(product) {
   const schema = {
-    name: Joi.string().min(3).max(30).required(),
-    coast: Joi.number().required(),
-    expire_time: Joi.number().min(1).max(36).required(),
-    service_rating: Joi.number().min(1).max(5).required(),
-    // cover: Joi.object().required(), // change to cover id
+    produectTitle: Joi.string().min(3).max(30).required(),
+    descriptions: Joi.string().min(3).max(150).required(),
+    condition: Joi.string().min(3).max(50).required(),
+    category: Joi.string().min(3).max(50).required(),
+    subCategory: Joi.string().min(3).max(50).required(),
+    images: Joi.array(),
+    replaceableCategoryNo1: Joi.string().min(3).max(50).required(),
+    replaceableSubCategoryNo1: Joi.string().min(3).max(50).required(),
+    replaceableCategoryNo2: Joi.string().min(3).max(50),
+    replaceableSubCategoryNo2: Joi.string().min(3).max(50),
+    replaceableCategoryNo3: Joi.string().min(3).max(50),
+    replaceableSubCategoryNo3: Joi.string().min(3).max(50),
+    date: Joi.date().required(),
+    user: Joi.object().required()
+    //
   };
 
   return Joi.validate(product, schema);
 }
 
-
-module.exports = {productSchema,
- validateProduct}
+module.exports = { Product, validateProduct };

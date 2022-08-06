@@ -45,8 +45,8 @@ router.post("/register", async (req, res) => {
   const salt = await bcrypt.genSalt(10);
   user.password = await bcrypt.hash(user.password, salt);
   await user.save();
-  res.setHeader("Set-Cookie", "newUser=true");
-  res.send(
+  // res.setHeader("Set-Cookie", "newUser=true");
+  res.status(200).send(
     {
       status: "success",
       message: "User registered successfuly",
@@ -79,14 +79,18 @@ router.post("/login", async (req, res) => {
     // console.log("user:", user)
     const auth = await bcrypt.compare(req.body.password, user.password);
     if (auth) {
+      // const salt = await bcrypt.genSalt(10);
+      // const uid = await bcrypt.hash(user._id.toString(), salt);
+      console.log("id: ",  user._id.toString() )
       const accessToken = generateToken(req.body);
       console.log("accessToken", accessToken);
       res.setHeader("Set-Cookie", accessToken);
       res.status(200);
       res.send(
         {
-          status: "success",
-          username: user.firstName,
+          firstName: user.firstName,
+          lastName: user.lastName,
+          uid: user._id.toString(),
           message: "User login successfuly",
           accessToken: accessToken,
         }
@@ -102,5 +106,41 @@ router.post("/login", async (req, res) => {
 
 
 });
+
+router.post("/get_user_by_id", async (req, res) => {
+  console.log(req.body);
+  
+  const uid = await bcrypt.hashSync(req.body._id, salt);
+
+
+  let user = await User.findById({ _id: req.body._id });
+  // console.log("user: ", user);
+
+  if (!user)
+    return res.status(400).send({
+      status: "error",
+      message: "User not exist.",
+    });
+
+  if (user) {
+    // console.log("user:", user)
+    
+      res.status(200);
+      res.send(
+        {
+          status: "success",
+          user: user
+        }
+        // _.pick(user, ["_id", "firstName", "lastName", "email", "phoneNumber"])
+      );
+    } else {
+      return res.status(400).send({
+        status: "error",
+        message: "Incorrect password.",
+      });
+    }
+  
+});
+
 
 module.exports = router;

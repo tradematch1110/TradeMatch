@@ -79,8 +79,7 @@ const Register = () => {
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState("");
-  const { currentUserName, setCurrentUserName, isLogged, setIsLogged } =
-    useContext(authContext);
+  const [isReg, setIsReg] = useState("");
   // route consts
   //   const history = useHistory();
   //   const location = useLocation();
@@ -96,15 +95,15 @@ const Register = () => {
     switch (res.statusId) {
       case 1:
         setFormValues(values);
-        setIsLogged(true);
-        setCurrentUserName(values.firstName);
-        navigate("/");
+        setIsReg(res.value.message);
+        console.log("res.message: ", res.value.message);
         setLoading(false);
+        setTimeout(() => {
+          navigate("/login");
+        }, 3000);
         break;
       case 2:
         setLoading(false);
-        setIsLogged(false);
-        setCurrentUserName(undefined);
         setError(res.value);
         setTimeout(() => {
           setError("");
@@ -130,6 +129,7 @@ const Register = () => {
         >
           <Grid direction="column" container item xs={12} md={6}>
             <Grid direction="row" container justifyContent="center">
+              {isReg && <h3>{isReg}</h3>}
               {/* <Link to="/">
             <Hidden smDown>
               <MainLogo
@@ -148,7 +148,7 @@ const Register = () => {
           </Link> */}
             </Grid>
             {/* {loading && !error} */}
-            <Formik
+            {!isReg && <Formik
               initialValues={{
                 ...INITIAL_FORM_STATE,
               }}
@@ -277,7 +277,7 @@ const Register = () => {
                   </Grid>
                 </Grid>
               </Form>
-            </Formik>
+            </Formik>}
           </Grid>
         </Grid>
       </ThemeProvider>

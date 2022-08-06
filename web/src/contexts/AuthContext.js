@@ -1,6 +1,6 @@
 // handle user context throughout the app
 
-import React, { useContext, createContext, useState } from 'react'
+import React, { useContext, createContext, useState, useEffect } from 'react'
 
 export const authContext = createContext()
 
@@ -10,25 +10,25 @@ export function useAuth() {
 
 function AuthContextProvider({ children }) {
   // init the context values
-  const [currentUserId, setCurrentUserId] = useState()
-  const [currentUserName, setCurrentUserName] = useState()
-  const [isLogged, setIsLogged] = useState();
+  const [currentUser, setCurrentUser] = useState()
 
+ useEffect(() => {
+   const user = JSON.parse(localStorage.getItem("user"));
 
+   if (user) {
+     setCurrentUser(user);
+   }
+     console.log("currentUser use effect: ", currentUser); 
+
+ }, []);
   console.log('------------ context update-----------------')
-  console.log('currentUserName: ' + currentUserName)
-  console.log("currentUserId: " + currentUserId);
-  console.log("isLogged: " + isLogged);
-
+  console.log('currentUser: ', currentUser  ) 
+ 
 
   // int the values in order to pass them in the provider
   const value = {
-    currentUserId,
-    setCurrentUserId,
-    currentUserName,
-    setCurrentUserName,
-    isLogged,
-    setIsLogged
+    currentUser,
+    setCurrentUser,
   }
   // return Auth Context Provider
   return <authContext.Provider value={value}>{children}</authContext.Provider>

@@ -9,10 +9,8 @@
 ******************************************************************************************************/
 
 const express = require("express");
-const companies = require("../routes/companies");
 const categories = require("../routes/categories");
-const onlineService = require("../routes/onlineService");
-const li = require("../routes/li");
+const products = require("../routes/products");
 const users = require("../routes/users");
 const error = require("../middleware/error");
 
@@ -22,9 +20,8 @@ module.exports = function (app) {
   app.use(express.json());
   app.use("/api/users", users);
   app.use("/api/categories", categories);
-  app.use("/companies", companies);
-  app.use("/onlineService", onlineService);
-  app.use("/li", li);
+  app.use("/api/products", products);
+
 
   // add middelware that handle server or database errors
   app.use(error);

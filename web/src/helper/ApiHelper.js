@@ -21,30 +21,22 @@ export const helper = async (urlType, method, token, data) => {
     initParam.method === "DELETE"
   ) {
     try {
-      return await (
-        await fetch(url, initParam)
-      )
-        .json()
-        .then((json) => {
-          if (json.status === "success") {
-            result.status = "success";
-            result.statusId = 1;
-            result.value = json;
-            
-            return result;
-          } else {
-            result.status = "error";
-            result.statusId = 2;
-            result.value = json.message;
-            return result;
-          }
-        })
-        .catch((err) => {
+      const response =  await fetch(url, initParam);
+      const json = await response.json();
+
+       if(!response.ok){
           result.status = "error";
           result.statusId = 2;
-          result.value = err;
+          result.value = json.message;
           return result;
-        });
+       }
+        if (response.ok) {
+          result.status = "success";
+          result.statusId = 1;
+          result.value = json;
+          return result;
+        }
+
     } catch (error) {
       console.log("error: ", error);
       result.status = "error";
@@ -68,6 +60,13 @@ const getUrl = (urlType) => {
     case "getCategoriesNames":
       url += "/api/categories/getCategoriesNames";
       break;
+    case "products/createProduct":
+      url += "/api/products/createProduct";
+      break;
+    case "products/getAllProducts":
+      url += "/api/products/getAllProducts";
+      break;
+    //products/createProduct
     default:
       result.status = "error";
       result.statusId = 2;

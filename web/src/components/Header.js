@@ -65,7 +65,7 @@ export default function Header() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [isDrawer, setIsDrawer] = React.useState(false);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-  const { currentUserName, setCurrentUserName, isLogged, setIsLogged } =
+  const { currentUser, setCurrentUser } =
     React.useContext(authContext);
 
 
@@ -83,6 +83,11 @@ export default function Header() {
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
+
+  const handleLogout = ()=>{
+    setCurrentUser("");
+    localStorage.removeItem("user", {})
+  }
 
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
@@ -182,8 +187,7 @@ export default function Header() {
             aria-label="open drawer"
             sx={{ mr: 2 }}
           >
-            
-            <SideBar/>
+            <SideBar />
           </IconButton>
           <Typography
             variant="h6"
@@ -212,7 +216,7 @@ export default function Header() {
             />
           </Search> */}
           <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ display: { xs: "none", sm: "flex" } }}>
             <IconButton
               size="large"
               aria-label="show 4 new mails"
@@ -240,9 +244,9 @@ export default function Header() {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              {isLogged && <AccountCircle />}
+              {currentUser && <AccountCircle />}
             </IconButton>
-            {!isLogged && (
+            {!currentUser && (
               <Typography
                 variant="h6"
                 component={Link}
@@ -261,7 +265,7 @@ export default function Header() {
                 התחבר |
               </Typography>
             )}
-            {!isLogged && (
+            {!currentUser && (
               <Typography
                 variant="h6"
                 component={Link}
@@ -280,9 +284,43 @@ export default function Header() {
                 הרשם
               </Typography>
             )}
-            {isLogged && <h3 >{currentUserName}</h3>}
+            {currentUser && (
+              <Typography
+                variant="h6"
+                sx={{
+                  display: {
+                    xs: "none",
+                    sm: "block",
+                    marginRight: 5,
+                    textDecoration: "none",
+                    color: "white",
+                    marginTop: 5,
+                  },
+                }}
+              >
+                {currentUser.firstName}
+              </Typography>
+            )}
+            {currentUser && (
+              <Typography
+                variant="h6"
+                onClick={handleLogout}
+                sx={{
+                  display: {
+                    xs: "none",
+                    sm: "block",
+                    marginRight: 10,
+                    textDecoration: "none",
+                    color: "white",
+                    marginTop: 5,
+                  },
+                }}
+              >
+                | התנתק
+              </Typography>
+            )}
           </Box>
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
+          <Box sx={{ display: { xs: "flex", sm: "none" } }}>
             <IconButton
               size="large"
               aria-label="show more"
@@ -296,7 +334,6 @@ export default function Header() {
           </Box>
         </Toolbar>
       </AppBar>
-     
 
       {renderMobileMenu}
       {renderMenu}
