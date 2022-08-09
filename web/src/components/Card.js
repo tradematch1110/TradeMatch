@@ -138,6 +138,7 @@ export default function CustomCard(props) {
               ))}
             </AutoPlaySwipeableViews>
             <MobileStepper
+              style={{justifyContent: "center"}}
               steps={maxSteps}
               position="static"
               activeStep={activeStep}

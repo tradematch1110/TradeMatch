@@ -5,6 +5,9 @@ import { Grid } from "@mui/material";
 import { authContext } from "./../contexts/AuthContext";
 import { createProduct } from "../services/api";
 import FileBase64 from "react-file-base64";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
+import { useNavigate } from "react-router-dom";
 
 const CreateProduct = () => {
   const initialValues = {
@@ -21,14 +24,13 @@ const CreateProduct = () => {
     replaceableCategoryNo3: "",
     replaceableSubCategoryNo3: "",
   };
+  const navigate = useNavigate();
   const { currentUser } = useContext(authContext);
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
   const [images, setImages] = useState({});
   const [imageErr, setImageErr] = useState("");
-  // const [item, setItem] = useState({ image: "" });
-  // const [items, setItems] = useState([]);
   const [subCategoriesNames, setSubCategoriesNames] = useState("");
   const [subCategoriesNames1, setSubCategoriesNames1] = useState("");
   const [subCategoriesNames2, setSubCategoriesNames2] = useState("");
@@ -60,10 +62,8 @@ const CreateProduct = () => {
       formValues.date = new Date();
       formValues.user = currentUser;
 
-      
-        formValues.images = {...images}
-      
-      
+      formValues.images = { ...images };
+
       // formValues.images= items;
       formValues.token = currentUser && currentUser.accessToken;
       // fetch to server
@@ -76,6 +76,9 @@ const CreateProduct = () => {
             // setCategoriesNames(res.value.categoriesNames);
             console.log(res);
             setDisplayForm(false);
+            setTimeout(() => {
+              navigate("/");
+            }, 1000);
             break;
           case 2:
             setError(res);
@@ -192,6 +195,10 @@ const CreateProduct = () => {
       console.log("select valid image.");
       setImageErr("קובץ לא תקין!");
     } else {
+      let url = process.env.REACT_APP_API || "";
+      base64.crossOrigin = "Anonymous";
+      base64.src = url + "?not-from-cache-please";
+      console.log("typeof(base64):", typeof base64);
       switch (index) {
         case 1:
           images.image1 = base64;
@@ -203,7 +210,6 @@ const CreateProduct = () => {
           images.image3 = base64;
           break;
       }
-      setIsSubmit(true);
       console.log("image is valid");
     }
     // console.log(" items:", items);
@@ -228,70 +234,92 @@ const CreateProduct = () => {
   };
 
   return (
-    <Grid direction="column" container item xs={12} md={6}>
+    <Grid item container justifyContent="center" xs={12}>
       {displayForm && (
         <div className="create">
-          <h2>המוצר שלך</h2>
+          <h1>המוצר שלך</h1>
 
           <form onSubmit={handleSubmit}>
-            <label>שם המוצר</label>
-            <input
-              type="text"
-              placeholder="שם המוצר"
-              name="produectTitle"
-              value={formValues.produectTitle}
-              onChange={handleChange}
-            />
-            <p>{formErrors.produectTitle}</p>
-            <label>תאור המוצר</label>
-            <textarea
-              placeholder="תאור המוצר"
-              name="descriptions"
-              value={formValues.descriptions}
-              onChange={handleChange}
-            ></textarea>
-            <p>{formErrors.descriptions}</p>
-            <label>מצב המוצר</label>
-            <input
-              type="text"
-              name="condition"
-              placeholder="מצב המוצר"
-              value={formValues.condition}
-              onChange={handleChange}
-            />
-            <p>{formErrors.condition}</p>
-            <div>
+            <div className="divWrapper">
+              <label>שם המוצר</label>
+              <input
+                type="text"
+                placeholder="שם המוצר"
+                name="produectTitle"
+                value={formValues.produectTitle}
+                onChange={handleChange}
+              />
+              <p>{formErrors.produectTitle}</p>
+            </div>
+            <div className="divWrapper">
+              <label>תאור המוצר</label>
+              <textarea
+                placeholder="תאור המוצר"
+                name="descriptions"
+                value={formValues.descriptions}
+                onChange={handleChange}
+              ></textarea>
+              <p>{formErrors.descriptions}</p>
+            </div>
+            <div className="divWrapper">
+              <label>מצב המוצר</label>
+              <input
+                type="text"
+                name="condition"
+                placeholder="מצב המוצר"
+                value={formValues.condition}
+                onChange={handleChange}
+              />
+              <p>{formErrors.condition}</p>
+            </div>
+            <div className="divWrapper">
               <label> תמונת המוצר</label>
               <div className="inputWrapper">
                 <FileBase64
+                  className="icon"
                   type="file"
                   multiple={false}
                   onDone={(base64) => handleImages(base64, 1)}
                 />
                 {images.image1 && (
-                  <button onClick={() => handleRemoveImage(1)}>הסר</button>
+                  <div className="icon">
+                    <DeleteForeverIcon
+                      color="disabled"
+                      onClick={() => handleRemoveImage(1)}
+                    ></DeleteForeverIcon>
+                  </div>
                 )}
               </div>
               <p>{imageErr}</p>
               <div className="inputWrapper">
                 <FileBase64
+                  className="icon"
                   type="file"
                   multiple={false}
                   onDone={(base64) => handleImages(base64, 2)}
                 />
                 {images.image2 && (
-                  <button onClick={() => handleRemoveImage(2)}>הסר</button>
+                  <DeleteForeverIcon
+                    color="disabled"
+                    className="icon"
+                    onClick={() => handleRemoveImage(2)}
+                  ></DeleteForeverIcon>
                 )}
               </div>
               <p>{imageErr}</p>
               <div className="inputWrapper">
                 <FileBase64
+                  className="icon"
                   type="file"
                   multiple={false}
                   onDone={(base64) => handleImages(base64, 3)}
                 />
                 {images.image3 && (
-                  <button onClick={() => handleRemoveImage(3)}>הסר</button>
+                  <DeleteForeverIcon
+                    color="disabled"
+                    className="icon"
+                    onClick={() => handleRemoveImage(3)}
+                  ></DeleteForeverIcon>
                 )}
               </div>
               <p>{imageErr}</p>
@@ -397,7 +425,13 @@ const CreateProduct = () => {
               )}
             </div>
             {!add2 && (
-              <button onClick={() => setAdd2(true)}>הוסף אפשרות החלפה</button>
+              <button onClick={() => setAdd2(true)}>
+                הוסף אפשרות החלפה
+                <AddCircleIcon
+                  className="iconButton"
+                  fontSize="small"
+                ></AddCircleIcon>
+              </button>
             )}{" "}
             {add2 && (
               <div className="optionWrapper">
@@ -457,12 +491,22 @@ const CreateProduct = () => {
                     setAdd2(false);
                     formValues.replaceableCategoryNo2 = "";
                     formValues.replaceableSubCategoryNo2 = "";
-                    handleSubmit();
                   }}
                 >
                   הסר אפשרות החלפה
+                  <DeleteForeverIcon
+                    className="iconButton"
+                    color="disabled"
+                    fontSize="small"
+                  ></DeleteForeverIcon>
                 </button>
-                <button onClick={() => setAdd3(true)}>הוסף אפשרות החלפה</button>
+                <button onClick={() => setAdd3(true)}>
+                  הוסף אפשרות החלפה
+                  <AddCircleIcon
+                    className="iconButton"
+                    fontSize="small"
+                  ></AddCircleIcon>
+                </button>
               </div>
             )}{" "}
             <br></br>
@@ -524,7 +568,6 @@ const CreateProduct = () => {
                     setAdd3(false);
                     formValues.replaceableCategoryNo3 = "";
                     formValues.replaceableSubCategoryNo3 = "";
-                    handleSubmit();
                   }}
                 >
                   הסר אפשרות החלפה
@@ -532,8 +575,9 @@ const CreateProduct = () => {
                 <button onClick={() => setAdd3(true)}>הוסף אפשרות החלפה</button>
               </div>
             )}{" "}
-            <br></br>
             <button>הוסף</button>
+            <br></br>
+            <br></br>
           </form>
         </div>
       )}

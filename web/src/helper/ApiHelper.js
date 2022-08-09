@@ -86,18 +86,35 @@ const getInitParam = (method, token, data) => {
         dataType: "json",
         headers: {
           Authorization: "Bearer " + token, // token
+          
         },
       };
       break;
     case "post":
       const body = data ? JSON.stringify(data) : "";
+      let headers = new Headers();
+
+      headers.append("Content-Type", "application/json");
+      headers.append("Accept", "application/json");
+      headers.append(
+        "Authorization",
+        "Basic " + "Access-Control-Allow-Headers",
+        "X-Requested-With, Content-Type, Accept, Origin, Authorization",
+      );
+      headers.append("Access-Control-Allow-Origin", process.env.REACT_APP_API || "");
+      headers.append("Authorization", "Bearer " + token)
       initParam = {
         method: "POST",
         dataType: "json",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + token,
-        },
+        headers: headers,
+        // headers: {
+        //   "Content-Type": "application/json",
+        //   "Access-Control-Allow-Origin": "*",
+        //   "Access-Control-Allow-Headers":
+        //     "X-Requested-With, Content-Type, Accept, Origin, Authorization",
+        //   "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+        //   Authorization: "Bearer " + token,
+        // },
         body: body,
       };
       break;
