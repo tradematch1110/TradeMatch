@@ -65,9 +65,7 @@ export default function Header() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [isDrawer, setIsDrawer] = React.useState(false);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-  const { currentUser, setCurrentUser } =
-    React.useContext(authContext);
-
+  const { currentUser, setCurrentUser } = React.useContext(authContext);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -84,10 +82,10 @@ export default function Header() {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleLogout = ()=>{
+  const handleLogout = () => {
     setCurrentUser("");
-    localStorage.removeItem("user", {})
-  }
+    localStorage.removeItem("user", {});
+  };
 
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
@@ -124,57 +122,6 @@ export default function Header() {
     </Menu>
   );
 
-  const mobileMenuId = "primary-search-account-menu-mobile";
-  const renderMobileMenu = (
-    <Menu
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{
-        vertical: "top",
-        horizontal: "right",
-      }}
-      id={mobileMenuId}
-      keepMounted
-      transformOrigin={{
-        vertical: "top",
-        horizontal: "right",
-      }}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
-      <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
-      </MenuItem>
-    </Menu>
-  );
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -196,7 +143,7 @@ export default function Header() {
             to="/"
             sx={{
               display: {
-                xs: "none",
+                // xs: "none",
                 sm: "block",
                 marginRight: 20,
                 textDecoration: "none",
@@ -216,17 +163,23 @@ export default function Header() {
             />
           </Search> */}
           <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: "none", sm: "flex" } }}>
-            <IconButton
-              size="large"
-              aria-label="show 4 new mails"
-              color="inherit"
-            >
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
+          <Box sx={{ display: {  sm: "flex" } }}>
+            {currentUser &&
+            (
+              <IconButton
+                size="large"
+                aria-label="show 4 new mails"
+                color="inherit"
+              >
+                <Badge
+                  badgeContent={currentUser && currentUser.massages.length}
+                  color="error"
+                >
+                  <MailIcon onClick={() => navigate("/user_massages")} />
+                </Badge>
+              </IconButton>
+            )}
+            {/* <IconButton
               size="large"
               aria-label="show 17 new notifications"
               color="inherit"
@@ -234,7 +187,7 @@ export default function Header() {
               <Badge badgeContent={17} color="error">
                 <NotificationsIcon />
               </Badge>
-            </IconButton>
+            </IconButton> */}
             <IconButton
               size="large"
               edge="end"
@@ -320,23 +273,9 @@ export default function Header() {
               </Typography>
             )}
           </Box>
-          <Box sx={{ display: { xs: "flex", sm: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
-          </Box>
         </Toolbar>
       </AppBar>
 
-      {renderMobileMenu}
-      {renderMenu}
     </Box>
   );
 }

@@ -13,6 +13,7 @@ const _ = require("lodash");
 const { User, validate } = require("../models/user");
 const { Login, validateLogin } = require("../models/login");
 const { generateToken } = require("../models/token");
+const userController = require("../controllers/userController");
 
 const mongoose = require("mongoose");
 const express = require("express");
@@ -92,6 +93,7 @@ router.post("/login", async (req, res) => {
           lastName: user.lastName,
           uid: user._id.toString(),
           message: "User login successfuly",
+          massages: user.massages,
           accessToken: accessToken,
         }
         // _.pick(user, ["_id", "firstName", "lastName", "email", "phoneNumber"])
@@ -142,5 +144,6 @@ router.post("/get_user_by_id", async (req, res) => {
   
 });
 
+router.post("/getUserMassages", userController.getUserMassages);
 
 module.exports = router;

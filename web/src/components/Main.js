@@ -13,6 +13,7 @@ import Login from './Login';
 import Register from './Register';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import CreateProduct from './CreateProduct';
+import UserMassages from './UserMassages';
 
 const Main = () => {
 
@@ -23,6 +24,7 @@ const Main = () => {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/create_product" element={<CreateProduct />}></Route>
+        <Route path="/user_massages" element={<UserMassages />}></Route>
       </Routes>
     </div>
   );

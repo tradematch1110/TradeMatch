@@ -156,7 +156,7 @@ text-align: right;}
   background: #0EACCB;
   color: #fff;
   border: 0;
-  padding: 8px;
+  /* padding: 8px; */
   border-radius: 8px;
   cursor: pointer;
 }
@@ -166,8 +166,17 @@ text-align: right;}
   background: #fff;
   color: #0EACCB;
   border: 0;
-  padding: 8px;
+  /* padding: 8px; */
   border-radius: 8px;
   cursor: pointer;
 }
 
+.massage {
+  direction: rtl;
+  background: #0EACCB;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}

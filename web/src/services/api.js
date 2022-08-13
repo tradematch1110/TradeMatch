@@ -18,6 +18,15 @@ export const loginUser = async (formValues) => {
   return await helper(url, method, headerToken, data);
 };
 
+export const getUserMassages = async (uid, accessToken) => {
+  const url = "users/getUserMassages";
+  const method = "post";
+  const headerToken = accessToken;
+  const data = {uid: uid};
+  return await helper(url, method, headerToken, data);
+};
+
+
 export const getCategoriesNames = async () => {
   const url = "getCategoriesNames";
   const method = "post";

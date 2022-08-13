@@ -8,6 +8,7 @@ import FileBase64 from "react-file-base64";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import { useNavigate } from "react-router-dom";
+import CustomCard from "./Card";
 
 const CreateProduct = () => {
   const initialValues = {
@@ -39,6 +40,8 @@ const CreateProduct = () => {
   const [add3, setAdd3] = useState(false);
   const [error, setError] = useState("");
   const [displayForm, setDisplayForm] = useState(true);
+  const [partMatchProducts, setPartMatchProducts] = useState("");
+  const [fullMatchProducts, setFullMatchProducts] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -70,14 +73,18 @@ const CreateProduct = () => {
       console.log("formValues with date: ", formValues);
       async function fetchData(values) {
         const res = await createProduct(values);
-        console.log("res: ", res);
+        console.log("respond from create product: ", res);
         switch (res.statusId) {
           case 1:
             // setCategoriesNames(res.value.categoriesNames);
-            console.log(res);
+            // console.log(res);
             setDisplayForm(false);
+            if (res.value.matchResult.fullMatchProducts)
+              setFullMatchProducts(res.value.matchResult.fullMatchProducts);
+            if (res.value.matchResult.partMatchProducts)
+              setPartMatchProducts(res.value.matchResult.partMatchProducts);
             setTimeout(() => {
-              navigate("/");
+              // navigate("/");
             }, 1000);
             break;
           case 2:
@@ -582,9 +589,46 @@ const CreateProduct = () => {
         </div>
       )}
       {!displayForm && (
-        <div className="create">
+        <Grid item container justifyContent="center" className="create" xs={12}>
           <h2>המוצר שלך נקלט בהצלחה במערכת!!!</h2>
-        </div>
+          {fullMatchProducts === "" && partMatchProducts === "" && (
+            <h2>לא נמצאה התאמה עבורך ... נודיע לך בהמשך!</h2>
+          )}
+
+          {!displayForm && (fullMatchProducts || partMatchProducts) && (
+            <div>
+              {fullMatchProducts.length > 0 && <h2>התאמה מלאה עבורך</h2>}
+
+              <div>
+                {fullMatchProducts &&
+                  fullMatchProducts.map((product, index) => {
+                    return (
+                      <CustomCard
+                        {...product}
+                        key={index}
+                        id={product.date.toString()}
+                      />
+                    );
+                  })}
+              </div>
+              {/* partMatchProducts */}
+              <div>
+                {partMatchProducts.length > 0 && <h2>התאמה חלקית עבורך</h2>}
+
+                {partMatchProducts &&
+                  partMatchProducts.map((product, index) => {
+                    return (
+                      <CustomCard
+                        {...product}
+                        key={index}
+                        id={product.date.toString()}
+                      />
+                    );
+                  })}
+              </div>
+            </div>
+          )}
+        </Grid>
       )}
     </Grid>
   );

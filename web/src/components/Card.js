@@ -1,7 +1,6 @@
-import React, { useLayoutEffect, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
-import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Avatar from "@mui/material/Avatar";
@@ -10,14 +9,12 @@ import { red } from "@mui/material/colors";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MobileStepper from "@mui/material/MobileStepper";
-import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 import { Grid } from "@mui/material";
-import PhotoSizeSelectActualIcon from "@mui/icons-material/PhotoSizeSelectActual";
 import emptyImage from "../images/emptyImage.png";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
@@ -27,7 +24,6 @@ export default function CustomCard(props) {
     border: "0.5px solid #66666",
     borderRadius: 5,
     marginTop: 40,
-
     boxShadow: "0 1px 8px 0 #d0d0d0",
   };
   const [images, setImages] = useState([]);
@@ -72,7 +68,7 @@ export default function CustomCard(props) {
       item
       container
       justifyContent="center"
-      className="create"
+      // className="create"
       xs={12}
       sm={8}
       md={6}
@@ -80,7 +76,7 @@ export default function CustomCard(props) {
       xl={3}
     >
       {cardValues && (
-        <Card sx={{ width: 380 }} style={ulStyle} className="card">
+        <Card sx={{ width: 360 }} style={ulStyle} className="card">
           <CardHeader
             style={{ textAlign: "end" }}
             avatar={
@@ -119,15 +115,16 @@ export default function CustomCard(props) {
                   {Math.abs(activeStep - index) <= 2 ? (
                     <Box
                       component="img"
+                      loading={index > 8 ? "lazy" : ""}
                       sx={{
                         height: 255,
-                        padding: 3,
+                        margin: 2,
                         display: "block",
-                        maxWidth: 360,
+                        maxWidth: 330,
                         overflow: "hidden",
                         width: "100%",
                       }}
-                      key={activeStep.toString()}
+                      key={index}
                       src={
                         cardValues.images[index] && cardValues.images[index]
                         //  || emptyImage
@@ -138,7 +135,7 @@ export default function CustomCard(props) {
               ))}
             </AutoPlaySwipeableViews>
             <MobileStepper
-              style={{justifyContent: "center"}}
+              style={{ justifyContent: "center" }}
               steps={maxSteps}
               position="static"
               activeStep={activeStep}
@@ -180,7 +177,7 @@ export default function CustomCard(props) {
               color="text.secondary"
               style={{ fontSize: "16px", color: "black" }}
             >
-              {cardValues && cardValues.descriptions}
+             תאור המוצר: {cardValues && cardValues.descriptions}
             </Typography>
           </CardContent>
           <CardActions disableSpacing></CardActions>

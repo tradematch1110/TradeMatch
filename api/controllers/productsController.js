@@ -1,4 +1,6 @@
 const { Product } = require("./../models/product");
+const { User } = require("./../models/user");
+
 const _ = require("lodash");
 const { forEach, forIn } = require("lodash");
 
@@ -49,8 +51,8 @@ const createProduct = async (req, res) => {
       "user",
     ])
   );
-  let matchProductsresult = await isMatchProduct(product);
-  console.log("matchProductsresult: ", matchProductsresult);
+  let matchResult = await isMatchProduct(product);
+  console.log("matchResult: ", matchResult);
 
   //   console.log("product :", product);
   try {
@@ -60,10 +62,16 @@ const createProduct = async (req, res) => {
   }
 
   // res.setHeader("Set-Cookie", "newUser=true");
-  res.status(200).send({
+  const result = {
     status: "success",
     message: "product created successfuly",
-  });
+    matchResult: matchResult,
+  };
+  console.log("--------------- result ----------------------");
+  console.log(result);
+
+  res.status(200);
+  res.send(result);
 };
 
 async function isMatchProduct(product) {
@@ -89,57 +97,83 @@ async function isMatchProduct(product) {
       },
     ],
   });
-  let matchProducts = [];
+  let fullMatchProducts = [];
+  let partMatchProducts = [];
 
   for (const key in products) {
     if (Object.hasOwnProperty.call(products, key)) {
-      const e = products[key];
+      const currentProductKey = products[key];
+      console.log("--------- match product from db  --------");
 
-      console.log(e.category, " ", e.subCategory);
-      console.log("--------------------------------------");
+      console.log(
+        currentProductKey.category,
+        " ",
+        currentProductKey.subCategory
+      );
       if (
-        product.category ===
-        (e.replaceableCategoryNo1 ||
-          e.replaceableCategoryNo2 ||
-          e.replaceableCategoryNo3)
+        product.category === currentProductKey.replaceableCategoryNo1 ||
+        product.category === currentProductKey.replaceableCategoryNo2 ||
+        product.category === currentProductKey.replaceableCategoryNo3
       ) {
         if (
-          product.subCategory ===
-          (e.replaceableSubCategoryNo1 ||
-            e.replaceableSubCategoryNo2 ||
-            e.replaceableSubCategoryNo3)
+          product.subCategory === currentProductKey.replaceableSubCategoryNo1 ||
+          product.subCategory === currentProductKey.replaceableSubCategoryNo2 ||
+          product.subCategory === currentProductKey.replaceableSubCategoryNo3
         ) {
-          matchProducts.push(e);
+          console.log("----------- full match ------------------");
+
+          fullMatchProducts.push(currentProductKey);
+          const resMassage1 = await setUserMassage(
+            currentProductKey.user.uid,
+            product,
+            "נמצאה התאמה מלאה עבורך"
+          );
+        } else {
+          console.log("------------ part match -----------------");
+          partMatchProducts.push(currentProductKey);
+          const resMassage2 = await setUserMassage(
+            currentProductKey.user.uid,
+            product,
+            "נמצאה התאמה חלקית עבורך"
+          );
+
+
         }
       }
     }
   }
 
-  // currentProduct.replaceableCategoryNo1
-  //   console.log(
-  //     "-----------------------------------------------------------------------------------"
-  //   );
-  // category
-  // subCategory
-  // replaceableCategoryNo1
-  // replaceableSubCategoryNo1
-  // replaceableCategoryNo2
-  // replaceableSubCategoryNo2
-  // replaceableCategoryNo3
-  // replaceableSubCategoryNo3
-
-  //   for (const key in products) {
-  //     if (Object.hasOwnProperty.call(products, key)) {
-  //       const element = products[key];
-  //       console.log(element._id);
-  //     }
   //   }
-  //   console.log(
-  //     "-----------------------------------------------------------------------------------"
-  //   );
-  return matchProducts;
+  console.log("--------------- after filter ----------------------");
+  console.log("fullMatchProducts: ", fullMatchProducts);
+  console.log("partMatchProducts: ", partMatchProducts);
+
+  return {
+    fullMatchProducts: fullMatchProducts,
+    partMatchProducts: partMatchProducts,
+  };
 }
 
+async function setUserMassage(uid, product, massage) {
+  const massage1 = {
+    product: product,
+    massage: massage,
+    date: new Date(),
+    isread: false
+  };
+  const filter = { _id: uid };
+  //{ $push: { friends: objFriends  } }
+  const update = { $push: { massages: massage1 }};
+
+  let doc = await User.findOneAndUpdate(filter, update, {
+    new: true,
+  });
+  console.log("--------------- setUserMassage update ----------------------");
+  console.log("doc: ", doc);
+
+  // console.log("update :", update);
+}
+ 
 module.exports = {
   getAllProducts,
   getProductById,

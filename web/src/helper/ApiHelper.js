@@ -66,7 +66,10 @@ const getUrl = (urlType) => {
     case "products/getAllProducts":
       url += "/api/products/getAllProducts";
       break;
-    //products/createProduct
+    case "users/getUserMassages":
+      url += "/api/users/getUserMassages";
+      break;
+    //users/getUserMassages
     default:
       result.status = "error";
       result.statusId = 2;
