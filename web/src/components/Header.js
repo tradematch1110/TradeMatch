@@ -20,6 +20,7 @@ import { authContext } from "../contexts/AuthContext";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import SideBar from "./SideBar";
+import Avatar from "@mui/material/Avatar";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -122,7 +123,6 @@ export default function Header() {
     </Menu>
   );
 
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ background: "#0EACCB" }}>
@@ -132,7 +132,7 @@ export default function Header() {
             edge="start"
             color="inherit"
             aria-label="open drawer"
-            sx={{ mr: 2 }}
+            // sx={{ mr: 2 }}
           >
             <SideBar />
           </IconButton>
@@ -163,9 +163,8 @@ export default function Header() {
             />
           </Search> */}
           <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: {  sm: "flex" } }}>
-            {currentUser &&
-            (
+          <Box sx={{ display: { sm: "flex" } }}>
+            {currentUser && (
               <IconButton
                 size="large"
                 aria-label="show 4 new mails"
@@ -197,7 +196,41 @@ export default function Header() {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              {currentUser && <AccountCircle />}
+              {/* userAbbreviations: props.user.firstName.charAt(0) + "." +
+              props.user.lastName.charAt(0), */}
+              {currentUser && (
+                <Avatar
+                  sx={{
+                    height: 25,
+                    width: 25,
+                    bgcolor: "#009900",
+                    // marginLeft: 2,
+                    fontSize: 12,
+                    fontWeight: 600,
+                  }}
+                  aria-label="recipe"
+                >
+                  {currentUser &&
+                    currentUser.firstName.charAt(0) +
+                      "." +
+                      currentUser.lastName.charAt(0)}
+                </Avatar>
+              )}
+              {!currentUser && (
+                <Avatar
+                onClick={handleLogin}
+                  sx={{
+                    height: 25,
+                    width: 25,
+                    bgcolor: "#66666",
+                    // marginLeft: 2,
+                    fontSize: 12,
+                    fontWeight: 600,
+                  }}
+                  aria-label="recipe"
+                >
+                </Avatar>
+              )}
             </IconButton>
             {!currentUser && (
               <Typography
@@ -275,7 +308,6 @@ export default function Header() {
           </Box>
         </Toolbar>
       </AppBar>
-
     </Box>
   );
 }

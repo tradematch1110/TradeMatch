@@ -6,6 +6,7 @@ import { getAllProducts } from "./../services/api";
 export default function Home() {
   const [error, setError] = useState("");
   const [products, setProducts] = useState(null);
+  
 
   useEffect(() => {
     async function fetchData() {
@@ -29,21 +30,16 @@ export default function Home() {
     fetchData();
   }, [error]);
   return (
-    
-    <Grid
-      item
-      container
-      justifyContent="center"
-      className="create"
-      xs={12}
-    >
+    <Grid item container justifyContent="center" className="create" xs={12}>
       {/* {error && <p>{error}<p/>}  */}
       {products &&
-        products.map((product, index) => 
-            <CustomCard {...product} key={index} id={product.date.toString()} />
-         
-        )}
-
+        products.map((product, index) => (
+          <CustomCard
+            {...product}
+            key={index}
+            id={product.date.toString()}
+          />
+        ))}
     </Grid>
   );
 }

@@ -15,17 +15,26 @@ import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 import { Grid } from "@mui/material";
-import emptyImage from "../images/emptyImage.png";
+import NoImagePlaceholder from "../images/NoImagePlaceholder.png";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
+
 export default function CustomCard(props) {
+  const randomNumber = () => {
+    const generateRandomColor = Math.floor(Math.random() * 16777215).toString(
+      16
+    );
+    // .padStart(6, "0");
+    return `#${generateRandomColor}`;
+  };
   const ulStyle = {
     border: "0.5px solid #66666",
     borderRadius: 5,
     marginTop: 40,
     boxShadow: "0 1px 8px 0 #d0d0d0",
   };
+
   const [images, setImages] = useState([]);
   const [cardValues, setCardValues] = useState({
     userAbbreviations:
@@ -42,15 +51,14 @@ export default function CustomCard(props) {
       props.images.image1 && images.push(props.images.image1.base64);
       props.images.image2 && images.push(props.images.image2.base64);
       props.images.image3 && images.push(props.images.image3.base64);
-
     } else {
-      images.push(emptyImage);
+      images.push(NoImagePlaceholder);
     }
   }, [images]);
 
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = cardValues.images && cardValues.images.length/2;
+  const maxSteps = cardValues.images && cardValues.images.length / 2;
   // console.log("emptyImage: ",  emptyImage);
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -68,7 +76,7 @@ export default function CustomCard(props) {
       item
       container
       justifyContent="center"
-      // className="create"
+      className="card"
       xs={12}
       sm={8}
       md={6}
@@ -76,12 +84,12 @@ export default function CustomCard(props) {
       xl={3}
     >
       {cardValues && (
-        <Card sx={{ width: 360 }} style={ulStyle} className="card">
+        <Card sx={{ width: 350 }} style={ulStyle} className="card">
           <CardHeader
             style={{ textAlign: "end" }}
             avatar={
               <Avatar
-                sx={{ bgcolor: red[500], marginLeft: 2 }}
+                sx={{ bgcolor: randomNumber, marginLeft: 2 }}
                 aria-label="recipe"
               >
                 {cardValues && cardValues.userAbbreviations}
@@ -90,7 +98,7 @@ export default function CustomCard(props) {
             title={cardValues && cardValues.produectTitle}
             subheader={cardValues && cardValues.date}
           />
-          <Box sx={{ width: 360, flexGrow: 1 }}>
+          <Box sx={{ width: 350, flexGrow: 1 }}>
             {/* <Paper
         square
         elevation={0}
@@ -115,14 +123,15 @@ export default function CustomCard(props) {
                   {Math.abs(activeStep - index) <= 2 ? (
                     <Box
                       component="img"
-                      loading={index > 8 ? "lazy" : ""}
+                      // loading={index > 8 ? "lazy" : ""}
                       sx={{
                         height: 255,
                         margin: 2,
                         display: "block",
-                        maxWidth: 330,
+                        maxWidth: 320,
                         overflow: "hidden",
                         width: "100%",
+                        class: "center",
                       }}
                       key={index}
                       src={
@@ -134,42 +143,45 @@ export default function CustomCard(props) {
                 </div>
               ))}
             </AutoPlaySwipeableViews>
-            <MobileStepper
-              style={{ justifyContent: "center" }}
-              steps={maxSteps}
-              position="static"
-              activeStep={activeStep}
-              nextButton={
-                <Button
-                  variant="text"
-                  size="small"
-                  onClick={handleNext}
-                  disabled={activeStep === maxSteps - 1}
-                >
-                  הבא
-                  {theme.direction === "ltr" ? (
-                    <KeyboardArrowLeft />
-                  ) : (
-                    <KeyboardArrowRight />
-                  )}
-                </Button>
-              }
-              backButton={
-                <Button
-                  variant="text"
-                  size="small"
-                  onClick={handleBack}
-                  disabled={activeStep === 0}
-                >
-                  {theme.direction === "ltr" ? (
-                    <KeyboardArrowRight />
-                  ) : (
-                    <KeyboardArrowLeft />
-                  )}
-                  קודם
-                </Button>
-              }
-            />
+
+            {cardValues.images.length > 2 && (
+              <MobileStepper
+                style={{ justifyContent: "center" }}
+                steps={maxSteps}
+                position="static"
+                activeStep={activeStep}
+                nextButton={
+                  <Button
+                    variant="text"
+                    size="small"
+                    onClick={handleNext}
+                    disabled={activeStep === maxSteps - 1}
+                  >
+                    הבא
+                    {theme.direction === "ltr" ? (
+                      <KeyboardArrowLeft />
+                    ) : (
+                      <KeyboardArrowRight />
+                    )}
+                  </Button>
+                }
+                backButton={
+                  <Button
+                    variant="text"
+                    size="small"
+                    onClick={handleBack}
+                    disabled={activeStep === 0}
+                  >
+                    {theme.direction === "ltr" ? (
+                      <KeyboardArrowRight />
+                    ) : (
+                      <KeyboardArrowLeft />
+                    )}
+                    קודם
+                  </Button>
+                }
+              />
+            )}
           </Box>
           <CardContent>
             <Typography
@@ -177,7 +189,7 @@ export default function CustomCard(props) {
               color="text.secondary"
               style={{ fontSize: "16px", color: "black" }}
             >
-             תאור המוצר: {cardValues && cardValues.descriptions}
+              תאור המוצר: {cardValues && cardValues.descriptions}
             </Typography>
           </CardContent>
           <CardActions disableSpacing></CardActions>

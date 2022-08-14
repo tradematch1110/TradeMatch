@@ -103,41 +103,43 @@ async function isMatchProduct(product) {
   for (const key in products) {
     if (Object.hasOwnProperty.call(products, key)) {
       const currentProductKey = products[key];
-      console.log("--------- match product from db  --------");
+      if (product.user.uid !== currentProductKey.user.uid) {
+        console.log("--------- match product from db  --------");
 
-      console.log(
-        currentProductKey.category,
-        " ",
-        currentProductKey.subCategory
-      );
-      if (
-        product.category === currentProductKey.replaceableCategoryNo1 ||
-        product.category === currentProductKey.replaceableCategoryNo2 ||
-        product.category === currentProductKey.replaceableCategoryNo3
-      ) {
+        console.log(
+          currentProductKey.category,
+          " ",
+          currentProductKey.subCategory
+        );
         if (
-          product.subCategory === currentProductKey.replaceableSubCategoryNo1 ||
-          product.subCategory === currentProductKey.replaceableSubCategoryNo2 ||
-          product.subCategory === currentProductKey.replaceableSubCategoryNo3
+          product.category === currentProductKey.replaceableCategoryNo1 ||
+          product.category === currentProductKey.replaceableCategoryNo2 ||
+          product.category === currentProductKey.replaceableCategoryNo3
         ) {
-          console.log("----------- full match ------------------");
+          if (
+            product.subCategory ===
+              currentProductKey.replaceableSubCategoryNo1 ||
+            product.subCategory ===
+              currentProductKey.replaceableSubCategoryNo2 ||
+            product.subCategory === currentProductKey.replaceableSubCategoryNo3
+          ) {
+            console.log("----------- full match ------------------");
 
-          fullMatchProducts.push(currentProductKey);
-          const resMassage1 = await setUserMassage(
-            currentProductKey.user.uid,
-            product,
-            "נמצאה התאמה מלאה עבורך"
-          );
-        } else {
-          console.log("------------ part match -----------------");
-          partMatchProducts.push(currentProductKey);
-          const resMassage2 = await setUserMassage(
-            currentProductKey.user.uid,
-            product,
-            "נמצאה התאמה חלקית עבורך"
-          );
-
-
+            fullMatchProducts.push(currentProductKey);
+            const resMassage1 = await setUserMassage(
+              currentProductKey.user.uid,
+              product,
+              "נמצאה התאמה מלאה עבורך"
+            );
+          } else {
+            console.log("------------ part match -----------------");
+            partMatchProducts.push(currentProductKey);
+            const resMassage2 = await setUserMassage(
+              currentProductKey.user.uid,
+              product,
+              "נמצאה התאמה חלקית עבורך"
+            );
+          }
         }
       }
     }
@@ -159,11 +161,11 @@ async function setUserMassage(uid, product, massage) {
     product: product,
     massage: massage,
     date: new Date(),
-    isread: false
+    isread: false,
   };
   const filter = { _id: uid };
   //{ $push: { friends: objFriends  } }
-  const update = { $push: { massages: massage1 }};
+  const update = { $push: { massages: massage1 } };
 
   let doc = await User.findOneAndUpdate(filter, update, {
     new: true,
@@ -173,7 +175,7 @@ async function setUserMassage(uid, product, massage) {
 
   // console.log("update :", update);
 }
- 
+
 module.exports = {
   getAllProducts,
   getProductById,

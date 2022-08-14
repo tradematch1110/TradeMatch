@@ -241,7 +241,7 @@ const CreateProduct = () => {
   };
 
   return (
-    <Grid item container justifyContent="center" xs={12}>
+    <Grid direction={"column"} item container justifyContent="center" xs={12}>
       {displayForm && (
         <div className="create">
           <h1>המוצר שלך</h1>
@@ -589,7 +589,7 @@ const CreateProduct = () => {
         </div>
       )}
       {!displayForm && (
-        <Grid item container justifyContent="center" className="create" xs={12}>
+        <>
           <h2>המוצר שלך נקלט בהצלחה במערכת!!!</h2>
           {fullMatchProducts === "" && partMatchProducts === "" && (
             <h2>לא נמצאה התאמה עבורך ... נודיע לך בהמשך!</h2>
@@ -628,7 +628,7 @@ const CreateProduct = () => {
               </div>
             </div>
           )}
-        </Grid>
+        </>
       )}
     </Grid>
   );

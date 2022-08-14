@@ -153,11 +153,12 @@ text-align: right;}
 }
 .card {
   direction: rtl;
-  background: #0EACCB;
+  /* background: #62bcce; */
   color: #fff;
   border: 0;
+  /* margin: 5; */
   /* padding: 8px; */
-  border-radius: 8px;
+  /* border-radius: 8px; */
   cursor: pointer;
 }
 
