@@ -55,6 +55,7 @@ const CreateProduct = () => {
     setFormErrors(validate(formValues));
     setIsSubmit(true);
     console.log("formValues: ", formValues);
+
     console.log("isSubmit: ", isSubmit);
   };
 
@@ -68,9 +69,11 @@ const CreateProduct = () => {
       formValues.images = { ...images };
 
       // formValues.images= items;
-      formValues.token = currentUser && currentUser.accessToken;
+      formValues.token = currentUser.accessToken;
       // fetch to server
       console.log("formValues with date: ", formValues);
+      console.log("typeOf: ", typeof formValues);
+
       async function fetchData(values) {
         const res = await createProduct(values);
         console.log("respond from create product: ", res);

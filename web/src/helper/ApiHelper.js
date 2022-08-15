@@ -11,8 +11,8 @@ export const helper = async (urlType, method, token, data) => {
 
   const url = getUrl(urlType);
   const initParam = getInitParam(method, token, data);
-  // console.log("initparam", initParam);
-  // console.log("url", url);
+  console.log("initparam", initParam);
+  console.log("url", url);
 
   if (
     initParam.method === "POST" ||
@@ -66,10 +66,16 @@ const getUrl = (urlType) => {
     case "products/getAllProducts":
       url += "/api/products/getAllProducts";
       break;
+    case "products/getProductById":
+      url += "/api/products/getProductById";
+      break;
+    case "products/getProductsByCategoryAndSubCategory":
+      url += "/api/products/getProductsByCategoryAndSubCategory";
+      break;
     case "users/getUserMassages":
       url += "/api/users/getUserMassages";
       break;
-    //users/getUserMassages
+    //products/getProductsByCategoryAndSubCategory
     default:
       result.status = "error";
       result.statusId = 2;
@@ -112,11 +118,12 @@ const getInitParam = (method, token, data) => {
         headers: headers,
         // headers: {
         //   "Content-Type": "application/json",
+        //   "Accept": "application/json",
         //   "Access-Control-Allow-Origin": "*",
-        //   "Access-Control-Allow-Headers":
-        //     "X-Requested-With, Content-Type, Accept, Origin, Authorization",
+        //   "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept, Origin, Authorization",
         //   "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-        //   Authorization: "Bearer " + token,
+        //   'Access-Control-Allow-Credentials': true,
+        //   "Authorization": "Bearer " + token,
         // },
         body: body,
       };

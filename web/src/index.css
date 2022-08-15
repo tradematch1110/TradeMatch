@@ -181,3 +181,27 @@ text-align: right;}
   border-radius: 8px;
   cursor: pointer;
 }
+
+.searchBar {
+  direction: rtl;
+    background: #032329;
+    color: #fff;
+    border: 0;
+    padding: 5px;
+    align-items: center;
+}
+.searchBar select{
+  min-height: 40px;
+  height: fit-content;
+  }
+
+.searchBar input {
+  margin-bottom: -0.5px;
+  min-height: 40px;
+  height: fit-content;
+}
+.searchBar button {
+  border-radius: 0;
+  min-height: 40px;
+  height: fit-content;
+}

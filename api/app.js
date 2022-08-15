@@ -29,6 +29,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
+
 // use morgan to console log any incoming http request
 app.use(morgan("tiny"));
 logger.info("morgan enabled");

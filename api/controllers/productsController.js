@@ -9,10 +9,54 @@ const getAllProducts = async (req, res) => {
   var result = [];
   products.forEach((product) => {
     let temp = { ...product }._doc;
-    delete temp._id;
-    delete temp.id;
-    delete temp.createdAt;
-    delete temp.updatedAt;
+    // delete temp._id;
+    // delete temp.id;
+    // delete temp.createdAt;
+    // delete temp.updatedAt;
+    delete temp.user.message;
+    delete temp.user.massages;
+    delete temp.user.accessToken;
+    delete temp.__v;
+    result.push(temp);
+  });
+
+  res.status(200);
+  res.send(result);
+};
+
+const getProductsByCategoryAndSubCategory = async (req, res) => {
+  const category = req.body.category;
+  const subCategory = req.body.subCategory;
+  if (!category) {
+    return res.status(400).send({
+      status: "error",
+      message: "Bad request.",
+    });
+  }
+  let products;
+  if (category && !subCategory) {
+     products = await Product.find({ category: category });
+  }
+  if (category && subCategory) {
+     products = await Product.find({$and:[{ category: category }, { subCategory: subCategory }]});
+    }
+  
+  if (!products) {
+    return res.status(204).send({
+      status: "Not found",
+      message: "No Product exist in this category.",
+    });
+  }
+  var result = [];
+  products.forEach((product) => {
+    let temp = { ...product }._doc;
+    // delete temp._id;
+    // delete temp.id;
+    // delete temp.createdAt;
+    // delete temp.updatedAt;
+    delete temp.user.message;
+    delete temp.user.massages;
+    delete temp.user.accessToken;
     delete temp.__v;
     result.push(temp);
   });
@@ -23,10 +67,15 @@ const getAllProducts = async (req, res) => {
 
 const getProductById = async (req, res) => {
   // winston.error("in Categories controlles " + req.params.name);
-
   // throw new Error("Error in companyies controller");
 
-  const product = await Product.findOne({ _id: `${req.params._id}` });
+  const product = await Product.findOne({ _id: `${req.body._id}` });
+  if (!product) {
+    return res.status(400).send({
+      status: "error",
+      message: "Product not exist.",
+    });
+  }
   res.send(product);
 };
 
@@ -179,6 +228,6 @@ async function setUserMassage(uid, product, massage) {
 module.exports = {
   getAllProducts,
   getProductById,
+  getProductsByCategoryAndSubCategory,
   createProduct,
-  isMatchProduct,
 };

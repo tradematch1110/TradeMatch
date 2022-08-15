@@ -22,10 +22,9 @@ export const getUserMassages = async (uid, accessToken) => {
   const url = "users/getUserMassages";
   const method = "post";
   const headerToken = accessToken;
-  const data = {uid: uid};
+  const data = { uid: uid };
   return await helper(url, method, headerToken, data);
 };
-
 
 export const getCategoriesNames = async () => {
   const url = "getCategoriesNames";
@@ -51,7 +50,23 @@ export const getAllProducts = async () => {
   return await helper(url, method, headerToken, data);
 };
 
-//getAllProducts
+export const getProductById = async (id) => {
+  const url = "products/getProductById";
+  const method = "post";
+  const headerToken = null;
+  const data = { _id: id };
+  return await helper(url, method, headerToken, data);
+};
+
+export const getProductsByCategoryAndSubCategory = async (values) => {
+  const url = "products/getProductsByCategoryAndSubCategory";
+  const method = "post";
+  const headerToken = null;
+  const data = values;
+  return await helper(url, method, headerToken, data);
+};
+
+//getProductsByCategoryAndSubCategory
 export const getAuthToken = async (sessionId) => {
   const url = "session";
   const method = "post";

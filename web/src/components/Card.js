@@ -16,11 +16,12 @@ import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 import { Grid } from "@mui/material";
 import NoImagePlaceholder from "../images/NoImagePlaceholder.png";
+import { useNavigate } from "react-router-dom";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
-
 export default function CustomCard(props) {
+  const navigate = useNavigate();
   const randomNumber = () => {
     const generateRandomColor = Math.floor(Math.random() * 16777215).toString(
       16
@@ -84,7 +85,14 @@ export default function CustomCard(props) {
       xl={3}
     >
       {cardValues && (
-        <Card sx={{ width: 350 }} style={ulStyle} className="card">
+        <Card
+          sx={{ width: 350 }}
+          style={ulStyle}
+          className="card"
+          onClick={() => {
+            navigate(`/product?name=${props._id}`);
+          }}
+        >
           <CardHeader
             style={{ textAlign: "end" }}
             avatar={
@@ -116,10 +124,10 @@ export default function CustomCard(props) {
               index={activeStep}
               onChangeIndex={handleStepChange}
               enableMouseEvents
-              key={activeStep}
+              key={activeStep + Math.random(10)}
             >
               {cardValues.images.map((step, index) => (
-                <div key={props.id + index} id={props.id + index}>
+                <div key={step + index} id={index}>
                   {Math.abs(activeStep - index) <= 2 ? (
                     <Box
                       component="img"
