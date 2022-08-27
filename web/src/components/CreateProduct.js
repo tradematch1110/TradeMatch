@@ -9,6 +9,7 @@ import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import { useNavigate } from "react-router-dom";
 import CustomCard from "./Card";
+import { getProductById } from "./../services/api";
 
 const CreateProduct = () => {
   const initialValues = {
@@ -30,8 +31,11 @@ const CreateProduct = () => {
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-  const [images, setImages] = useState({});
+  const [imagesSelcted, setImagesSelcted] = useState({});
   const [imageErr, setImageErr] = useState("");
+  const [image1, setImage1] = useState(false);
+  const [image2, setImage2] = useState(false);
+  const [image3, setImage3] = useState(false);
   const [subCategoriesNames, setSubCategoriesNames] = useState("");
   const [subCategoriesNames1, setSubCategoriesNames1] = useState("");
   const [subCategoriesNames2, setSubCategoriesNames2] = useState("");
@@ -42,6 +46,46 @@ const CreateProduct = () => {
   const [displayForm, setDisplayForm] = useState(true);
   const [partMatchProducts, setPartMatchProducts] = useState("");
   const [fullMatchProducts, setFullMatchProducts] = useState("");
+  const [product, setProduct] = useState(null);
+
+  // useEffect(() => {
+  //   console.log("id create product:  ", id);
+  //   async function fetchData() {
+  //     const res = await getProductById(id);
+  //     console.log("res in updateProduct", res);
+
+  //     switch (res.statusId) {
+  //       case 1:
+  //         // setCategoriesNames(res.value.categoriesNames);
+  //         setProduct(res.value);
+  //         let p = res.value;
+  //         formValues.produectTitle = p.produectTitle;
+  //         formValues.descriptions = p.descriptions;
+  //         formValues.condition = p.condition;
+  //         formValues.descriptions = p.descriptions;
+  //         formValues.category = p.category;
+  //         formValues.subCategory = p.subCategory;
+  //         formValues.replaceableCategoryNo1 = p.replaceableCategoryNo1;
+  //         formValues.replaceableSubCategoryNo1 = p.replaceableSubCategoryNo1;
+  //         formValues.replaceableCategoryNo2 = p.replaceableCategoryNo2;
+  //         formValues.replaceableSubCategoryNo2 = p.replaceableSubCategoryNo2;
+  //         formValues.replaceableCategoryNo3 = p.replaceableCategoryNo3;
+  //         formValues.replaceableSubCategoryNo3 = p.replaceableSubCategoryNo3;
+  //         console.log(res.value);
+  //         break;
+  //       case 2:
+  //         setError(res);
+  //         setTimeout(() => {
+  //           setError("");
+  //         }, 5000);
+  //         break;
+  //       default:
+  //     }
+  //   }
+  //   if (id) {
+  //     fetchData();
+  //   }
+  // }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -66,7 +110,7 @@ const CreateProduct = () => {
       formValues.date = new Date();
       formValues.user = currentUser;
 
-      formValues.images = { ...images };
+      formValues.images = { ...imagesSelcted };
 
       // formValues.images= items;
       formValues.token = currentUser.accessToken;
@@ -211,42 +255,48 @@ const CreateProduct = () => {
       console.log("typeof(base64):", typeof base64);
       switch (index) {
         case 1:
-          images.image1 = base64;
+          imagesSelcted.image1 = base64;
+          setImage1(true)
           break;
         case 2:
-          images.image2 = base64;
+          imagesSelcted.image2 = base64;
+          setImage2(true);
           break;
         case 3:
-          images.image3 = base64;
+          imagesSelcted.image3 = base64;
+          setImage3(true);
           break;
       }
       console.log("image is valid");
     }
     // console.log(" items:", items);
 
-    console.log("images :", images);
+    console.log("imagesSelcted :", imagesSelcted);
   };
   const handleRemoveImage = (index) => {
     switch (index) {
       case 1:
-        delete images.image1;
+        delete imagesSelcted.image1;
+        setImage1(false);
         break;
       case 2:
-        delete images.image2;
+        delete imagesSelcted.image2;
+        setImage2(false);
         break;
       case 3:
-        delete images.image3;
+        delete imagesSelcted.image3;
+        setImage3(false);
         break;
     }
     setIsSubmit(false);
     // console.log(" items:", items);
-    console.log("images :", images);
+    console.log("imagesSelcted :", imagesSelcted);
   };
 
   return (
     <Grid direction={"column"} item container justifyContent="center" xs={12}>
       {displayForm && (
-        <div className="create">
+        <div className="product_form">
           <h1>המוצר שלך</h1>
 
           <form onSubmit={handleSubmit}>
@@ -291,12 +341,22 @@ const CreateProduct = () => {
                   multiple={false}
                   onDone={(base64) => handleImages(base64, 1)}
                 />
-                {images.image1 && (
+                {image1 && (
                   <div className="icon">
                     <DeleteForeverIcon
                       color="disabled"
                       onClick={() => handleRemoveImage(1)}
                     ></DeleteForeverIcon>
+                  </div>
+                )}
+                {image1 && (
+                  <div>
+                    <img
+                      src={imagesSelcted.image1.base64}
+                      alt=""
+                      height="200px"
+                      width="200px"
+                    />
                   </div>
                 )}
               </div>
@@ -308,12 +368,22 @@ const CreateProduct = () => {
                   multiple={false}
                   onDone={(base64) => handleImages(base64, 2)}
                 />
-                {images.image2 && (
+                {image2 && (
                   <DeleteForeverIcon
                     color="disabled"
                     className="icon"
                     onClick={() => handleRemoveImage(2)}
                   ></DeleteForeverIcon>
+                )}
+                {image2 && (
+                  <div>
+                    <img
+                      src={imagesSelcted.image2.base64}
+                      alt=""
+                      height="200px"
+                      width="200px"
+                    />
+                  </div>
                 )}
               </div>
               <p>{imageErr}</p>
@@ -324,12 +394,22 @@ const CreateProduct = () => {
                   multiple={false}
                   onDone={(base64) => handleImages(base64, 3)}
                 />
-                {images.image3 && (
+                {image3 && (
                   <DeleteForeverIcon
                     color="disabled"
                     className="icon"
                     onClick={() => handleRemoveImage(3)}
                   ></DeleteForeverIcon>
+                )}
+                {image3 && (
+                  <div>
+                    <img
+                      src={imagesSelcted.image3.base64}
+                      alt=""
+                      height="200px"
+                      width="200px"
+                    />
+                  </div>
                 )}
               </div>
               <p>{imageErr}</p>

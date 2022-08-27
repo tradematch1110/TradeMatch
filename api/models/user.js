@@ -35,8 +35,11 @@ const User = mongoose.model(
       
     },
     massages: [
-      
+
     ],
+    isAdmin: {
+      type: Boolean
+    }
     // isAdmin: Boolean
   })
 );

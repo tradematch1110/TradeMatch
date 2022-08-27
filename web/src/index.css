@@ -116,6 +116,7 @@ code {
 .divWrapper {
     margin: 5%;
     
+    
  }
 .optionWrapper {
   margin: 5%;
@@ -132,7 +133,7 @@ text-align: right;}
       'left left right right'
       ;
   width: 100%;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
 
 }
@@ -161,6 +162,11 @@ text-align: right;}
   /* border-radius: 8px; */
   cursor: pointer;
 }
+.cardTitle {
+ display: inline;
+color: #0EACCB;
+font-weight: 700;
+}
 
 .card button {
   direction: rtl;
@@ -170,6 +176,7 @@ text-align: right;}
   /* padding: 8px; */
   border-radius: 8px;
   cursor: pointer;
+  
 }
 
 .massage {
@@ -205,3 +212,97 @@ text-align: right;}
   min-height: 40px;
   height: fit-content;
 }
+
+/* input[type="file"] {
+} */
+
+.product_form {
+  background: #eaf2f4;
+  text-align: center;
+  margin-top: 20px;
+  width: 60%;
+  min-width: 350px;
+  max-width: 1000px;
+  align-self: center;
+}
+
+.product_form label {
+  text-align: right;
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0EACCB;
+}
+
+.product_form h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #0EACCB;
+  margin-bottom: 20px;
+}
+
+.product_form h2 {
+  font-size: 20px;
+  color: #0EACCB;
+  margin-bottom: 20px;
+}
+
+.product_form input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #ddd;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+}
+
+.product_form textarea {
+  width: 100%;
+  min-height: 40px;
+  border: 1px solid #ddd;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+}
+
+.product_form select {
+  font-size: small;
+  color: gray;
+  direction: rtl;
+  width: 100%;
+  height: 40px;
+  padding: 6px 10px;
+  margin: 10px 0;
+  display: block;
+}
+
+.product_form option {
+  font-size: small;
+  color: #095d6d;
+}
+
+.product_form button {
+  direction: rtl;
+  background: #0EACCB;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  min-width: 200px;
+  max-width: 265px;
+  max-height: 50px;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  margin: 5px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: large;
+  cursor: pointer;
+}
+
+.product_form p {
+  color: rgb(225, 91, 91);
+  text-align: right;
+  margin-top: 0px;
+  margin-bottom: 1px;
+  font-size: 14px;
+}
+

@@ -42,6 +42,14 @@ export const createProduct = async (values) => {
   return await helper(url, method, headerToken, data);
 };
 
+export const updateProduct = async (values) => {
+  const url = "products/updateProduct";
+  const method = "post";
+  const headerToken = values.token;
+  const data = values;
+  return await helper(url, method, headerToken, data);
+};
+
 export const getAllProducts = async () => {
   const url = "products/getAllProducts";
   const method = "post";
@@ -66,7 +74,15 @@ export const getProductsByCategoryAndSubCategory = async (values) => {
   return await helper(url, method, headerToken, data);
 };
 
-//getProductsByCategoryAndSubCategory
+export const getProductsPerUser = async (uid) => {
+  const url = "products/getProductsPerUser";
+  const method = "post";
+  const headerToken = null;
+  const data = { uid: uid };
+  return await helper(url, method, headerToken, data);
+};
+
+//getProductsPerUser
 export const getAuthToken = async (sessionId) => {
   const url = "session";
   const method = "post";

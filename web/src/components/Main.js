@@ -14,6 +14,8 @@ import CreateProduct from './CreateProduct';
 import UserMassages from './UserMassages';
 import Product from "./Product";
 import { authContext } from "./../contexts/AuthContext";
+import MyProducts from './MyProducts';
+import UpdateProduct from './UpdateProduct';
 
 const Main = () => {
 const {currentUser} = useContext(authContext);
@@ -25,13 +27,26 @@ const {currentUser} = useContext(authContext);
         <Route path="/register" element={<Register />}></Route>
         <Route
           path="/create_product"
-          element={currentUser ? <CreateProduct /> : <Navigate to="/login" />}
+          element={currentUser ? <CreateProduct product={null} /> : <Navigate to="/login" />}
         ></Route>
         <Route
           path="/user_massages"
           element={currentUser ? <UserMassages /> : <Navigate to="/login" />}
         ></Route>
-        <Route path="/product" element={currentUser ? <Product />:<Navigate to="/login"/>}></Route>
+        <Route
+          path="/product"
+          element={currentUser ? <Product /> : <Navigate to="/login" />}
+        ></Route>
+        <Route
+          path="/myProduct"
+          element={currentUser ? <MyProducts /> : <Navigate to="/login" />}
+        ></Route>
+        <Route
+          path="/updateProduct"
+          element={
+            currentUser ? <UpdateProduct /> : <Navigate to="/updateProduct" />
+          }
+        ></Route>
       </Routes>
     </div>
   );

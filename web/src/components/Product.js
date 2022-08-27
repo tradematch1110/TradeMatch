@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import CustomCard from "./Card";
 import { useLocation } from "react-router-dom";
 import {getProductById} from "../services/api"
+import { identifier } from "stylis";
 
 export default function Product() {
   const search = useLocation().search;

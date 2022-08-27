@@ -46,6 +46,12 @@ export default function CustomCard(props) {
     descriptions: props.descriptions,
     category: props.category,
     subCategory: props.subCategory,
+    replaceableCategoryNo1: props.replaceableCategoryNo1,
+    replaceableSubCategoryNo1: props.replaceableSubCategoryNo1,
+    replaceableCategoryNo2: props.replaceableCategoryNo2,
+    replaceableSubCategoryNo2: props.replaceableSubCategoryNo2,
+    replaceableCategoryNo3: props.replaceableCategoryNo3,
+    replaceableSubCategoryNo3: props.replaceableSubCategoryNo3,
   });
   useEffect(() => {
     if (props.images) {
@@ -197,9 +203,49 @@ export default function CustomCard(props) {
               color="text.secondary"
               style={{ fontSize: "16px", color: "black" }}
             >
-              תאור המוצר: {cardValues && cardValues.descriptions}
+              <Typography className="cardTitle" component="span">
+                תיאור:{" "}
+              </Typography>{" "}
+              {cardValues && cardValues.descriptions}
             </Typography>
           </CardContent>
+          <CardContent>
+            <Typography
+              variant="body1"
+              color="text.secondary"
+              style={{ fontSize: "16px", color: "black" }}
+            >
+              <Typography className="cardTitle" component="span">
+                שיוך:{" "}
+              </Typography>{" "}
+              {cardValues &&
+                cardValues.category + ", " + cardValues.subCategory}
+            </Typography>
+            <Typography
+              variant="body1"
+              color="text.secondary"
+              style={{ fontSize: "16px", color: "black" }}
+            >
+              <Typography className="cardTitle" component="span">
+                מוכן להחליף:{" "}
+              </Typography>{" "}
+              {cardValues &&
+                cardValues.replaceableCategoryNo1 +
+                  ", " +
+                  cardValues.replaceableSubCategoryNo1}
+              <br />
+              {cardValues.replaceableCategoryNo2 &&
+                cardValues.replaceableCategoryNo2 +
+                  ", " +
+                  cardValues.replaceableSubCategoryNo2}
+              <br />
+              {cardValues.replaceableCategoryNo3 &&
+                cardValues.replaceableCategoryNo3 +
+                  ", " +
+                  cardValues.replaceableSubCategoryNo3}
+            </Typography>
+          </CardContent>
+
           <CardActions disableSpacing></CardActions>
         </Card>
       )}

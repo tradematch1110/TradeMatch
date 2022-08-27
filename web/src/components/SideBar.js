@@ -69,6 +69,21 @@ const handleLogin = () => {
           </ListItemButton>
         </ListItem>
       </List>
+      {currentUser && (
+        <List>
+          <ListItem disablePadding>
+            <ListItemButton onClick={() => navigate("/myProduct")}>
+              <ListItemText
+                primary={"המוצרים שלי"}
+                style={{ textAlign: "right" }}
+              />
+              <ListItemIcon style={{ justifyContent: "left" }}>
+                <FileUploadIcon />
+              </ListItemIcon>
+            </ListItemButton>
+          </ListItem>
+        </List>
+      )}
       <List>
         <ListItem disablePadding>
           <ListItemButton>
@@ -85,16 +100,20 @@ const handleLogin = () => {
       <List>
         <ListItem disablePadding>
           <ListItemButton>
-            {currentUser && <ListItemText
-              primary={"התנתק"}
-              style={{ textAlign: "right" }}
-              onClick={handleLogout}
-            />}
-            {!currentUser && <ListItemText
-              primary={"התחבר"}
-              style={{ textAlign: "right" }}
-              onClick={handleLogin}
-            />}
+            {currentUser && (
+              <ListItemText
+                primary={"התנתק"}
+                style={{ textAlign: "right" }}
+                onClick={handleLogout}
+              />
+            )}
+            {!currentUser && (
+              <ListItemText
+                primary={"התחבר"}
+                style={{ textAlign: "right" }}
+                onClick={handleLogin}
+              />
+            )}
             <ListItemIcon style={{ justifyContent: "left" }}>
               <LogoutIcon />
             </ListItemIcon>

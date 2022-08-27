@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Grid } from "@mui/material";
 import CustomCard from "./Card";
-import { getAllProducts, getProductsByCategoryAndSubCategory } from "./../services/api";
-import { allCategories, categoriesNames,  } from "../resourcees/categories";
+import {
+  getAllProducts,
+  getProductsByCategoryAndSubCategory,
+} from "./../services/api";
+import { allCategories, categoriesNames } from "../resourcees/categories";
 
 export default function Home() {
   const [error, setError] = useState("");
-  const [products, setProducts] = useState(null);
+  const [products, setProducts] = useState("");
+  const [filterdProducts, setFilterdProducts] = useState("");
   const [category, setCategory] = useState("");
   const [subCategory, setSubCategory] = useState("");
   const [subCategorySelected, setSubCategorySelected] = useState("");
@@ -35,11 +39,38 @@ export default function Home() {
   const handleSearch = async () => {
     if (!category) return;
     const data = { category: category, subCategory: subCategory };
+    setFilterdProducts(null);
 
     const res = await getProductsByCategoryAndSubCategory(data);
     switch (res.statusId) {
       case 1:
         // setCategoriesNames(res.value.categoriesNames);
+        setProducts(null);        
+        setFilterdProducts(res.value);
+        console.log("filterdProducts:", filterdProducts);
+        break;
+      case 2:
+        setError(res);
+        setTimeout(() => {
+          setError("");
+        }, 5000);
+        break;
+      default:
+    }
+  };
+  // useEffect(() => {
+  //   console.log("filterdProducts:", filterdProducts);
+  // }, [filterdProducts]);
+ const handleClear = async () => {
+    setFilterdProducts(null)
+    setCategory("")
+    setSubCategory("")
+    
+    const res = await getAllProducts();
+    switch (res.statusId) {
+      case 1:
+        // setCategoriesNames(res.value.categoriesNames);
+
         setProducts(res.value);
         console.log(res.value);
 
@@ -52,15 +83,14 @@ export default function Home() {
         break;
       default:
     }
-  };
-
+ }
   useEffect(() => {
     async function fetchData() {
       const res = await getAllProducts();
       switch (res.statusId) {
         case 1:
           // setCategoriesNames(res.value.categoriesNames);
-         
+
           setProducts(res.value);
           console.log(res.value);
 
@@ -141,7 +171,7 @@ export default function Home() {
               })}
           </select>
         </Grid>
-        <Grid
+        {/* <Grid
           direction={"column"}
           item
           container
@@ -152,11 +182,11 @@ export default function Home() {
           <input
             name="search"
             placeholder="חיפוש"
-            value={category}
+            // value={category}
             onChange={handleChange}
             onClick={(e) => handleCategory(e.target.value)}
           ></input>
-        </Grid>
+        </Grid> */}
         <Grid
           direction={"column"}
           item
@@ -174,13 +204,37 @@ export default function Home() {
             חפש
           </button>
         </Grid>
+        <Grid
+          direction={"column"}
+          item
+          container
+          xs={12}
+          md={2}
+          className="searchBar"
+        >
+          <button
+            name="searchClear"
+            placeholder="נקה חיפוש"
+            onClick={handleClear}
+          >
+            נקה
+          </button>
+        </Grid>
       </Grid>
       {/* {error && <p>{error}<p/>}  */}
       {products &&
         products.map((product, index) => (
           <CustomCard {...product} key={index} id={product.date.toString()} />
         ))}
-      {products && products.length==0 && (
+      {filterdProducts &&
+        filterdProducts.map((filterdProduct, index) => (
+          <CustomCard
+            {...filterdProduct}
+            key={index}
+            id={filterdProduct.date.toString()}
+          />
+        ))}
+      {filterdProducts && filterdProducts.length == 0 && (
         <h1>לא נמצאו תוצאות עבור מוצר זה</h1>
       )}
     </Grid>

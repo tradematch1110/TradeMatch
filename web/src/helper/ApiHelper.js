@@ -63,6 +63,9 @@ const getUrl = (urlType) => {
     case "products/createProduct":
       url += "/api/products/createProduct";
       break;
+    case "products/updateProduct":
+      url += "/api/products/updateProduct";
+      break;
     case "products/getAllProducts":
       url += "/api/products/getAllProducts";
       break;
@@ -72,10 +75,13 @@ const getUrl = (urlType) => {
     case "products/getProductsByCategoryAndSubCategory":
       url += "/api/products/getProductsByCategoryAndSubCategory";
       break;
+    case "products/getProductsPerUser":
+      url += "/api/products/getProductsPerUser";
+      break;
     case "users/getUserMassages":
       url += "/api/users/getUserMassages";
       break;
-    //products/getProductsByCategoryAndSubCategory
+    //products/getProductsPerUser
     default:
       result.status = "error";
       result.statusId = 2;

@@ -24,6 +24,44 @@ const getAllProducts = async (req, res) => {
   res.send(result);
 };
 
+const getProductsPerUser = async (req, res) => {
+  if (!req.body.uid) {
+    return res.status(400).send({
+      status: "error",
+      message: "Bad request.",
+    });
+  }
+  let products;
+
+  if (req.body.uid) {
+    // {_id: 'nAwt3b76c24mZfqxz', test:{ $elemMatch: { "30": {$exists: true}}}},
+    products = await Product.find({ "user.uid": req.body.uid });
+  }
+
+  if (!products) {
+    return res.status(200).send({
+      status: "Not found",
+      message: "No Products for this user.",
+    });
+  }
+  var result = [];
+  products.forEach((product) => {
+    let temp = { ...product }._doc;
+    // delete temp._id;
+    // delete temp.id;
+    // delete temp.createdAt;
+    // delete temp.updatedAt;
+    // delete temp.user.message;
+    // delete temp.user.massages;
+    delete temp.user.accessToken;
+    delete temp.__v;
+    result.push(temp);
+  });
+
+  res.status(200);
+  res.send(result);
+};
+
 const getProductsByCategoryAndSubCategory = async (req, res) => {
   const category = req.body.category;
   const subCategory = req.body.subCategory;
@@ -35,12 +73,14 @@ const getProductsByCategoryAndSubCategory = async (req, res) => {
   }
   let products;
   if (category && !subCategory) {
-     products = await Product.find({ category: category });
+    products = await Product.find({ category: category });
   }
   if (category && subCategory) {
-     products = await Product.find({$and:[{ category: category }, { subCategory: subCategory }]});
-    }
-  
+    products = await Product.find({
+      $and: [{ category: category }, { subCategory: subCategory }],
+    });
+  }
+
   if (!products) {
     return res.status(204).send({
       status: "Not found",
@@ -122,6 +162,57 @@ const createProduct = async (req, res) => {
   res.status(200);
   res.send(result);
 };
+
+const updateProduct = async (req, res) => {
+  const product = await Product.updateOne(
+    { _id: `${req.body._id}` },
+    {
+      $set: {
+        produectTitle: `${req.body.produectTitle}`,
+        descriptions: `${req.body.descriptions}`,
+        condition: `${req.body.condition}`,
+        category: `${req.body.category}`,
+        subCategory: `${req.body.subCategory}`,
+        images: req.body.images,
+        replaceableCategoryNo1: `${req.body.replaceableCategoryNo1}`,
+        replaceableSubCategoryNo1: `${req.body.replaceableSubCategoryNo1}`,
+        replaceableCategoryNo2: `${req.body.replaceableCategoryNo2}`,
+        replaceableSubCategoryNo2: `${req.body.replaceableSubCategoryNo2}`,
+        replaceableCategoryNo3: `${req.body.replaceableCategoryNo3}`,
+        replaceableSubCategoryNo3: `${req.body.replaceableSubCategoryNo3}`,
+        // dateUpdate: `${req.body.date}`,
+      },
+    }
+  );
+  if (!product) {
+    return res.status(400).send({
+      status: "error",
+      message: "Product not exist.",
+    });
+  }
+  let matchResult = await isMatchProduct(product);
+  console.log("matchResult: ", matchResult);
+
+  //   console.log("product :", product);
+  try {
+    await product.save();
+  } catch (error) {
+    console.log("error: ", error);
+  }
+
+  // res.setHeader("Set-Cookie", "newUser=true");
+  const result = {
+    status: "success",
+    message: "product created successfuly",
+    matchResult: matchResult,
+  };
+  console.log("--------------- result ----------------------");
+  console.log(result);
+
+  res.status(200);
+  res.send(result);
+};
+
 
 async function isMatchProduct(product) {
   const products = await Product.find({
@@ -228,6 +319,8 @@ async function setUserMassage(uid, product, massage) {
 module.exports = {
   getAllProducts,
   getProductById,
+  getProductsPerUser,
   getProductsByCategoryAndSubCategory,
   createProduct,
+  updateProduct,
 };
