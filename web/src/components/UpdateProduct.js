@@ -11,6 +11,7 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import { useNavigate } from "react-router-dom";
 import CustomCard from "./Card";
 import { getProductById } from "./../services/api";
+import Loader from "./Loader";
 
 const UpdateProduct = () => {
   const initialValues = {
@@ -32,6 +33,7 @@ const UpdateProduct = () => {
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const [loading, setLoading] = useState("");
   const [imagesSelcted, setImagesSelcted] = useState({});
   const [imageErr, setImageErr] = useState("");
   const [subCategoriesNames, setSubCategoriesNames] = useState("");
@@ -52,6 +54,7 @@ const UpdateProduct = () => {
   const [id, setId] = useState(null);
 
   useEffect(() => {
+    setLoading(true);
     const id = new URLSearchParams(search).get("name");
     console.log("id  updateproduct", id);
     setId(id);
@@ -142,9 +145,11 @@ const UpdateProduct = () => {
           setIsSubmit(true);
           console.log(res.value);
           console.log(res.value);
+          setLoading(false);
           break;
         case 2:
           setError(res);
+          setLoading(false);
           setTimeout(() => {
             setError("");
           }, 5000);
@@ -152,7 +157,9 @@ const UpdateProduct = () => {
         default:
       }
     }
-    fetchData();
+    if (id) {
+      fetchData();
+    }
   }, [error]);
 
   //   useEffect(() => {
@@ -211,6 +218,7 @@ const UpdateProduct = () => {
   };
 
   useEffect(() => {
+    setLoading(true);
     console.log("formErrors: ", formErrors);
     if (Object.keys(formErrors).length === 0 && isSubmit) {
       console.log("form is valid!!!!");
@@ -237,9 +245,12 @@ const UpdateProduct = () => {
             setTimeout(() => {
               // navigate("/");
             }, 1000);
+            setLoading(false);
+
             break;
           case 2:
             setError(res);
+            setLoading(false);
             setTimeout(() => {
               setError("");
             }, 5000);
@@ -398,166 +409,153 @@ const UpdateProduct = () => {
   };
 
   return (
-    <Grid direction={"column"} item container justifyContent="center" xs={12}>
-      {displayForm && (
-        <div className="product_form">
-          <h1> עדכן את המוצר שלך</h1>
+    <>
+      {error && <h1>{error}</h1>}
+      {loading && <Loader />}
+      {!loading && (
+        <Grid
+          direction={"column"}
+          item
+          container
+          justifyContent="center"
+          xs={12}
+        >
+          {displayForm && (
+            <div className="product_form">
+              <h1> עדכן את המוצר שלך</h1>
 
-          <form onSubmit={handleSubmit}>
-            <div className="divWrapper">
-              <label>שם המוצר</label>
-              <input
-                type="text"
-                placeholder="שם המוצר"
-                name="produectTitle"
-                value={formValues.produectTitle}
-                onChange={handleChange}
-              />
-              <p>{formErrors.produectTitle}</p>
-            </div>
-            <div className="divWrapper">
-              <label>תאור המוצר</label>
-              <textarea
-                placeholder="תאור המוצר"
-                name="descriptions"
-                value={formValues.descriptions}
-                onChange={handleChange}
-              ></textarea>
-              <p>{formErrors.descriptions}</p>
-            </div>
-            <div className="divWrapper">
-              <label>מצב המוצר</label>
-              <input
-                type="text"
-                name="condition"
-                placeholder="מצב המוצר"
-                value={formValues.condition}
-                onChange={handleChange}
-              />
-              <p>{formErrors.condition}</p>
-            </div>
-            <div className="divWrapper">
-              <label> תמונת המוצר</label>
-              <div className="inputWrapper">
-                <FileBase64
-                  className="icon"
-                  type="file"
-                  multiple={false}
-                  onDone={(base64) => handleImages(base64, 1)}
-                />
-                {image1 && (
-                  <div className="icon">
-                    <DeleteForeverIcon
-                      color="disabled"
-                      onClick={() => handleRemoveImage(1)}
-                    ></DeleteForeverIcon>
-                  </div>
-                )}
-                {image1 && (
-                  <div>
-                    <img
-                      src={imagesSelcted.image1.base64}
-                      alt=""
-                      height="200px"
-                      width="200px"
-                    />
-                  </div>
-                )}
-              </div>
-              <p>{imageErr}</p>
-              <div className="inputWrapper">
-                <FileBase64
-                  className="icon"
-                  type="file"
-                  multiple={false}
-                  onDone={(base64) => handleImages(base64, 2)}
-                />
-                {image2 && (
-                  <DeleteForeverIcon
-                    color="disabled"
-                    className="icon"
-                    onClick={() => handleRemoveImage(2)}
-                  ></DeleteForeverIcon>
-                )}
-                {image2 && (
-                  <div>
-                    <img
-                      src={imagesSelcted.image2.base64}
-                      alt=""
-                      height="200px"
-                      width="200px"
-                    />
-                  </div>
-                )}
-              </div>
-              <p>{imageErr}</p>
-              <div className="inputWrapper">
-                <FileBase64
-                  className="icon"
-                  type="file"
-                  multiple={false}
-                  onDone={(base64) => handleImages(base64, 3)}
-                />
-                {image3 && (
-                  <DeleteForeverIcon
-                    color="disabled"
-                    className="icon"
-                    onClick={() => handleRemoveImage(3)}
-                  ></DeleteForeverIcon>
-                )}
-                {image3 && (
-                  <div>
-                    <img
-                      src={imagesSelcted.image3.base64}
-                      alt=""
-                      height="200px"
-                      width="200px"
-                    />
-                  </div>
-                )}
-              </div>
-              <p>{imageErr}</p>
-              {/* <ImageUpload setImages={setImages} /> */}
-            </div>
-            <div className="optionWrapper">
-              <h3> איפיון המוצר</h3>
-              <label> קטגוריה ראשית</label>
-
-              <select
-                name="category"
-                placeholder="קטגוריה ראשית"
-                value={formValues.category}
-                onChange={handleChange}
-                onClick={(e) => handleCategory(e.target.value)}
-              >
-                <option value="" disabled>
-                  קטגוריה ראשית
-                </option>
-
-                {categoriesNames.map((category, pos) => {
-                  return (
-                    <option value={category} key={pos}>
-                      {category}
-                    </option>
-                  );
-                })}
-              </select>
-              <p>{formErrors.category}</p>
-
-              {subCategoriesNames && (
-                <div>
-                  <label>קטגוריה משנית</label>
-                  <select
-                    name="subCategory"
-                    placeholder=" תת קטגוריה ראשית"
-                    value={formValues.subCategory}
+              <form onSubmit={handleSubmit}>
+                <div className="divWrapper">
+                  <label>שם המוצר</label>
+                  <input
+                    type="text"
+                    placeholder="שם המוצר"
+                    name="produectTitle"
+                    value={formValues.produectTitle}
                     onChange={handleChange}
+                  />
+                  <p>{formErrors.produectTitle}</p>
+                </div>
+                <div className="divWrapper">
+                  <label>תאור המוצר</label>
+                  <textarea
+                    placeholder="תאור המוצר"
+                    name="descriptions"
+                    value={formValues.descriptions}
+                    onChange={handleChange}
+                  ></textarea>
+                  <p>{formErrors.descriptions}</p>
+                </div>
+                <div className="divWrapper">
+                  <label>מצב המוצר</label>
+                  <input
+                    type="text"
+                    name="condition"
+                    placeholder="מצב המוצר"
+                    value={formValues.condition}
+                    onChange={handleChange}
+                  />
+                  <p>{formErrors.condition}</p>
+                </div>
+                <div className="divWrapper">
+                  <label> תמונת המוצר</label>
+                  <div className="inputWrapper">
+                    <FileBase64
+                      className="icon"
+                      type="file"
+                      multiple={false}
+                      onDone={(base64) => handleImages(base64, 1)}
+                    />
+                    {image1 && (
+                      <div className="icon">
+                        <DeleteForeverIcon
+                          color="disabled"
+                          onClick={() => handleRemoveImage(1)}
+                        ></DeleteForeverIcon>
+                      </div>
+                    )}
+                    {image1 && (
+                      <div>
+                        <img
+                          src={imagesSelcted.image1.base64}
+                          alt=""
+                          height="200px"
+                          width="200px"
+                        />
+                      </div>
+                    )}
+                  </div>
+                  <p>{imageErr}</p>
+                  <div className="inputWrapper">
+                    <FileBase64
+                      className="icon"
+                      type="file"
+                      multiple={false}
+                      onDone={(base64) => handleImages(base64, 2)}
+                    />
+                    {image2 && (
+                      <DeleteForeverIcon
+                        color="disabled"
+                        className="icon"
+                        onClick={() => handleRemoveImage(2)}
+                      ></DeleteForeverIcon>
+                    )}
+                    {image2 && (
+                      <div>
+                        <img
+                          src={imagesSelcted.image2.base64}
+                          alt=""
+                          height="200px"
+                          width="200px"
+                        />
+                      </div>
+                    )}
+                  </div>
+                  <p>{imageErr}</p>
+                  <div className="inputWrapper">
+                    <FileBase64
+                      className="icon"
+                      type="file"
+                      multiple={false}
+                      onDone={(base64) => handleImages(base64, 3)}
+                    />
+                    {image3 && (
+                      <DeleteForeverIcon
+                        color="disabled"
+                        className="icon"
+                        onClick={() => handleRemoveImage(3)}
+                      ></DeleteForeverIcon>
+                    )}
+                    {image3 && (
+                      <div>
+                        <img
+                          src={imagesSelcted.image3.base64}
+                          alt=""
+                          height="200px"
+                          width="200px"
+                        />
+                      </div>
+                    )}
+                  </div>
+                  <p>{imageErr}</p>
+                  {/* <ImageUpload setImages={setImages} /> */}
+                </div>
+                <div className="optionWrapper">
+                  <h3> איפיון המוצר</h3>
+                  <label> קטגוריה ראשית</label>
+
+                  <select
+                    name="category"
+                    placeholder="קטגוריה ראשית"
+                    value={formValues.category}
+                    onChange={handleChange}
+                    onClick={(e) => handleCategory(e.target.value)}
                   >
                     <option value="" disabled>
-                      קטגוריה משנית
+                      קטגוריה ראשית
                     </option>
 
-                    {subCategoriesNames.map((category, pos) => {
+                    {categoriesNames.map((category, pos) => {
                       return (
                         <option value={category} key={pos}>
                           {category}
@@ -565,48 +563,51 @@ const UpdateProduct = () => {
                       );
                     })}
                   </select>
-                  <p>{formErrors.subCategory}</p>
+                  <p>{formErrors.category}</p>
+
+                  {subCategoriesNames && (
+                    <div>
+                      <label>קטגוריה משנית</label>
+                      <select
+                        name="subCategory"
+                        placeholder=" תת קטגוריה ראשית"
+                        value={formValues.subCategory}
+                        onChange={handleChange}
+                      >
+                        <option value="" disabled>
+                          קטגוריה משנית
+                        </option>
+
+                        {subCategoriesNames.map((category, pos) => {
+                          return (
+                            <option value={category} key={pos}>
+                              {category}
+                            </option>
+                          );
+                        })}
+                      </select>
+                      <p>{formErrors.subCategory}</p>
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
-            <div className="optionWrapper">
-              <h3>1 המוצר הרצוי</h3>
+                <div className="optionWrapper">
+                  <h3>1 המוצר הרצוי</h3>
 
-              <label> קטגוריה ראשית להחלפה</label>
-              <select
-                name="replaceableCategoryNo1"
-                placeholder=" קטגוריה ראשית להחלפה"
-                value={formValues.replaceableCategoryNo1}
-                onChange={handleChange}
-                onClick={(e) => handleReplaceableCategoryNo1(e.target.value)}
-              >
-                <option value="" disabled>
-                  קטגוריה ראשית להחלפה{" "}
-                </option>
-
-                {categoriesNames.map((category, pos) => {
-                  return (
-                    <option value={category} key={pos}>
-                      {category}
-                    </option>
-                  );
-                })}
-              </select>
-              <p>{formErrors.replaceableCategoryNo1}</p>
-              {subCategoriesNames1 && (
-                <div>
-                  <label> תת קטגוריה משנית להחלפה</label>
+                  <label> קטגוריה ראשית להחלפה</label>
                   <select
-                    name="replaceableSubCategoryNo1"
-                    placeholder=" תת קטגוריה ראשית"
-                    value={formValues.replaceableSubCategoryNo1}
+                    name="replaceableCategoryNo1"
+                    placeholder=" קטגוריה ראשית להחלפה"
+                    value={formValues.replaceableCategoryNo1}
                     onChange={handleChange}
+                    onClick={(e) =>
+                      handleReplaceableCategoryNo1(e.target.value)
+                    }
                   >
                     <option value="" disabled>
-                      קטגוריה משנית להחלפה
+                      קטגוריה ראשית להחלפה{" "}
                     </option>
 
-                    {subCategoriesNames1.map((category, pos) => {
+                    {categoriesNames.map((category, pos) => {
                       return (
                         <option value={category} key={pos}>
                           {category}
@@ -614,249 +615,241 @@ const UpdateProduct = () => {
                       );
                     })}
                   </select>
-                  <p>{formErrors.replaceableSubCategoryNo1}</p>
+                  <p>{formErrors.replaceableCategoryNo1}</p>
+                  {subCategoriesNames1 && (
+                    <div>
+                      <label> תת קטגוריה משנית להחלפה</label>
+                      <select
+                        name="replaceableSubCategoryNo1"
+                        placeholder=" תת קטגוריה ראשית"
+                        value={formValues.replaceableSubCategoryNo1}
+                        onChange={handleChange}
+                      >
+                        <option value="" disabled>
+                          קטגוריה משנית להחלפה
+                        </option>
+
+                        {subCategoriesNames1.map((category, pos) => {
+                          return (
+                            <option value={category} key={pos}>
+                              {category}
+                            </option>
+                          );
+                        })}
+                      </select>
+                      <p>{formErrors.replaceableSubCategoryNo1}</p>
+                    </div>
+                  )}
+                </div>
+                {!add2 && (
+                  <button onClick={() => setAdd2(true)}>
+                    הוסף אפשרות החלפה
+                    <AddCircleIcon
+                      className="iconButton"
+                      fontSize="small"
+                    ></AddCircleIcon>
+                  </button>
+                )}{" "}
+                {add2 && (
+                  <div className="optionWrapper">
+                    <h3>2 המוצר הרצוי</h3>
+                    <label> קטגוריה ראשית להחלפה</label>
+                    <select
+                      name="replaceableCategoryNo2"
+                      placeholder=" קטגוריה ראשית להחלפה"
+                      value={formValues.replaceableCategoryNo2}
+                      onChange={handleChange}
+                      onClick={(e) =>
+                        handleReplaceableCategoryNo2(e.target.value)
+                      }
+                    >
+                      <option value="" disabled>
+                        קטגוריה ראשית להחלפה{" "}
+                      </option>
+
+                      {categoriesNames.map((category, pos) => {
+                        return (
+                          <option value={category} key={pos}>
+                            {category}
+                          </option>
+                        );
+                      })}
+                    </select>
+                    <p>{formErrors.replaceableCategoryNo2}</p>
+                    {subCategoriesNames2 && (
+                      <div>
+                        <label> תת קטגוריה משנית להחלפה</label>
+                        <select
+                          name="replaceableSubCategoryNo2"
+                          placeholder=" תת קטגוריה ראשית"
+                          value={formValues.replaceableSubCategoryNo2}
+                          onChange={handleChange}
+                        >
+                          <option value="" disabled>
+                            קטגוריה משנית להחלפה
+                          </option>
+
+                          {subCategoriesNames2.map((category, pos) => {
+                            return (
+                              <option value={category} key={pos + "" + 1}>
+                                {category}
+                              </option>
+                            );
+                          })}
+                        </select>
+                        <p>{formErrors.replaceableSubCategoryNo2}</p>
+                      </div>
+                    )}
+                  </div>
+                )}
+                <br></br>
+                {add2 && (
+                  <div>
+                    <button
+                      onClick={() => {
+                        setAdd2(false);
+                        formValues.replaceableCategoryNo2 = "";
+                        formValues.replaceableSubCategoryNo2 = "";
+                      }}
+                    >
+                      הסר אפשרות החלפה
+                      <DeleteForeverIcon
+                        className="iconButton"
+                        color="disabled"
+                        fontSize="small"
+                      ></DeleteForeverIcon>
+                    </button>
+                    <button onClick={() => setAdd3(true)}>
+                      הוסף אפשרות החלפה
+                      <AddCircleIcon
+                        className="iconButton"
+                        fontSize="small"
+                      ></AddCircleIcon>
+                    </button>
+                  </div>
+                )}{" "}
+                <br></br>
+                {add3 && (
+                  <div className="optionWrapper">
+                    <h3>3 המוצר הרצוי</h3>
+                    <label> קטגוריה ראשית להחלפה</label>
+                    <select
+                      name="replaceableCategoryNo3"
+                      placeholder=" קטגוריה ראשית להחלפה"
+                      value={formValues.replaceableCategoryNo3}
+                      onChange={handleChange}
+                      onClick={(e) =>
+                        handleReplaceableCategoryNo3(e.target.value)
+                      }
+                    >
+                      <option value="" disabled>
+                        קטגוריה ראשית להחלפה{" "}
+                      </option>
+
+                      {categoriesNames.map((category, pos) => {
+                        return (
+                          <option value={category} key={pos}>
+                            {category}
+                          </option>
+                        );
+                      })}
+                    </select>
+                    <p>{formErrors.replaceableCategoryNo3}</p>
+                    {subCategoriesNames3 && (
+                      <div>
+                        <label> תת קטגוריה משנית להחלפה</label>
+                        <select
+                          name="replaceableSubCategoryNo3"
+                          placeholder=" תת קטגוריה ראשית"
+                          value={formValues.replaceableSubCategoryNo3}
+                          onChange={handleChange}
+                        >
+                          <option value="" disabled>
+                            קטגוריה משנית להחלפה
+                          </option>
+
+                          {subCategoriesNames3.map((category, pos) => {
+                            return (
+                              <option value={category} key={pos + "" + 1}>
+                                {category}
+                              </option>
+                            );
+                          })}
+                        </select>
+                        <p>{formErrors.replaceableSubCategoryNo3}</p>
+                      </div>
+                    )}
+                  </div>
+                )}
+                <br></br>
+                {add3 && (
+                  <div>
+                    <button
+                      onClick={() => {
+                        setAdd3(false);
+                        formValues.replaceableCategoryNo3 = "";
+                        formValues.replaceableSubCategoryNo3 = "";
+                      }}
+                    >
+                      הסר אפשרות החלפה
+                    </button>
+                    <button onClick={() => setAdd3(true)}>
+                      הוסף אפשרות החלפה
+                    </button>
+                  </div>
+                )}{" "}
+                <button>הוסף</button>
+                <br></br>
+                <br></br>
+              </form>
+            </div>
+          )}
+          {!displayForm && (
+            <>
+              <h2>המוצר שלך נקלט בהצלחה במערכת!!!</h2>
+              {fullMatchProducts === "" && partMatchProducts === "" && (
+                <h2>לא נמצאה התאמה עבורך ... נודיע לך בהמשך!</h2>
+              )}
+
+              {!displayForm && (fullMatchProducts || partMatchProducts) && (
+                <div>
+                  {fullMatchProducts.length > 0 && <h2>התאמה מלאה עבורך</h2>}
+
+                  <div>
+                    {fullMatchProducts &&
+                      fullMatchProducts.map((product, index) => {
+                        return (
+                          <CustomCard
+                            {...product}
+                            key={index}
+                            id={product.date.toString()}
+                          />
+                        );
+                      })}
+                  </div>
+                  {/* partMatchProducts */}
+                  <div>
+                    {partMatchProducts.length > 0 && <h2>התאמה חלקית עבורך</h2>}
+
+                    {partMatchProducts &&
+                      partMatchProducts.map((product, index) => {
+                        return (
+                          <CustomCard
+                            {...product}
+                            key={index}
+                            id={product.date.toString()}
+                          />
+                        );
+                      })}
+                  </div>
                 </div>
               )}
-            </div>
-            {!add2 && (
-              <button onClick={() => setAdd2(true)}>
-                הוסף אפשרות החלפה
-                <AddCircleIcon
-                  className="iconButton"
-                  fontSize="small"
-                ></AddCircleIcon>
-              </button>
-            )}{" "}
-            {add2 && (
-              <div className="optionWrapper">
-                <h3>2 המוצר הרצוי</h3>
-                <label> קטגוריה ראשית להחלפה</label>
-                <select
-                  name="replaceableCategoryNo2"
-                  placeholder=" קטגוריה ראשית להחלפה"
-                  value={formValues.replaceableCategoryNo2}
-                  onChange={handleChange}
-                  onClick={(e) => handleReplaceableCategoryNo2(e.target.value)}
-                >
-                  <option value="" disabled>
-                    קטגוריה ראשית להחלפה{" "}
-                  </option>
-
-                  {categoriesNames.map((category, pos) => {
-                    return (
-                      <option value={category} key={pos}>
-                        {category}
-                      </option>
-                    );
-                  })}
-                </select>
-                <p>{formErrors.replaceableCategoryNo2}</p>
-                {subCategoriesNames2 && (
-                  <div>
-                    <label> תת קטגוריה משנית להחלפה</label>
-                    <select
-                      name="replaceableSubCategoryNo2"
-                      placeholder=" תת קטגוריה ראשית"
-                      value={formValues.replaceableSubCategoryNo2}
-                      onChange={handleChange}
-                    >
-                      <option value="" disabled>
-                        קטגוריה משנית להחלפה
-                      </option>
-
-                      {subCategoriesNames2.map((category, pos) => {
-                        return (
-                          <option value={category} key={pos + "" + 1}>
-                            {category}
-                          </option>
-                        );
-                      })}
-                    </select>
-                    <p>{formErrors.replaceableSubCategoryNo2}</p>
-                  </div>
-                )}
-              </div>
-            )}
-            <br></br>
-            {add2 && (
-              <div>
-                <button
-                  onClick={() => {
-                    setAdd2(false);
-                    formValues.replaceableCategoryNo2 = "";
-                    formValues.replaceableSubCategoryNo2 = "";
-                  }}
-                >
-                  הסר אפשרות החלפה
-                  <DeleteForeverIcon
-                    className="iconButton"
-                    color="disabled"
-                    fontSize="small"
-                  ></DeleteForeverIcon>
-                </button>
-                <button onClick={() => setAdd3(true)}>
-                  הוסף אפשרות החלפה
-                  <AddCircleIcon
-                    className="iconButton"
-                    fontSize="small"
-                  ></AddCircleIcon>
-                </button>
-              </div>
-            )}{" "}
-            <br></br>
-            {add3 && (
-              <div className="optionWrapper">
-                <h3>3 המוצר הרצוי</h3>
-                <label> קטגוריה ראשית להחלפה</label>
-                <select
-                  name="replaceableCategoryNo3"
-                  placeholder=" קטגוריה ראשית להחלפה"
-                  value={formValues.replaceableCategoryNo3}
-                  onChange={handleChange}
-                  onClick={(e) => handleReplaceableCategoryNo3(e.target.value)}
-                >
-                  <option value="" disabled>
-                    קטגוריה ראשית להחלפה{" "}
-                  </option>
-
-                  {categoriesNames.map((category, pos) => {
-                    return (
-                      <option value={category} key={pos}>
-                        {category}
-                      </option>
-                    );
-                  })}
-                </select>
-                <p>{formErrors.replaceableCategoryNo3}</p>
-                {subCategoriesNames3 && (
-                  <div>
-                    <label> תת קטגוריה משנית להחלפה</label>
-                    <select
-                      name="replaceableSubCategoryNo3"
-                      placeholder=" תת קטגוריה ראשית"
-                      value={formValues.replaceableSubCategoryNo3}
-                      onChange={handleChange}
-                    >
-                      <option value="" disabled>
-                        קטגוריה משנית להחלפה
-                      </option>
-
-                      {subCategoriesNames3.map((category, pos) => {
-                        return (
-                          <option value={category} key={pos + "" + 1}>
-                            {category}
-                          </option>
-                        );
-                      })}
-                    </select>
-                    <p>{formErrors.replaceableSubCategoryNo3}</p>
-                  </div>
-                )}
-              </div>
-            )}
-            <br></br>
-            {add3 && (
-              <div>
-                <button
-                  onClick={() => {
-                    setAdd3(false);
-                    formValues.replaceableCategoryNo3 = "";
-                    formValues.replaceableSubCategoryNo3 = "";
-                  }}
-                >
-                  הסר אפשרות החלפה
-                </button>
-                <button onClick={() => setAdd3(true)}>הוסף אפשרות החלפה</button>
-              </div>
-            )}{" "}
-            <button>הוסף</button>
-            <br></br>
-            <br></br>
-          </form>
-        </div>
-      )}
-      {!displayForm && (
-        <>
-          <h2>המוצר שלך נקלט בהצלחה במערכת!!!</h2>
-          {fullMatchProducts === "" && partMatchProducts === "" && (
-            <h2>לא נמצאה התאמה עבורך ... נודיע לך בהמשך!</h2>
+            </>
           )}
-
-          {!displayForm && (fullMatchProducts || partMatchProducts) && (
-            <div>
-              {fullMatchProducts.length > 0 && <h2>התאמה מלאה עבורך</h2>}
-
-              <div>
-                {fullMatchProducts &&
-                  fullMatchProducts.map((product, index) => {
-                    return (
-                      <CustomCard
-                        {...product}
-                        key={index}
-                        id={product.date.toString()}
-                      />
-                    );
-                  })}
-              </div>
-              {/* partMatchProducts */}
-              <div>
-                {partMatchProducts.length > 0 && <h2>התאמה חלקית עבורך</h2>}
-
-                {partMatchProducts &&
-                  partMatchProducts.map((product, index) => {
-                    return (
-                      <CustomCard
-                        {...product}
-                        key={index}
-                        id={product.date.toString()}
-                      />
-                    );
-                  })}
-              </div>
-            </div>
-          )}
-        </>
+        </Grid>
       )}
-    </Grid>
+    </>
   );
 };
 
 export default UpdateProduct;
-
-// export default function UpdateProduct() {
-//     const search = useLocation().search;
-//     const [error, setError] = useState("");
-//     const [id, setId] = useState(null);
-
-//     useEffect(() => {
-//       const id = new URLSearchParams(search).get("name");
-//       console.log("id  updateproduct", id);
-//       setId(id)
-//     //   async function fetchData() {
-//     //     const res = await getProductById(id);
-//     //     console.log("res in updateProduct", res);
-
-//     //     switch (res.statusId) {
-//     //       case 1:
-//     //         // setCategoriesNames(res.value.categoriesNames);
-//     //         setProduct(res.value);
-//     //         console.log(res.value);
-//     //         break;
-//     //       case 2:
-//     //         setError(res);
-//     //         setTimeout(() => {
-//     //           setError("");
-//     //         }, 5000);
-//     //         break;
-//     //       default:
-//     //     }
-//     //   }
-//     //   fetchData();
-//     }, [error]);
-
-//   return (
-//     <div>
-//         {id && <CreateProduct id={id} ></CreateProduct>}
-//     </div>
-//   )
-// }

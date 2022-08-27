@@ -153,19 +153,14 @@ text-align: right;}
     transform: translate(-5px, 4px);
 }
 .card {
-  direction: rtl;
-  /* background: #62bcce; */
   color: #fff;
-  border: 0;
-  /* margin: 5; */
-  /* padding: 8px; */
-  /* border-radius: 8px; */
   cursor: pointer;
+  
 }
 .cardTitle {
- display: inline;
-color: #0EACCB;
-font-weight: 700;
+  display: inline;
+  color: #0EACCB;
+  font-weight: 700;
 }
 
 .card button {
@@ -285,13 +280,13 @@ font-weight: 700;
   align-items: center;
   align-content: center;
   text-align: center;
+  
   min-width: 200px;
   max-width: 265px;
   max-height: 50px;
   color: #fff;
   border: 0;
   padding: 8px;
-  margin: 5px;
   border-radius: 8px;
   font-weight: 700;
   font-size: large;
@@ -306,3 +301,50 @@ font-weight: 700;
   font-size: 14px;
 }
 
+.myProductButton {
+  display: grid;
+  justify-content: center;
+  width: 350;
+}
+
+.myProductButton button {
+  background: #0EACCB;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  min-width: 350px;
+  max-width: 350px;
+  max-height: 50px;
+  color: #fff;
+  border: 0;
+  font-weight: 700;
+  font-size: large;
+  cursor: pointer;
+}
+
+
+.App-logo {
+  margin: 5px;
+  height: 30vmin;
+  width: 30vmin;
+  pointer-events: none;
+  /* background-color: #93278f; */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 1.5s linear; 
+    /* /* animation: App-logo-colors infinite 2.5s linear; */
+  }
+}
+
+@keyframes App-logo-colors {
+
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}

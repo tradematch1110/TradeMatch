@@ -9,6 +9,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import FileUploadIcon from "@mui/icons-material/FileUpload";
+import InfoIcon from "@mui/icons-material/Info";
 import { useNavigate } from "react-router";
 import LogoutIcon from "@mui/icons-material/Logout";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
@@ -70,6 +71,7 @@ const handleLogin = () => {
           </ListItemButton>
         </ListItem>
       </List>
+
       {currentUser && (
         <List>
           <ListItem disablePadding>
@@ -122,7 +124,16 @@ const handleLogin = () => {
         </ListItem>
       </List>
       <Divider />
-
+      <List>
+        <ListItem disablePadding>
+          <ListItemButton onClick={() => navigate("/about_us")}>
+            <ListItemText primary={"אודות"} style={{ textAlign: "right" }} />
+            <ListItemIcon style={{ justifyContent: "left" }}>
+              <InfoIcon style={{ color: "#0EACCB" }} />
+            </ListItemIcon>
+          </ListItemButton>
+        </ListItem>
+      </List>
       <List>
         <ListItem disablePadding>
           <ListItemButton>

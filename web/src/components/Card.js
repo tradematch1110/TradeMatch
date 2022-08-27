@@ -17,7 +17,11 @@ import { autoPlay } from "react-swipeable-views-utils";
 import { Grid } from "@mui/material";
 import NoImagePlaceholder from "../images/NoImagePlaceholder.png";
 import { useNavigate } from "react-router-dom";
-
+import IconButton, { IconButtonProps } from "@mui/material/IconButton";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import ShareIcon from "@mui/icons-material/Share";
+import { grid } from "@mui/system";
+import ReportIcon from "@mui/icons-material/Report";
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 export default function CustomCard(props) {
@@ -30,10 +34,17 @@ export default function CustomCard(props) {
     return `#${generateRandomColor}`;
   };
   const ulStyle = {
-    border: "0.5px solid #66666",
-    borderRadius: 5,
     marginTop: 40,
-    boxShadow: "0 1px 8px 0 #d0d0d0",
+    borderTopLeftRadius: 5,
+    borderTopRightRadius: 5,
+    borderBottomLeftRadius: 0,
+    borderBottomRightRadius: 0,
+    height: 630
+  };
+
+  const ulStyleBottom = {
+    borderTopLeftRadius: 0,
+    borderTopRightRadius: 0,
   };
 
   const [images, setImages] = useState([]);
@@ -83,7 +94,6 @@ export default function CustomCard(props) {
       item
       container
       justifyContent="center"
-      className="card"
       xs={12}
       sm={8}
       md={6}
@@ -245,10 +255,14 @@ export default function CustomCard(props) {
                   cardValues.replaceableSubCategoryNo3}
             </Typography>
           </CardContent>
-
-          <CardActions disableSpacing></CardActions>
         </Card>
       )}
+      <Card style={ulStyleBottom} sx={{ width: 350, height: 50, padding: 1 }}>
+        <Grid container justifyContent="left" alignItems="center">
+          <FavoriteIcon sx={{ margin: 1, color: "#DE3E16" }} />
+          <ReportIcon sx={{ margin: 1, color: "#CFCC07" }} />
+        </Grid>
+      </Card>
     </Grid>
   );
 }
