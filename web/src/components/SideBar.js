@@ -11,6 +11,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import FileUploadIcon from "@mui/icons-material/FileUpload";
 import { useNavigate } from "react-router";
 import LogoutIcon from "@mui/icons-material/Logout";
+import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
 import { authContext } from "../contexts/AuthContext";
@@ -64,7 +65,7 @@ const handleLogin = () => {
               style={{ textAlign: "right" }}
             />
             <ListItemIcon style={{ justifyContent: "left" }}>
-              <FileUploadIcon />
+              <FileUploadIcon style={{ color: "#0EACCB" }} />
             </ListItemIcon>
           </ListItemButton>
         </ListItem>
@@ -78,7 +79,7 @@ const handleLogin = () => {
                 style={{ textAlign: "right" }}
               />
               <ListItemIcon style={{ justifyContent: "left" }}>
-                <FileUploadIcon />
+                <ShoppingBasketIcon style={{ color: "#B119DE" }} />
               </ListItemIcon>
             </ListItemButton>
           </ListItem>
@@ -115,7 +116,7 @@ const handleLogin = () => {
               />
             )}
             <ListItemIcon style={{ justifyContent: "left" }}>
-              <LogoutIcon />
+              <LogoutIcon style={{ color: "#AD3242" }} />
             </ListItemIcon>
           </ListItemButton>
         </ListItem>
