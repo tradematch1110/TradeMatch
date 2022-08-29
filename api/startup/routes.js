@@ -12,6 +12,7 @@ const express = require("express");
 const categories = require("../routes/categories");
 const products = require("../routes/products");
 const users = require("../routes/users");
+const admin = require("../routes/admin");
 const error = require("../middleware/error");
 
 module.exports = function (app) {
@@ -21,6 +22,7 @@ module.exports = function (app) {
   app.use("/api/users", users);
   app.use("/api/categories", categories);
   app.use("/api/products", products);
+  app.use("/api/admin", admin);
 
 
   // add middelware that handle server or database errors

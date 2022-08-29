@@ -81,7 +81,11 @@ const getUrl = (urlType) => {
     case "users/getUserMassages":
       url += "/api/users/getUserMassages";
       break;
-    //products/getProductsPerUser
+    case "admin/reportMassage":
+      url += "/api/admin/reportMassage";
+      break;
+
+    //"admin/reportMassage"
     default:
       result.status = "error";
       result.statusId = 2;

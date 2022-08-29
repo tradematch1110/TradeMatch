@@ -2,6 +2,14 @@
 // The functions turn to a helper file with the request params
 import { helper } from "./../helper/ApiHelper";
 
+export const reportMassage = async (values) => {
+  const url = "admin/reportMassage";
+  const method = "post";
+  const headerToken = null;
+  const data = values;
+  return await helper(url, method, headerToken, data);
+};
+
 export const registerNewUser = async (formValues) => {
   const url = "users/register";
   const method = "post";
@@ -37,7 +45,7 @@ export const getCategoriesNames = async () => {
 export const createProduct = async (values) => {
   const url = "products/createProduct";
   const method = "post";
-  const headerToken = values.token;
+  const headerToken = null;
   const data = values;
   return await helper(url, method, headerToken, data);
 };
@@ -45,7 +53,7 @@ export const createProduct = async (values) => {
 export const updateProduct = async (values) => {
   const url = "products/updateProduct";
   const method = "post";
-  const headerToken = values.token;
+  const headerToken = null;
   const data = values;
   return await helper(url, method, headerToken, data);
 };

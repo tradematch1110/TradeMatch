@@ -11,7 +11,7 @@ router.post("/getProductById", productsController.getProductById);
 router.post("/getProductsByCategoryAndSubCategory", productsController.getProductsByCategoryAndSubCategory);
 router.post("/getProductsPerUser", productsController.getProductsPerUser);
 
-// updateProduct
+// admin/reportMassage
 module.exports = router;
 
 // router.get("/:name", (req, res) => {

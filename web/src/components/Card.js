@@ -259,8 +259,15 @@ export default function CustomCard(props) {
       )}
       <Card style={ulStyleBottom} sx={{ width: 350, height: 50, padding: 1 }}>
         <Grid container justifyContent="left" alignItems="center">
-          <FavoriteIcon sx={{ margin: 1, color: "#DE3E16" }} />
-          <ReportIcon sx={{ margin: 1, color: "#CFCC07" }} />
+          <FavoriteIcon
+            sx={{ margin: 1, color: "#DE3E16", cursor: "pointer" }}
+          />
+          <ReportIcon
+            sx={{ margin: 1, color: "#CFCC07", cursor: "pointer" }}
+            onClick={() => {
+              navigate(`/report_massage?id=${props._id}`);
+            }}
+          />
         </Grid>
       </Card>
     </Grid>

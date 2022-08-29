@@ -73,7 +73,7 @@ const CreateProduct = () => {
       formValues.user = currentUser;
       formValues.images = { ...imagesSelcted };
       // formValues.images= items;
-      formValues.token = currentUser.accessToken;
+      // formValues.token = currentUser.accessToken;
       // fetch to server
       console.log("formValues with date: ", formValues);
       console.log("typeOf: ", typeof formValues);
@@ -260,7 +260,7 @@ const CreateProduct = () => {
 
   return (
     <>
-      {error && <h1>{error}</h1>}
+      {error && <h1>{error.massage}</h1>}
       {loading && <Loader />}
       {!loading && (
         <Grid
