@@ -8,7 +8,6 @@
 const result = { status: null, value: null, statusId: null };
 
 export const helper = async (urlType, method, token, data) => {
-
   const url = getUrl(urlType);
   const initParam = getInitParam(method, token, data);
   console.log("initparam", initParam);
@@ -21,22 +20,21 @@ export const helper = async (urlType, method, token, data) => {
     initParam.method === "DELETE"
   ) {
     try {
-      const response =  await fetch(url, initParam);
+      const response = await fetch(url, initParam);
       const json = await response.json();
 
-       if(!response.ok){
-          result.status = "error";
-          result.statusId = 2;
-          result.value = json.message;
-          return result;
-       }
-        if (response.ok) {
-          result.status = "success";
-          result.statusId = 1;
-          result.value = json;
-          return result;
-        }
-
+      if (!response.ok) {
+        result.status = "error";
+        result.statusId = 2;
+        result.value = json.message;
+        return result;
+      }
+      if (response.ok) {
+        result.status = "success";
+        result.statusId = 1;
+        result.value = json;
+        return result;
+      }
     } catch (error) {
       console.log("error: ", error);
       result.status = "error";
@@ -78,14 +76,14 @@ const getUrl = (urlType) => {
     case "products/getProductsPerUser":
       url += "/api/products/getProductsPerUser";
       break;
-    case "users/getUserMassages":
-      url += "/api/users/getUserMassages";
+    case "users/getUserMessages":
+      url += "/api/users/getUserMessages";
       break;
-    case "admin/reportMassage":
-      url += "/api/admin/reportMassage";
+    case "admin/reportMessage":
+      url += "/api/admin/reportMessage";
       break;
 
-    //"admin/reportMassage"
+    //"admin/reportMessage"
     default:
       result.status = "error";
       result.statusId = 2;
@@ -105,7 +103,6 @@ const getInitParam = (method, token, data) => {
         dataType: "json",
         headers: {
           Authorization: "Bearer " + token, // token
-          
         },
       };
       break;
@@ -118,10 +115,13 @@ const getInitParam = (method, token, data) => {
       headers.append(
         "Authorization",
         "Basic " + "Access-Control-Allow-Headers",
-        "X-Requested-With, Content-Type, Accept, Origin, Authorization",
+        "X-Requested-With, Content-Type, Accept, Origin, Authorization"
       );
-      headers.append("Access-Control-Allow-Origin", process.env.REACT_APP_API || "");
-      headers.append("Authorization", "Bearer " + token)
+      headers.append(
+        "Access-Control-Allow-Origin",
+        process.env.REACT_APP_API || ""
+      );
+      headers.append("Authorization", "Bearer " + token);
       initParam = {
         method: "POST",
         dataType: "json",

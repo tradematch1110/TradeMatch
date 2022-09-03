@@ -1,24 +1,24 @@
-const { Massage } = require("./../models/massage");
+const { Message } = require("./../models/message");
 const { User } = require("./../models/user");
 
 const _ = require("lodash");
 const { forEach, forIn } = require("lodash");
 
-const reportMassage = async (req, res) => {
+const reportMessage = async (req, res) => {
   console.log("req.body:", req.body);
-  const massage = new Massage(
-    _.pick(req.body, ["massage", "productId", "reportingUserId"])
+  const message = new Message(
+    _.pick(req.body, ["message", "productId", "reportingUserId"])
   );
-  //   console.log("massage :", massage);
+  //   console.log("message :", message);
   try {
-    await massage.save();
+    await message.save();
   } catch (error) {
     console.log("error: ", error);
   }
 
   const result = {
     status: "success",
-    message: "massage added successfuly",
+    message: "message added successfuly",
   };
   console.log("--------------- result ----------------------");
   console.log(result);
@@ -27,28 +27,26 @@ const reportMassage = async (req, res) => {
   res.send(result);
 };
 
-
-
-async function setUserMassage(uid, product, massage) {
-  const massage1 = {
+async function setUserMessage(uid, product, message) {
+  const message1 = {
     product: product,
-    massage: massage,
+    message: message,
     date: new Date(),
     isread: false,
   };
   const filter = { _id: uid };
   //{ $push: { friends: objFriends  } }
-  const update = { $push: { massages: massage1 } };
+  const update = { $push: { messages: message1 } };
 
   let doc = await User.findOneAndUpdate(filter, update, {
     new: true,
   });
-  console.log("--------------- setUserMassage update ----------------------");
+  console.log("--------------- setUserMessage update ----------------------");
   console.log("doc: ", doc);
 
   // console.log("update :", update);
 }
 
 module.exports = {
-  reportMassage
+  reportMessage,
 };

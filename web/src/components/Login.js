@@ -71,8 +71,7 @@ const Login = () => {
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState("");
-  const { currentUser, setCurrentUser } =
-    useContext(authContext);
+  const { currentUser, setCurrentUser } = useContext(authContext);
   // route consts
   //   const history = useHistory();
   //   const location = useLocation();
@@ -89,7 +88,7 @@ const Login = () => {
       case 1:
         setFormValues(values);
         setCurrentUser(res.value);
-        console.log(res)
+        console.log(res);
         localStorage.setItem("user", JSON.stringify(res.value));
         navigate("/");
         setLoading(false);
@@ -172,7 +171,7 @@ const Login = () => {
                       xs={12}
                       justifyContent="center"
                     >
-                      {/* <h1 className={classes.errorMassage}>{error}</h1>{" "} */}
+                      {/* <h1 className={classes.errorMessage}>{error}</h1>{" "} */}
                       <h1>{error}</h1>{" "}
                     </Grid>
                   )}

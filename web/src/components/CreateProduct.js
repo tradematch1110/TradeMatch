@@ -215,8 +215,7 @@ const CreateProduct = () => {
       base64.crossOrigin = "Anonymous";
       base64.src = url + "?not-from-cache-please";
 
-     
-      base64.name = Math.floor((Math.random()*(5000000000))+1) + base64.name;
+      base64.name = Math.floor(Math.random() * 5000000000 + 1) + base64.name;
       console.log("typeof(base64):", typeof base64);
       switch (index) {
         case 1:
@@ -260,7 +259,7 @@ const CreateProduct = () => {
 
   return (
     <>
-      {error && <h1>{error.massage}</h1>}
+      {error && <h1>{error.message}</h1>}
       {loading && <Loader />}
       {!loading && (
         <Grid

@@ -31,20 +31,14 @@ const User = mongoose.model(
       minlength: 10,
       maxlength: 10,
     },
-    password: {
-      
-    },
-    massages: [
-
-    ],
+    password: {},
+    messages: [],
     isAdmin: {
-      type: Boolean
-    }
+      type: Boolean,
+    },
     // isAdmin: Boolean
   })
 );
-
-
 
 // userSchema.methods.generateAuthToken = function() {
 //   const token = jwt.sign(
@@ -62,22 +56,12 @@ const User = mongoose.model(
 // const User = mongoose.model("User", userSchema);
 
 function validateUser(user) {
-
   const schema = Joi.object({
-    firstName: Joi.string()
-      .min(2)
-      .max(20)
-      .required(),
-    lastName: Joi.string()
-      .min(2)
-      .max(20)
-      .required(),
+    firstName: Joi.string().min(2).max(20).required(),
+    lastName: Joi.string().min(2).max(20).required(),
     email: Joi.string().email().required(),
-    phoneNumber: Joi.string()
-      .required(),
-    password: Joi.string()
-      .required()
-      .min(8)
+    phoneNumber: Joi.string().required(),
+    password: Joi.string().required().min(8),
   });
 
   return schema.validate(user);

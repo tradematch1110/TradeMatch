@@ -148,136 +148,138 @@ const Register = () => {
           </Link> */}
             </Grid>
             {/* {loading && !error} */}
-            {!isReg && <Formik
-              initialValues={{
-                ...INITIAL_FORM_STATE,
-              }}
-              validationSchema={FORM_REGISTER_VALIDATION}
-              onSubmit={(values, onSubmitProps) => {
-                handleSubmit(values, onSubmitProps);
-              }}
-            >
-              <Form>
-                <Grid container item xs={12}>
-                  <Hidden smUp>
+            {!isReg && (
+              <Formik
+                initialValues={{
+                  ...INITIAL_FORM_STATE,
+                }}
+                validationSchema={FORM_REGISTER_VALIDATION}
+                onSubmit={(values, onSubmitProps) => {
+                  handleSubmit(values, onSubmitProps);
+                }}
+              >
+                <Form>
+                  <Grid container item xs={12}>
+                    <Hidden smUp>
+                      <Grid
+                        dir="column"
+                        container
+                        item
+                        xs={12}
+                        md={6}
+                        justifyContent="center"
+                        className={classes.image}
+                      ></Grid>
+                    </Hidden>
+                    <Grid container item xs={12} justifyContent="center">
+                      <p className={classes.title} />
+                    </Grid>
+                    {error && (
+                      <Grid
+                        className="input"
+                        item
+                        xs={12}
+                        justifyContent="center"
+                      >
+                        {/* <h1 className={classes.errorMessage}>{error}</h1>{" "} */}
+                        <h1>{error}</h1>{" "}
+                      </Grid>
+                    )}
                     <Grid
-                      dir="column"
+                      direction="row"
                       container
-                      item
-                      xs={12}
-                      md={6}
                       justifyContent="center"
-                      className={classes.image}
-                    ></Grid>
-                  </Hidden>
-                  <Grid container item xs={12} justifyContent="center">
-                    <p className={classes.title} />
-                  </Grid>
-                  {error && (
+                      item
+                      className="input"
+                      xs={12}
+                    >
+                      <Grid item xs={12} className="input">
+                        {" "}
+                        <Textfield name="firstName" label="שם פרטי" />
+                      </Grid>
+                    </Grid>
                     <Grid
+                      direction="row"
+                      container
+                      justifyContent="center"
                       className="input"
                       item
                       xs={12}
-                      justifyContent="center"
                     >
-                      {/* <h1 className={classes.errorMassage}>{error}</h1>{" "} */}
-                      <h1>{error}</h1>{" "}
+                      <Grid item xs={12} className="input">
+                        <Textfield name="lastName" label="שם משפחה" />
+                      </Grid>
                     </Grid>
-                  )}
-                  <Grid
-                    direction="row"
-                    container
-                    justifyContent="center"
-                    item
-                    className="input"
-                    xs={12}
-                  >
-                    <Grid item xs={12} className="input">
-                      {" "}
-                      <Textfield name="firstName" label="שם פרטי" />
+                    <Grid
+                      direction="row"
+                      container
+                      justifyContent="center"
+                      className="input"
+                      item
+                      xs={12}
+                    >
+                      <Grid item xs={12} className="input">
+                        <Textfield name="email" label="מייל" />
+                      </Grid>
                     </Grid>
-                  </Grid>
-                  <Grid
-                    direction="row"
-                    container
-                    justifyContent="center"
-                    className="input"
-                    item
-                    xs={12}
-                  >
-                    <Grid item xs={12} className="input">
-                      <Textfield name="lastName" label="שם משפחה" />
+                    <Grid
+                      direction="row"
+                      container
+                      justifyContent="center"
+                      className="input"
+                      item
+                      xs={12}
+                    >
+                      {/* <Gr> */}
+                      <Grid item xs={12} className="input">
+                        <Textfield
+                          name="phoneNumber"
+                          label="פלאפון"
+                          type="tel"
+                          inputProps={{
+                            inputMode: "tel",
+                            pattern: "[0-9]*",
+                          }}
+                        />
+                      </Grid>{" "}
                     </Grid>
-                  </Grid>
-                  <Grid
-                    direction="row"
-                    container
-                    justifyContent="center"
-                    className="input"
-                    item
-                    xs={12}
-                  >
-                    <Grid item xs={12} className="input">
-                      <Textfield name="email" label="מייל" />
+                    <Grid
+                      direction="row"
+                      container
+                      justifyContent="center"
+                      className="input"
+                      item
+                      xs={12}
+                    >
+                      {/* <Gr> */}
+                      <Grid item xs={12} className="input">
+                        <Textfield
+                          name="password"
+                          label="סיסמה"
+                          type="password"
+                          // inputProps={{
+                          //   inputMode: "tel",
+                          //   pattern: "[0-9]*",
+                          // }}
+                        />
+                      </Grid>{" "}
                     </Grid>
-                  </Grid>
-                  <Grid
-                    direction="row"
-                    container
-                    justifyContent="center"
-                    className="input"
-                    item
-                    xs={12}
-                  >
-                    {/* <Gr> */}
-                    <Grid item xs={12} className="input">
-                      <Textfield
-                        name="phoneNumber"
-                        label="פלאפון"
-                        type="tel"
-                        inputProps={{
-                          inputMode: "tel",
-                          pattern: "[0-9]*",
-                        }}
-                      />
-                    </Grid>{" "}
-                  </Grid>
-                  <Grid
-                    direction="row"
-                    container
-                    justifyContent="center"
-                    className="input"
-                    item
-                    xs={12}
-                  >
-                    {/* <Gr> */}
-                    <Grid item xs={12} className="input">
-                      <Textfield
-                        name="password"
-                        label="סיסמה"
-                        type="password"
-                        // inputProps={{
-                        //   inputMode: "tel",
-                        //   pattern: "[0-9]*",
-                        // }}
-                      />
-                    </Grid>{" "}
-                  </Grid>
 
-                  <Grid
-                    //   className={classes.btnWrapper}
-                    container
-                    item
-                    xs={12}
-                    alignItems="center"
-                    justifyContent="center"
-                    // style={{ minHeight: '10vh' }}
-                  >
-                    <Button error={error}>נקסט</Button>
+                    <Grid
+                      //   className={classes.btnWrapper}
+                      container
+                      item
+                      xs={12}
+                      alignItems="center"
+                      justifyContent="center"
+                      // style={{ minHeight: '10vh' }}
+                    >
+                      <Button error={error}>נקסט</Button>
+                    </Grid>
                   </Grid>
-                </Grid>
-              </Form>
-            </Formik>}
+                </Form>
+              </Formik>
+            )}
           </Grid>
         </Grid>
       </ThemeProvider>

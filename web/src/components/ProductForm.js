@@ -32,8 +32,6 @@ import { allCategories } from "../resourcees/categories";
 import { useRef } from "react";
 import { useField, useFormikContext } from "formik";
 
-
-
 const cacheLtr = createCache({
   key: "muiltr",
 });
@@ -97,11 +95,15 @@ const ProductForm = () => {
   const [selectedMainReplaceable, setSelectedMainReplaceable] = useState("");
 
   // setSelectedMain
-  const { currentUserName, setCurrentUserName, isLogged, setIsLogged } =
-    useContext(authContext);
+  const {
+    currentUserName,
+    setCurrentUserName,
+    isLogged,
+    setIsLogged,
+  } = useContext(authContext);
   const [categoriesNames, setCategoriesNames] = useState("");
   const [subCategories, setSubCategories] = useState("");
-  const [replaceSubCategories, setReplaceSubCategories] = useState("")
+  const [replaceSubCategories, setReplaceSubCategories] = useState("");
   const categoriesRef = useRef("");
 
   const handleChangeMainCategory = (e) => {
@@ -119,24 +121,23 @@ const ProductForm = () => {
   const handleChangeSubCategory = (e) => {
     console.log("subcategory evalue: ", e.target.value);
     setFieldValue("subcategory", e.target.value);
-
   };
 
   const handleChangeMainReplaceableCategory = (e) => {
     console.log("e: ", e.target.value);
-        setFieldValue("replaceableCategory", e.target.value);
+    setFieldValue("replaceableCategory", e.target.value);
 
-   allCategories.find((subCategory) => {
-     if (subCategory.name == e.target.value) {
-       //  console.log(subCategory.subCategories);
-       setReplaceSubCategories(subCategory.subCategories);
-     }
-   });
+    allCategories.find((subCategory) => {
+      if (subCategory.name == e.target.value) {
+        //  console.log(subCategory.subCategories);
+        setReplaceSubCategories(subCategory.subCategories);
+      }
+    });
   };
 
   const handleChangeReplaceSubCategory = (e) => {
-        console.log("replaceableSubCategory", e.target.value);
-  }
+    console.log("replaceableSubCategory", e.target.value);
+  };
   //  handleChangeMainReplaceableCategory
 
   // const { categories, dispatch } = useTradeContext();
@@ -280,7 +281,7 @@ const ProductForm = () => {
                           xs={12}
                           justifyContent="center"
                         >
-                          {/* <h1 className={classes.errorMassage}>{error}</h1>{" "} */}
+                          {/* <h1 className={classes.errorMessage}>{error}</h1>{" "} */}
                           <h1>{error}</h1>{" "}
                         </Grid>
                       )}
@@ -450,31 +451,31 @@ const ProductForm = () => {
                         xs={12}
                       >
                         {replaceSubCategories && (
-                        <Grid item xs={12} className="input">
-                          <FormControl fullWidth>
-                            <InputLabel id="demo-simple-select-label">
-                              קטגוריה משנית להחלפה
-                            </InputLabel>
-                            <Select
-                              name="replaceableSubCategory"
-                              label="קטגוריה משנית להחלפה"
-                              onChange={handleChangeReplaceSubCategory}
-                            >
-                              {replaceSubCategories.map((item) => {
-                                return (
-                                  <MenuItem key={item} value={item}>
-                                    {item}
-                                  </MenuItem>
-                                );
-                              })}
-                            </Select>
-                          </FormControl>
-                          {/* <Select
+                          <Grid item xs={12} className="input">
+                            <FormControl fullWidth>
+                              <InputLabel id="demo-simple-select-label">
+                                קטגוריה משנית להחלפה
+                              </InputLabel>
+                              <Select
+                                name="replaceableSubCategory"
+                                label="קטגוריה משנית להחלפה"
+                                onChange={handleChangeReplaceSubCategory}
+                              >
+                                {replaceSubCategories.map((item) => {
+                                  return (
+                                    <MenuItem key={item} value={item}>
+                                      {item}
+                                    </MenuItem>
+                                  );
+                                })}
+                              </Select>
+                            </FormControl>
+                            {/* <Select
                             name="replaceableSubCategory"
                             label="קטגוריה משנית להחלפה"
                             options={["חמור", "שזלון"]}
                           ></Select> */}
-                        </Grid>
+                          </Grid>
                         )}
                       </Grid>
                       <Grid

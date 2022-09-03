@@ -173,11 +173,18 @@ export default function Header() {
           <Box sx={{ display: { sm: "flex" } }}>
             {currentUser && (
               <Hidden smDown>
-                <div style={{marginTop: 5, marginLeft: 15}}>
+                <div style={{ marginTop: 5, marginLeft: 15 }}>
                   <Button
                     component={Link}
                     to={"/create_product"}
-                    endIcon={<AddIcon style={{ fontWeight: 700 , transform: "translate(-15px, 1px)"}} />}
+                    endIcon={
+                      <AddIcon
+                        style={{
+                          fontWeight: 700,
+                          transform: "translate(-15px, 1px)",
+                        }}
+                      />
+                    }
                     style={{
                       justifyContent: "center",
                       alignItems: "center",
@@ -189,7 +196,7 @@ export default function Header() {
                       fontWeight: 700,
                       borderRadius: 25,
                       border: 0,
-                      textAlign: "center"
+                      textAlign: "center",
                     }}
                   >
                     העלה מוצר
@@ -217,10 +224,10 @@ export default function Header() {
                 color="inherit"
               >
                 <Badge
-                  badgeContent={currentUser && currentUser.massages.length}
+                  badgeContent={currentUser && currentUser.messages.length}
                   color="error"
                 >
-                  <MailIcon onClick={() => navigate("/user_massages")} />
+                  <MailIcon onClick={() => navigate("/user_messages")} />
                 </Badge>
               </IconButton>
             )}

@@ -54,10 +54,7 @@ router.post("/register", async (req, res) => {
     }
     // _.pick(user, ["_id", "firstName", "lastName", "email", "phoneNumber"])
   );
-  
-  
 });
-
 
 router.post("/login", async (req, res) => {
   console.log(req.body);
@@ -65,7 +62,6 @@ router.post("/login", async (req, res) => {
   const { error } = validateLogin(req.body);
   console.log("error: ", error);
   if (error) return res.status(400).send(error.details[0].message);
-
 
   let user = await User.findOne({ email: req.body.email });
   // console.log("user: ", user);
@@ -82,7 +78,7 @@ router.post("/login", async (req, res) => {
     if (auth) {
       // const salt = await bcrypt.genSalt(10);
       // const uid = await bcrypt.hash(user._id.toString(), salt);
-      console.log("id: ",  user._id.toString() )
+      console.log("id: ", user._id.toString());
       const accessToken = generateToken(req.body);
       console.log("accessToken", accessToken);
       res.setHeader("Set-Cookie", accessToken);
@@ -93,7 +89,7 @@ router.post("/login", async (req, res) => {
           lastName: user.lastName,
           uid: user._id.toString(),
           message: "User login successfuly",
-          massages: user.massages,
+          messages: user.messages,
           accessToken: accessToken,
         }
         // _.pick(user, ["_id", "firstName", "lastName", "email", "phoneNumber"])
@@ -105,15 +101,12 @@ router.post("/login", async (req, res) => {
       });
     }
   }
-
-
 });
 
 router.post("/get_user_by_id", async (req, res) => {
   console.log(req.body);
-  
-  const uid = await bcrypt.hashSync(req.body._id, salt);
 
+  const uid = await bcrypt.hashSync(req.body._id, salt);
 
   let user = await User.findById({ _id: req.body._id });
   // console.log("user: ", user);
@@ -126,24 +119,23 @@ router.post("/get_user_by_id", async (req, res) => {
 
   if (user) {
     // console.log("user:", user)
-    
-      res.status(200);
-      res.send(
-        {
-          status: "success",
-          user: user
-        }
-        // _.pick(user, ["_id", "firstName", "lastName", "email", "phoneNumber"])
-      );
-    } else {
-      return res.status(400).send({
-        status: "error",
-        message: "Incorrect password.",
-      });
-    }
-  
+
+    res.status(200);
+    res.send(
+      {
+        status: "success",
+        user: user,
+      }
+      // _.pick(user, ["_id", "firstName", "lastName", "email", "phoneNumber"])
+    );
+  } else {
+    return res.status(400).send({
+      status: "error",
+      message: "Incorrect password.",
+    });
+  }
 });
 
-router.post("/getUserMassages", userController.getUserMassages);
+router.post("/getUserMessages", userController.getUserMessages);
 
 module.exports = router;

@@ -3,10 +3,10 @@
 const Joi = require("joi");
 const mongoose = require("mongoose");
 
-const Massage = mongoose.model(
-  "Massage",
+const Message = mongoose.model(
+  "Message",
   new mongoose.Schema({
-    massage: {
+    message: {
       type: String,
       required: true,
       minlength: 10,
@@ -38,16 +38,16 @@ const Massage = mongoose.model(
 
 // const User = mongoose.model("User", userSchema);
 
-function validateMassage(massage) {
+function validateMessage(message) {
   const schema = Joi.object({
-    massage: Joi.string().min(10).max(500).required(),
+    message: Joi.string().min(10).max(500).required(),
     productId: Joi.string().required(),
     reportingUserId: Joi.string().required(),
   });
 
-  return schema.validate(massage);
+  return schema.validate(message);
 }
 
-exports.Massage = Massage;
-exports.validate = validateMassage;
+exports.Message = Message;
+exports.validate = validateMessage;
 // module.exports = { User, validateUser };

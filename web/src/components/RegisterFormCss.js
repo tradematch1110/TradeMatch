@@ -1,7 +1,4 @@
-import {
-  makeStyles,
-} from "@material-ui/core/styles";
-
+import { makeStyles } from "@material-ui/core/styles";
 
 export const RegisterFormCss = makeStyles((theme) => ({
   formWrapper: {
@@ -138,7 +135,7 @@ export const RegisterFormCss = makeStyles((theme) => ({
     color: "#5E5E5F",
     marginTop: 1,
   },
-  errorMassage: {
+  errorMessage: {
     fontFamily: "Assistant",
     fontSize: "22px",
     fontWeight: "500",
@@ -151,4 +148,3 @@ export const RegisterFormCss = makeStyles((theme) => ({
     height: "20px",
   },
 }));
-

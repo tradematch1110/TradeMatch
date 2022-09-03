@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useContext } from "react";
-import { authContext } from "./../contexts/AuthContext";
+import { authContext } from "../contexts/AuthContext";
 import Loader from "./Loader";
 import { Grid } from "@mui/material";
 import { useLocation } from "react-router";
-import { reportMassage } from "./../services/api";
+import { reportMessage } from "../services/api";
 
-export default function ReportMassage() {
+export default function ReportMessage() {
   const { currentUser } = useContext(authContext);
   const search = useLocation().search;
   const initialValues = {
-    massage: "",
+    message: "",
   };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
@@ -39,10 +39,10 @@ export default function ReportMassage() {
 
   const validate = (values) => {
     const errors = {};
-    if (!values.massage) {
-      errors.massage = "שדה חובה";
-    } else if (values.massage.length < 10) {
-      errors.massage = "מינימום 10 תווים";
+    if (!values.message) {
+      errors.message = "שדה חובה";
+    } else if (values.message.length < 10) {
+      errors.message = "מינימום 10 תווים";
     }
     return errors;
   };
@@ -59,8 +59,8 @@ export default function ReportMassage() {
       console.log("formValues with after adding values: ", formValues);
 
       async function fetchData(values) {
-        const res = await reportMassage(values);
-        console.log("respond from report massage: ", res);
+        const res = await reportMessage(values);
+        console.log("respond from report message: ", res);
         switch (res.statusId) {
           case 1:
             // setCategoriesNames(res.value.categoriesNames);
@@ -87,7 +87,7 @@ export default function ReportMassage() {
 
   return (
     <>
-      {error && <h1>{error.massage}</h1>}
+      {error && <h1>{error.message}</h1>}
       {loading && <Loader />}
       {!loading && (
         <Grid
@@ -107,11 +107,11 @@ export default function ReportMassage() {
                   <textarea
                     style={{ height: 150 }}
                     placeholder="תוכן ההודעה"
-                    name="massage"
-                    value={formValues.massage}
+                    name="message"
+                    value={formValues.message}
                     onChange={handleChange}
                   ></textarea>
-                  <p>{formErrors.massage}</p>
+                  <p>{formErrors.message}</p>
                 </div>
                 <br />
                 <button>שלח</button>

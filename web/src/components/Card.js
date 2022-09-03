@@ -39,7 +39,7 @@ export default function CustomCard(props) {
     borderTopRightRadius: 5,
     borderBottomLeftRadius: 0,
     borderBottomRightRadius: 0,
-    height: 630
+    height: 630,
   };
 
   const ulStyleBottom = {
@@ -157,7 +157,7 @@ export default function CustomCard(props) {
                         width: "100%",
                         class: "center",
                       }}
-                      key={index+Math.floor(Math.random(10000))}
+                      key={index + Math.floor(Math.random(10000))}
                       src={
                         cardValues.images[index] && cardValues.images[index]
                         //  || emptyImage
@@ -257,19 +257,21 @@ export default function CustomCard(props) {
           </CardContent>
         </Card>
       )}
-     { <Card style={ulStyleBottom} sx={{ width: 350, height: 50, padding: 1 }}>
-        <Grid container justifyContent="left" alignItems="center">
-          <FavoriteIcon
-            sx={{ margin: 1, color: "#DE3E16", cursor: "pointer" }}
-          />
-          <ReportIcon
-            sx={{ margin: 1, color: "#CFCC07", cursor: "pointer" }}
-            onClick={() => {
-              navigate(`/report_massage?id=${props._id}`);
-            }}
-          />
-        </Grid>
-      </Card>}
+      {
+        <Card style={ulStyleBottom} sx={{ width: 350, height: 50, padding: 1 }}>
+          <Grid container justifyContent="left" alignItems="center">
+            <FavoriteIcon
+              sx={{ margin: 1, color: "#DE3E16", cursor: "pointer" }}
+            />
+            <ReportIcon
+              sx={{ margin: 1, color: "#CFCC07", cursor: "pointer" }}
+              onClick={() => {
+                navigate(`/report_message?id=${props._id}`);
+              }}
+            />
+          </Grid>
+        </Card>
+      }
     </Grid>
   );
 }

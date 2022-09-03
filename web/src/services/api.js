@@ -2,8 +2,8 @@
 // The functions turn to a helper file with the request params
 import { helper } from "./../helper/ApiHelper";
 
-export const reportMassage = async (values) => {
-  const url = "admin/reportMassage";
+export const reportMessage = async (values) => {
+  const url = "admin/reportMessage";
   const method = "post";
   const headerToken = null;
   const data = values;
@@ -26,8 +26,8 @@ export const loginUser = async (formValues) => {
   return await helper(url, method, headerToken, data);
 };
 
-export const getUserMassages = async (uid, accessToken) => {
-  const url = "users/getUserMassages";
+export const getUserMessages = async (uid, accessToken) => {
+  const url = "users/getUserMessages";
   const method = "post";
   const headerToken = accessToken;
   const data = { uid: uid };

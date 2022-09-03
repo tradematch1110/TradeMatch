@@ -14,7 +14,7 @@ const getAllProducts = async (req, res) => {
     // delete temp.createdAt;
     // delete temp.updatedAt;
     delete temp.user.message;
-    delete temp.user.massages;
+    delete temp.user.messages;
     delete temp.user.accessToken;
     delete temp.__v;
     result.push(temp);
@@ -52,7 +52,7 @@ const getProductsPerUser = async (req, res) => {
     // delete temp.createdAt;
     // delete temp.updatedAt;
     // delete temp.user.message;
-    // delete temp.user.massages;
+    // delete temp.user.messages;
     delete temp.user.accessToken;
     delete temp.__v;
     result.push(temp);
@@ -95,7 +95,7 @@ const getProductsByCategoryAndSubCategory = async (req, res) => {
     // delete temp.createdAt;
     // delete temp.updatedAt;
     delete temp.user.message;
-    delete temp.user.massages;
+    delete temp.user.messages;
     delete temp.user.accessToken;
     delete temp.__v;
     result.push(temp);
@@ -213,7 +213,6 @@ const updateProduct = async (req, res) => {
   res.send(result);
 };
 
-
 async function isMatchProduct(product) {
   const products = await Product.find({
     $or: [
@@ -266,7 +265,7 @@ async function isMatchProduct(product) {
             console.log("----------- full match ------------------");
 
             fullMatchProducts.push(currentProductKey);
-            const resMassage1 = await setUserMassage(
+            const resMessage1 = await setUserMessage(
               currentProductKey.user.uid,
               product,
               "נמצאה התאמה מלאה עבורך"
@@ -274,7 +273,7 @@ async function isMatchProduct(product) {
           } else {
             console.log("------------ part match -----------------");
             partMatchProducts.push(currentProductKey);
-            const resMassage2 = await setUserMassage(
+            const resMessage2 = await setUserMessage(
               currentProductKey.user.uid,
               product,
               "נמצאה התאמה חלקית עבורך"
@@ -296,21 +295,21 @@ async function isMatchProduct(product) {
   };
 }
 
-async function setUserMassage(uid, product, massage) {
-  const massage1 = {
+async function setUserMessage(uid, product, message) {
+  const message1 = {
     product: product,
-    massage: massage,
+    message: message,
     date: new Date(),
     isread: false,
   };
   const filter = { _id: uid };
   //{ $push: { friends: objFriends  } }
-  const update = { $push: { massages: massage1 } };
+  const update = { $push: { messages: message1 } };
 
   let doc = await User.findOneAndUpdate(filter, update, {
     new: true,
   });
-  console.log("--------------- setUserMassage update ----------------------");
+  console.log("--------------- setUserMessage update ----------------------");
   console.log("doc: ", doc);
 
   // console.log("update :", update);

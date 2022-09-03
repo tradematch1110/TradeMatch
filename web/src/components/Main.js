@@ -4,23 +4,23 @@
     2. handle routing
 */
 
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 // import NotFound from './../NotFound'
-import Home from './Home';
-import Login from './Login';
-import Register from './Register';
+import Home from "./Home";
+import Login from "./Login";
+import Register from "./Register";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import CreateProduct from './CreateProduct';
-import UserMassages from './UserMassages';
+import CreateProduct from "./CreateProduct";
+import UserMessages from "./UserMessages";
 import Product from "./Product";
 import { authContext } from "./../contexts/AuthContext";
-import MyProducts from './MyProducts';
-import UpdateProduct from './UpdateProduct';
-import AboutUs from './AboutUs';
-import ReportMassage from './ReportMassage';
+import MyProducts from "./MyProducts";
+import UpdateProduct from "./UpdateProduct";
+import AboutUs from "./AboutUs";
+import ReportMessage from "./ReportMessage";
 
 const Main = () => {
-const {currentUser} = useContext(authContext);
+  const { currentUser } = useContext(authContext);
   return (
     <div>
       <Routes>
@@ -39,8 +39,8 @@ const {currentUser} = useContext(authContext);
           }
         ></Route>
         <Route
-          path="/user_massages"
-          element={currentUser ? <UserMassages /> : <Navigate to="/login" />}
+          path="/user_messages"
+          element={currentUser ? <UserMessages /> : <Navigate to="/login" />}
         ></Route>
         <Route
           path="/product"
@@ -57,11 +57,11 @@ const {currentUser} = useContext(authContext);
           }
         ></Route>
         <Route
-          path="/report_massage"
+          path="/report_message"
           element={
-            currentUser ? <ReportMassage /> : <Navigate to="/report_massage" />
+            currentUser ? <ReportMessage /> : <Navigate to="/report_message" />
           }
-          report_massage
+          report_message
         ></Route>
       </Routes>
     </div>

@@ -8,10 +8,13 @@ router.post("/getAllProducts", productsController.getAllProducts);
 router.post("/createProduct", productsController.createProduct);
 router.post("/updateProduct", productsController.updateProduct);
 router.post("/getProductById", productsController.getProductById);
-router.post("/getProductsByCategoryAndSubCategory", productsController.getProductsByCategoryAndSubCategory);
+router.post(
+  "/getProductsByCategoryAndSubCategory",
+  productsController.getProductsByCategoryAndSubCategory
+);
 router.post("/getProductsPerUser", productsController.getProductsPerUser);
 
-// admin/reportMassage
+// admin/reportMessage
 module.exports = router;
 
 // router.get("/:name", (req, res) => {

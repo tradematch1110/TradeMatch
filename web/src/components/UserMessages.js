@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { authContext } from "../contexts/AuthContext";
-import { getUserMassages } from "./../services/api";
+import { getUserMessages } from "../services/api";
 import { Grid } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
@@ -9,20 +9,20 @@ import { CardActions, Typography } from "@material-ui/core";
 import { Button } from "@material-ui/core";
 import CustomCard from "./Card";
 
-export default function UserMassages() {
+export default function UserMessages() {
   const { currentUser } = useContext(authContext);
 
-  const [massages, setMassages] = useState([]);
+  const [messages, setMessages] = useState([]);
   const [error, setError] = useState("");
 
   useEffect(() => {
     // fetch to server
     async function fetchData(uid, token) {
-      const res = await getUserMassages(uid, token);
-      console.log("respond from massages: ", res);
+      const res = await getUserMessages(uid, token);
+      console.log("respond from messages: ", res);
       switch (res.statusId) {
         case 1:
-          setMassages(res.value);
+          setMessages(res.value);
           break;
         case 2:
           setError(res);
@@ -38,8 +38,8 @@ export default function UserMassages() {
 
   return (
     <div style={{ paddingTop: 50 }}>
-      {massages &&
-        massages.map((massage, index) => {
+      {messages &&
+        messages.map((message, index) => {
           return (
             <Grid
               item
@@ -50,16 +50,22 @@ export default function UserMassages() {
               className="message"
             >
               <h1>
-                {currentUser.firstName} {massage.massage}
+                {currentUser.firstName} {message.message}
               </h1>
               <h1>
-                התקבלה ב: {new Date(massage.date).toLocaleDateString("en-GB")}{" "}
-                {`${new Date(massage.date).getHours()}:${new Date(
-                  massage.date
+                התקבלה ב: {new Date(message.date).toLocaleDateString("en-GB")}{" "}
+                {`${new Date(message.date).getHours()}:${new Date(
+                  message.date
                 ).getMinutes()}`}
               </h1>
-              <Grid item container justifyContent="center" className="create" xs={12}>
-                <CustomCard {...massage.product} />
+              <Grid
+                item
+                container
+                justifyContent="center"
+                className="create"
+                xs={12}
+              >
+                <CustomCard {...message.product} />
               </Grid>
             </Grid>
           );
