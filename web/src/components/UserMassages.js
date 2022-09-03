@@ -2,6 +2,12 @@ import React, { useContext, useState, useEffect } from "react";
 import { authContext } from "../contexts/AuthContext";
 import { getUserMassages } from "./../services/api";
 import { Grid } from "@mui/material";
+import Card from "@mui/material/Card";
+import CardHeader from "@mui/material/CardHeader";
+import CardContent from "@mui/material/CardContent";
+import { CardActions, Typography } from "@material-ui/core";
+import { Button } from "@material-ui/core";
+import CustomCard from "./Card";
 
 export default function UserMassages() {
   const { currentUser } = useContext(authContext);
@@ -31,26 +37,30 @@ export default function UserMassages() {
   }, [currentUser]);
 
   return (
-    <div>
+    <div style={{ paddingTop: 50 }}>
       {massages &&
         massages.map((massage, index) => {
           return (
             <Grid
-              direction={"column"}
-              key={index}
-              container
               item
+              container
+              justifyContent="center"
               xs={12}
-              md={6}
-              spacing={2}
+              direction="row"
+              className="message"
             >
-              <h3> תוכן ההודעה : {massage.massage}</h3>
-              <h4>{massage.product.produectTitle}</h4>
-              <h4>{massage.product.user.firstName}</h4>
-              <p>{new Date(massage.date).toLocaleDateString("en-GB")}</p>
-              <p>{`${new Date(massage.date).getHours()}:${new Date(
-                massage.date
-              ).getMinutes()}`}</p>
+              <h1>
+                {currentUser.firstName} {massage.massage}
+              </h1>
+              <h1>
+                התקבלה ב: {new Date(massage.date).toLocaleDateString("en-GB")}{" "}
+                {`${new Date(massage.date).getHours()}:${new Date(
+                  massage.date
+                ).getMinutes()}`}
+              </h1>
+              <Grid item container justifyContent="center" className="create" xs={12}>
+                <CustomCard {...massage.product} />
+              </Grid>
             </Grid>
           );
         })}

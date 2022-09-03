@@ -14,14 +14,17 @@ import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+
 import MoreIcon from "@mui/icons-material/MoreVert";
 import { Link } from "react-router-dom";
 import { authContext } from "../contexts/AuthContext";
-import { Button } from "@mui/material";
+import { Button, Hidden } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import SideBar from "./SideBar";
 import Avatar from "@mui/material/Avatar";
-
+import AddIcon from "@mui/icons-material/Add";
+import MainLogo from "../svg/MainLogo";
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -136,6 +139,7 @@ export default function Header() {
           >
             <SideBar />
           </IconButton>
+          <MainLogo style={{ marginRight: 5 }} />
           <Typography
             variant="h6"
             noWrap
@@ -145,9 +149,12 @@ export default function Header() {
               display: {
                 // xs: "none",
                 sm: "block",
-                marginRight: 20,
+                marginRight: 5,
                 textDecoration: "none",
                 color: "white",
+                fontFamily: "ruby",
+                fontWeight: 700,
+                fontSize: 28,
               },
             }}
           >
@@ -164,6 +171,45 @@ export default function Header() {
           </Search> */}
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { sm: "flex" } }}>
+            {currentUser && (
+              <Hidden smDown>
+                <div style={{marginTop: 5, marginLeft: 15}}>
+                  <Button
+                    component={Link}
+                    to={"/create_product"}
+                    endIcon={<AddIcon style={{ fontWeight: 700 , transform: "translate(-15px, 1px)"}} />}
+                    style={{
+                      justifyContent: "center",
+                      alignItems: "center",
+                      height: 35,
+                      width: 150,
+                      background: "#FFFFFF",
+                      color: "#0EACCB",
+                      fontSize: 18,
+                      fontWeight: 700,
+                      borderRadius: 25,
+                      border: 0,
+                      textAlign: "center"
+                    }}
+                  >
+                    העלה מוצר
+                  </Button>
+                </div>
+              </Hidden>
+            )}
+            {currentUser && (
+              <Hidden smDown>
+                <FavoriteIcon
+                  style={{
+                    color: "#ff4d4d",
+                    marginTop: 10,
+                    marginLeft: 10,
+                    fontSize: 25,
+                    cursor: "pointer",
+                  }}
+                />
+              </Hidden>
+            )}
             {currentUser && (
               <IconButton
                 size="large"
@@ -218,7 +264,7 @@ export default function Header() {
               )}
               {!currentUser && (
                 <Avatar
-                onClick={handleLogin}
+                  onClick={handleLogin}
                   sx={{
                     height: 25,
                     width: 25,
@@ -228,8 +274,7 @@ export default function Header() {
                     fontWeight: 600,
                   }}
                   aria-label="recipe"
-                >
-                </Avatar>
+                ></Avatar>
               )}
             </IconButton>
             {!currentUser && (

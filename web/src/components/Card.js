@@ -157,7 +157,7 @@ export default function CustomCard(props) {
                         width: "100%",
                         class: "center",
                       }}
-                      key={index}
+                      key={index+Math.floor(Math.random(10000))}
                       src={
                         cardValues.images[index] && cardValues.images[index]
                         //  || emptyImage
@@ -257,7 +257,7 @@ export default function CustomCard(props) {
           </CardContent>
         </Card>
       )}
-      <Card style={ulStyleBottom} sx={{ width: 350, height: 50, padding: 1 }}>
+     { <Card style={ulStyleBottom} sx={{ width: 350, height: 50, padding: 1 }}>
         <Grid container justifyContent="left" alignItems="center">
           <FavoriteIcon
             sx={{ margin: 1, color: "#DE3E16", cursor: "pointer" }}
@@ -269,7 +269,7 @@ export default function CustomCard(props) {
             }}
           />
         </Grid>
-      </Card>
+      </Card>}
     </Grid>
   );
 }

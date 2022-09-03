@@ -8,6 +8,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import FileUploadIcon from "@mui/icons-material/FileUpload";
 import InfoIcon from "@mui/icons-material/Info";
 import { useNavigate } from "react-router";
@@ -16,7 +17,7 @@ import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
 import { authContext } from "../contexts/AuthContext";
-
+import CloseIcon from "@mui/icons-material/Close";
 export default function SideBar() {
   // const ulStyle = {
   //     text-align: right;
@@ -26,10 +27,9 @@ export default function SideBar() {
     setCurrentUser("");
     localStorage.removeItem("user", {});
   };
-  ;
-const handleLogin = () => {
-  navigate("/login")
-};
+  const handleLogin = () => {
+    navigate("/login");
+  };
   // };
   const navigate = useNavigate();
   const [state, setState] = useState({
@@ -60,6 +60,16 @@ const handleLogin = () => {
     >
       <List>
         <ListItem disablePadding>
+          <ListItemIcon style={{ justifyContent: "right" }}>
+            <CloseIcon
+              onClick={toggleDrawer(anchor, false)}
+              style={{ color: "#666A", marginRight:15, marginTop: 5, fontSize:28 }}
+            />
+          </ListItemIcon>
+        </ListItem>
+      </List>
+      <List>
+        <ListItem disablePadding>
           <ListItemButton onClick={() => navigate("/create_product")}>
             <ListItemText
               primary={"העלת מוצר"}
@@ -82,6 +92,21 @@ const handleLogin = () => {
               />
               <ListItemIcon style={{ justifyContent: "left" }}>
                 <ShoppingBasketIcon style={{ color: "#B119DE" }} />
+              </ListItemIcon>
+            </ListItemButton>
+          </ListItem>
+        </List>
+      )}
+      {currentUser && (
+        <List>
+          <ListItem disablePadding>
+            <ListItemButton onClick={() => navigate("/myProduct")}>
+              <ListItemText
+                primary={"המועדפים שלי"}
+                style={{ textAlign: "right" }}
+              />
+              <ListItemIcon style={{ justifyContent: "left" }}>
+                <FavoriteIcon style={{ color: "#ff4d4d" }} />
               </ListItemIcon>
             </ListItemButton>
           </ListItem>

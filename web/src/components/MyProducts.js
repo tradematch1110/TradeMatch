@@ -10,9 +10,11 @@ export default function MyProducts() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState("");
   const [products, setProducts] = useState("");
-  const { currentUser } = useContext(authContext);
+  let { currentUser } = useContext(authContext);
   const navigate = useNavigate();
 
+  useEffect(() => {
+  },[])
   useEffect(() => {
     async function fetchData() {
       setLoading(true)
@@ -35,6 +37,7 @@ export default function MyProducts() {
     }
     fetchData();
   }, [error]);
+
   return (
     <>
       {error && <h1>{error}</h1>}
@@ -45,21 +48,20 @@ export default function MyProducts() {
           <Grid item container justifyContent="center" xs={12} direction="row">
             {products &&
               products.map((product, index) => (
-                <Grid
-                  item
-                  container
-                  justifyContent="center"
-                  alignItems="center"
-                  xs={12}
-                  direction={{ xs: "row", md: "column" }}
-                >
+                <>
                   <CustomCard
                     {...product}
-                    key={index + product._id}
+                    key={index + Math.random((5000000)*5).toString() + product._id}
                     id={product.date.toString()}
                   />
-                  <div className="myProductButton">
+                  <div
+                    key={Math.random(5000000).toString()}
+                    className="myProductButton"
+                  >
                     <button
+                      key={
+                        index + Math.random(5000000).toString() + product._id
+                      }
                       onClick={() =>
                         navigate(`/updateProduct?name=${product._id}`)
                       }
@@ -67,7 +69,7 @@ export default function MyProducts() {
                       עריכת מוצר
                     </button>
                   </div>
-                </Grid>
+                </>
               ))}
           </Grid>
         </Grid>
