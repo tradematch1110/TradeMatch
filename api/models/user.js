@@ -33,6 +33,8 @@ const User = mongoose.model(
     },
     password: {},
     messages: [],
+    favouritesProducts: [],
+
     isAdmin: {
       type: Boolean,
     },

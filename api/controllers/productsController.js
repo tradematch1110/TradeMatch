@@ -62,6 +62,56 @@ const getProductsPerUser = async (req, res) => {
   res.send(result);
 };
 
+const getFavouritesProductsPerUser = async (req, res) => {
+  console.log("req.body.favouritesProducts: ", req.body.favouritesProducts);
+  if (!req.body.favouritesProducts) {
+    return res.status(400).send({
+      status: "error",
+      message: "Bad request.",
+    });
+  }
+  let products =  [];
+
+  for (const id in req.body.favouritesProducts) {
+    console.log("id in loop: ", req.body.favouritesProducts[id]);
+    let res = await Product.find({ _id: `${req.body.favouritesProducts[id]}` });
+    console.log("res in loop: ", res);
+    if(res){
+    products.push(res[0]);}
+    res=null;
+  }
+  console.log("products: ", products);
+
+  // req.body.favouritesProducts.forEach(productId =>  {
+  //     let product =  await Product.find({ _id: `${productId}` });
+  //     products.push(product)
+  //   });
+
+  if (!products) {
+    return res.status(200).send({
+      status: "Not found",
+      message: "No favouritesProducts for this user.",
+    });
+  }
+  var result = [];
+  products.forEach((product) => {
+    let temp = { ...product }._doc;
+    // delete temp._id;
+    // delete temp.id;
+    // delete temp.createdAt;
+    // delete temp.updatedAt;
+    // delete temp.user.message;
+    delete temp.user.messages;
+    delete temp.user.accessToken;
+    delete temp.__v;
+    result.push(temp);
+  });
+    console.log("result: ", result);
+
+  res.status(200);
+  res.send(result);
+};
+
 const getProductsByCategoryAndSubCategory = async (req, res) => {
   const category = req.body.category;
   const subCategory = req.body.subCategory;
@@ -194,11 +244,11 @@ const updateProduct = async (req, res) => {
   console.log("matchResult: ", matchResult);
 
   //   console.log("product :", product);
-  try {
-    await product.save();
-  } catch (error) {
-    console.log("error: ", error);
-  }
+  // try {
+  //   await product.u();
+  // } catch (error) {
+  //   console.log("error: ", error);
+  // }
 
   // res.setHeader("Set-Cookie", "newUser=true");
   const result = {
@@ -319,7 +369,9 @@ module.exports = {
   getAllProducts,
   getProductById,
   getProductsPerUser,
+  getFavouritesProductsPerUser,
   getProductsByCategoryAndSubCategory,
   createProduct,
   updateProduct,
+  
 };

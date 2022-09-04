@@ -13,8 +13,13 @@ router.post(
   productsController.getProductsByCategoryAndSubCategory
 );
 router.post("/getProductsPerUser", productsController.getProductsPerUser);
+router.post(
+  "/getFavouritesProductsPerUser",
+  productsController.getFavouritesProductsPerUser
+);
 
-// admin/reportMessage
+//   getFavouritesProductsPerUser,
+
 module.exports = router;
 
 // router.get("/:name", (req, res) => {

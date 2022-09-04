@@ -10,7 +10,7 @@ export default function MyProducts() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState("");
   const [products, setProducts] = useState("");
-  let { currentUser } = useContext(authContext);
+  const { currentUser } = useContext(authContext);
   const navigate = useNavigate();
 
   useEffect(() => {

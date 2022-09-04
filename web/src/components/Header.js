@@ -15,7 +15,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-
+import AddCircleIcon from "@mui/icons-material/AddCircle";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import { Link } from "react-router-dom";
 import { authContext } from "../contexts/AuthContext";
@@ -139,7 +139,7 @@ export default function Header() {
           >
             <SideBar />
           </IconButton>
-          <MainLogo style={{ marginRight: 5 }} />
+          <MainLogo width={30} height={30} style={{ marginRight: 5 }} />
           <Typography
             variant="h6"
             noWrap
@@ -178,7 +178,7 @@ export default function Header() {
                     component={Link}
                     to={"/create_product"}
                     endIcon={
-                      <AddIcon
+                      <AddCircleIcon
                         style={{
                           fontWeight: 700,
                           transform: "translate(-15px, 1px)",
@@ -207,6 +207,7 @@ export default function Header() {
             {currentUser && (
               <Hidden smDown>
                 <FavoriteIcon
+                  onClick={() => navigate("/favouritesProducts")}
                   style={{
                     color: "#ff4d4d",
                     marginTop: 10,
@@ -222,12 +223,13 @@ export default function Header() {
                 size="large"
                 aria-label="show 4 new mails"
                 color="inherit"
+                onClick={() => navigate("/user_messages")}
               >
                 <Badge
                   badgeContent={currentUser && currentUser.messages.length}
                   color="error"
                 >
-                  <MailIcon onClick={() => navigate("/user_messages")} />
+                  <MailIcon />
                 </Badge>
               </IconButton>
             )}
@@ -298,6 +300,7 @@ export default function Header() {
                     color: "white",
                     marginTop: 5,
                   },
+                  pointer: "cursor",
                 }}
               >
                 התחבר |
@@ -324,6 +327,7 @@ export default function Header() {
             )}
             {currentUser && (
               <Typography
+                component={Button}
                 variant="h6"
                 sx={{
                   display: {
@@ -332,7 +336,6 @@ export default function Header() {
                     marginRight: 5,
                     textDecoration: "none",
                     color: "white",
-                    marginTop: 5,
                   },
                 }}
               >
@@ -341,6 +344,7 @@ export default function Header() {
             )}
             {currentUser && (
               <Typography
+                component={Button}
                 variant="h6"
                 onClick={handleLogout}
                 sx={{
@@ -350,11 +354,10 @@ export default function Header() {
                     marginRight: 10,
                     textDecoration: "none",
                     color: "white",
-                    marginTop: 5,
                   },
                 }}
               >
-                | התנתק
+                התנתק
               </Typography>
             )}
           </Box>

@@ -8,7 +8,7 @@ import { authContext } from "../contexts/AuthContext";
 // import { useHistory, useLocation } from "react-router";
 import { RegisterFormCss } from "./RegisterFormCss";
 // import { Link } from "react-router-dom";
-import MainLogo from "./../images/MainLogo";
+import MainLogo from "../svg/MainLogo";
 import { FORM_LOGIN_VALIDATION } from "./../validationService/Yupvalidation";
 import "../App.css";
 import rtlPlugin from "stylis-plugin-rtl";
@@ -119,6 +119,16 @@ const Login = () => {
           justifyContent="center"
           className="formWrapper"
         >
+          <MainLogo width={200} height={200} />
+        </Grid>
+        <Grid
+          container
+          direction="row"
+          maxwidth="xs"
+          item
+          justifyContent="center"
+          className="formWrapper"
+        >
           <Grid direction="column" container item xs={12} md={6}>
             <Grid direction="row" container justifyContent="center">
               {/* <Link to="/">
@@ -150,20 +160,7 @@ const Login = () => {
             >
               <Form>
                 <Grid container item xs={12}>
-                  <Hidden smUp>
-                    <Grid
-                      dir="column"
-                      container
-                      item
-                      xs={12}
-                      md={6}
-                      justifyContent="center"
-                      className={classes.image}
-                    ></Grid>
-                  </Hidden>
-                  <Grid container item xs={12} justifyContent="center">
-                    <p className={classes.title} />
-                  </Grid>
+                  
                   {error && (
                     <Grid
                       className="input"
@@ -218,7 +215,7 @@ const Login = () => {
                     justifyContent="center"
                     // style={{ minHeight: '10vh' }}
                   >
-                    <Button error={error}>נקסט</Button>
+                    <Button error={error}>התחבר</Button>
                   </Grid>
                 </Grid>
               </Form>

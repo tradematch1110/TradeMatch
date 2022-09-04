@@ -1,6 +1,7 @@
 import React, { useState, useContext, useLayoutEffect, useEffect } from "react";
 import { Formik, Form } from "formik";
 import { registerNewUser } from "../services/api";
+import { FormGlobalStyle } from "./FormGlobalStyle";
 // import CircularIndeterminate from "./common/Circular";
 import { Grid, Hidden } from "@mui/material";
 import Textfield from "./TextFeild/index1";
@@ -9,7 +10,7 @@ import Button from "./Button";
 import { RegisterFormCss } from "./RegisterFormCss";
 import { authContext } from "../contexts/AuthContext";
 // import { Link } from "react-router-dom";
-import MainLogo from "./../images/MainLogo";
+import MainLogo from "./../svg/MainLogo";
 import { FORM_REGISTER_VALIDATION } from "./../validationService/Yupvalidation";
 import "../App.css";
 import rtlPlugin from "stylis-plugin-rtl";
@@ -116,174 +117,167 @@ const Register = () => {
   // handle Submit - code form
 
   return (
-    <CacheProvider value={isRtl ? cacheRtl : cacheLtr}>
-      <ThemeProvider theme={isRtl ? rtlTheme : ltrTheme}>
-        <CssBaseline />
-        <Grid
-          className="formWrapper"
-          container
-          direction="row"
-          maxwidth="xs"
-          item
-          justifyContent="center"
-        >
-          <Grid direction="column" container item xs={12} md={6}>
-            <Grid direction="row" container justifyContent="center">
-              {isReg && <h3>{isReg}</h3>}
-              {/* <Link to="/">
-            <Hidden smDown>
-              <MainLogo
-                width={192}
-                height={33}
-                //   className={classes.logoMobile}
-              />
-            </Hidden>
-            <Hidden smUp>
-              <MainLogo
-                width={145}
-                height={25}
-                //   className={classes.logoMobile}
-              />
-            </Hidden>
-          </Link> */}
-            </Grid>
-            {/* {loading && !error} */}
-            {!isReg && (
-              <Formik
-                initialValues={{
-                  ...INITIAL_FORM_STATE,
-                }}
-                validationSchema={FORM_REGISTER_VALIDATION}
-                onSubmit={(values, onSubmitProps) => {
-                  handleSubmit(values, onSubmitProps);
-                }}
-              >
-                <Form>
-                  <Grid container item xs={12}>
-                    <Hidden smUp>
+    <>
+      <CacheProvider value={isRtl ? cacheRtl : cacheLtr}>
+        <ThemeProvider theme={isRtl ? rtlTheme : ltrTheme}>
+          <CssBaseline />
+          <Grid
+            container
+            direction="row"
+            maxwidth="xs"
+            item
+            justifyContent="center"
+          >
+            <MainLogo width={150} height={150} />
+          </Grid>
+          {/* <Grid
+            container
+            direction="row"
+            maxwidth="xs"
+            item
+            justifyContent="center"
+          >
+            <h1>הי נעים להכיר!</h1>
+          </Grid> */}
+
+          <Grid
+            className="formWrapper"
+            container
+            direction="row"
+            maxwidth="xs"
+            item
+            justifyContent="center"
+          >
+            <Grid direction="column" container item xs={12} md={6}>
+              {isReg && (
+                <Grid direction="row" container justifyContent="center">
+                  <h3>{isReg}</h3>
+                </Grid>
+              )}
+              {loading && !error}
+              {!isReg && (
+                <Formik
+                  initialValues={{
+                    ...INITIAL_FORM_STATE,
+                  }}
+                  validationSchema={FORM_REGISTER_VALIDATION}
+                  onSubmit={(values, onSubmitProps) => {
+                    handleSubmit(values, onSubmitProps);
+                  }}
+                >
+                  <Form>
+                    <Grid container item xs={12}>
+                      {error && (
+                        <Grid
+                          className="input"
+                          item
+                          xs={12}
+                          justifyContent="center"
+                        >
+                          {/* <h1 className={classes.errorMessage}>{error}</h1>{" "} */}
+                          <h1>{error}</h1>{" "}
+                        </Grid>
+                      )}
                       <Grid
-                        dir="column"
+                        direction="row"
                         container
-                        item
-                        xs={12}
-                        md={6}
                         justifyContent="center"
-                        className={classes.image}
-                      ></Grid>
-                    </Hidden>
-                    <Grid container item xs={12} justifyContent="center">
-                      <p className={classes.title} />
-                    </Grid>
-                    {error && (
+                        item
+                        className="input"
+                        xs={12}
+                      >
+                        <Grid item xs={12} className="input">
+                          {" "}
+                          <Textfield name="firstName" label="שם פרטי" />
+                        </Grid>
+                      </Grid>
                       <Grid
+                        direction="row"
+                        container
+                        justifyContent="center"
                         className="input"
                         item
                         xs={12}
-                        justifyContent="center"
                       >
-                        {/* <h1 className={classes.errorMessage}>{error}</h1>{" "} */}
-                        <h1>{error}</h1>{" "}
+                        <Grid item xs={12} className="input">
+                          <Textfield name="lastName" label="שם משפחה" />
+                        </Grid>
                       </Grid>
-                    )}
-                    <Grid
-                      direction="row"
-                      container
-                      justifyContent="center"
-                      item
-                      className="input"
-                      xs={12}
-                    >
-                      <Grid item xs={12} className="input">
-                        {" "}
-                        <Textfield name="firstName" label="שם פרטי" />
+                      <Grid
+                        direction="row"
+                        container
+                        justifyContent="center"
+                        className="input"
+                        item
+                        xs={12}
+                      >
+                        <Grid item xs={12} className="input">
+                          <Textfield name="email" label="מייל" />
+                        </Grid>
                       </Grid>
-                    </Grid>
-                    <Grid
-                      direction="row"
-                      container
-                      justifyContent="center"
-                      className="input"
-                      item
-                      xs={12}
-                    >
-                      <Grid item xs={12} className="input">
-                        <Textfield name="lastName" label="שם משפחה" />
+                      <Grid
+                        direction="row"
+                        container
+                        justifyContent="center"
+                        className="input"
+                        item
+                        xs={12}
+                      >
+                        {/* <Gr> */}
+                        <Grid item xs={12} className="input">
+                          <Textfield
+                            name="phoneNumber"
+                            label="פלאפון"
+                            type="tel"
+                            inputProps={{
+                              inputMode: "tel",
+                              pattern: "[0-9]*",
+                            }}
+                          />
+                        </Grid>{" "}
                       </Grid>
-                    </Grid>
-                    <Grid
-                      direction="row"
-                      container
-                      justifyContent="center"
-                      className="input"
-                      item
-                      xs={12}
-                    >
-                      <Grid item xs={12} className="input">
-                        <Textfield name="email" label="מייל" />
+                      <Grid
+                        direction="row"
+                        container
+                        justifyContent="center"
+                        className="input"
+                        item
+                        xs={12}
+                      >
+                        {/* <Gr> */}
+                        <Grid item xs={12} className="input">
+                          <Textfield
+                            name="password"
+                            label="סיסמה"
+                            type="password"
+                            // inputProps={{
+                            //   inputMode: "tel",
+                            //   pattern: "[0-9]*",
+                            // }}
+                          />
+                        </Grid>{" "}
                       </Grid>
-                    </Grid>
-                    <Grid
-                      direction="row"
-                      container
-                      justifyContent="center"
-                      className="input"
-                      item
-                      xs={12}
-                    >
-                      {/* <Gr> */}
-                      <Grid item xs={12} className="input">
-                        <Textfield
-                          name="phoneNumber"
-                          label="פלאפון"
-                          type="tel"
-                          inputProps={{
-                            inputMode: "tel",
-                            pattern: "[0-9]*",
-                          }}
-                        />
-                      </Grid>{" "}
-                    </Grid>
-                    <Grid
-                      direction="row"
-                      container
-                      justifyContent="center"
-                      className="input"
-                      item
-                      xs={12}
-                    >
-                      {/* <Gr> */}
-                      <Grid item xs={12} className="input">
-                        <Textfield
-                          name="password"
-                          label="סיסמה"
-                          type="password"
-                          // inputProps={{
-                          //   inputMode: "tel",
-                          //   pattern: "[0-9]*",
-                          // }}
-                        />
-                      </Grid>{" "}
-                    </Grid>
 
-                    <Grid
-                      //   className={classes.btnWrapper}
-                      container
-                      item
-                      xs={12}
-                      alignItems="center"
-                      justifyContent="center"
-                      // style={{ minHeight: '10vh' }}
-                    >
-                      <Button error={error}>נקסט</Button>
+                      <Grid
+                        //   className={classes.btnWrapper}
+                        container
+                        item
+                        xs={12}
+                        alignItems="center"
+                        justifyContent="center"
+                        // style={{ minHeight: '10vh' }}
+                      >
+                        <Button error={error}>הרשם</Button>
+                      </Grid>
                     </Grid>
-                  </Grid>
-                </Form>
-              </Formik>
-            )}
+                  </Form>
+                </Formik>
+              )}
+            </Grid>
           </Grid>
-        </Grid>
-      </ThemeProvider>
-    </CacheProvider>
+        </ThemeProvider>
+      </CacheProvider>
+    </>
   );
 };
 

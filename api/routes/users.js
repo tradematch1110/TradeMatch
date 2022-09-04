@@ -90,6 +90,7 @@ router.post("/login", async (req, res) => {
           uid: user._id.toString(),
           message: "User login successfuly",
           messages: user.messages,
+          favouritesProducts: user.favouritesProducts,
           accessToken: accessToken,
         }
         // _.pick(user, ["_id", "firstName", "lastName", "email", "phoneNumber"])
@@ -103,39 +104,47 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.post("/get_user_by_id", async (req, res) => {
-  console.log(req.body);
+// router.post("/get_user_by_id", async (req, res) => {
+//   console.log(req.body);
 
-  const uid = await bcrypt.hashSync(req.body._id, salt);
+//   const uid = await bcrypt.hashSync(req.body._id, salt);
 
-  let user = await User.findById({ _id: req.body._id });
-  // console.log("user: ", user);
+//   let user = await User.findById({ _id: req.body._id });
+//   // console.log("user: ", user);
 
-  if (!user)
-    return res.status(400).send({
-      status: "error",
-      message: "User not exist.",
-    });
+//   if (!user)
+//     return res.status(400).send({
+//       status: "error",
+//       message: "User not exist.",
+//     });
 
-  if (user) {
-    // console.log("user:", user)
+//   if (user) {
+//     // console.log("user:", user)
 
-    res.status(200);
-    res.send(
-      {
-        status: "success",
-        user: user,
-      }
-      // _.pick(user, ["_id", "firstName", "lastName", "email", "phoneNumber"])
-    );
-  } else {
-    return res.status(400).send({
-      status: "error",
-      message: "Incorrect password.",
-    });
-  }
-});
+//     res.status(200);
+//     res.send(
+//       {
+//         status: "success",
+//         user: user,
+//       }
+//       // _.pick(user, ["_id", "firstName", "lastName", "email", "phoneNumber"])
+//     );
+//   } else {
+//     return res.status(400).send({
+//       status: "error",
+//       message: "Incorrect password.",
+//     });
+//   }
+// });
 
 router.post("/getUserMessages", userController.getUserMessages);
+router.post("/addFavoriteProductToUser", userController.addFavoriteProductToUser);
+router.post("/get_user_by_id", userController.getUserById);
+router.post(
+  "/getUserFavouritesProducts",
+  userController.getUserFavouritesProducts
+);
+
+// getUserFavouritesProducts
 
 module.exports = router;

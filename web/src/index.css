@@ -15,6 +15,10 @@ code {
     monospace;
 }
 
+/* .formWrapper {
+  margin-top: 10;
+} */
+
 /* create new blog form */
 .create {
   background: #eaf2f4;

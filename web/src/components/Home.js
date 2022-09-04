@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useLayoutEffect, useContext } from "react";
 import { Grid } from "@mui/material";
 import CustomCard from "./Card";
 import {
   getAllProducts,
   getProductsByCategoryAndSubCategory,
+  getUserFavouritesProducts,
 } from "./../services/api";
 import { allCategories, categoriesNames } from "../resourcees/categories";
 import Loader from "./Loader";
+import { authContext } from "./../contexts/AuthContext";
 
 export default function Home() {
   const [error, setError] = useState("");
@@ -16,7 +18,12 @@ export default function Home() {
   const [category, setCategory] = useState("");
   const [subCategory, setSubCategory] = useState("");
   const [subCategorySelected, setSubCategorySelected] = useState("");
-
+  const {
+    currentUser,
+    setCurrentUser,
+    favouritesProducts,
+    setFavouritesProducts,
+  } = useContext(authContext);
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (name === "category") setCategory(value);
@@ -113,6 +120,8 @@ export default function Home() {
     }
     fetchData();
   }, [error]);
+
+
   return (
     <>
       {error && <h1>{error}</h1>}

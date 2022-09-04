@@ -10,6 +10,22 @@ export const reportMessage = async (values) => {
   return await helper(url, method, headerToken, data);
 };
 
+export const addFavoriteProductToUser = async (values) => {
+  const url = "users/addFavoriteProductToUser";
+  const method = "post";
+  const headerToken = null;
+  const data = values;
+  return await helper(url, method, headerToken, data);
+};
+
+export const getUserFavouritesProducts = async (uid, accessToken) => {
+  const url = "users/getUserFavouritesProducts";
+  const method = "post";
+  const headerToken = null;
+  const data = { uid: uid };
+  return await helper(url, method, headerToken, data);
+};
+// getUserFavouritesProducts
 export const registerNewUser = async (formValues) => {
   const url = "users/register";
   const method = "post";
@@ -87,6 +103,14 @@ export const getProductsPerUser = async (uid) => {
   const method = "post";
   const headerToken = null;
   const data = { uid: uid };
+  return await helper(url, method, headerToken, data);
+};
+
+export const getFavouritesProductsPerUser = async (fp) => {
+  const url = "products/getFavouritesProductsPerUser";
+  const method = "post";
+  const headerToken = null;
+  const data = { favouritesProducts: fp };
   return await helper(url, method, headerToken, data);
 };
 

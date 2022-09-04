@@ -18,6 +18,7 @@ import MyProducts from "./MyProducts";
 import UpdateProduct from "./UpdateProduct";
 import AboutUs from "./AboutUs";
 import ReportMessage from "./ReportMessage";
+import FavouritesProducts from "./FavouritesProducts";
 
 const Main = () => {
   const { currentUser } = useContext(authContext);
@@ -49,6 +50,12 @@ const Main = () => {
         <Route
           path="/myProduct"
           element={currentUser ? <MyProducts /> : <Navigate to="/login" />}
+        ></Route>
+        <Route
+          path="/favouritesProducts"
+          element={
+            currentUser ? <FavouritesProducts /> : <Navigate to="/login" />
+          }
         ></Route>
         <Route
           path="/updateProduct"

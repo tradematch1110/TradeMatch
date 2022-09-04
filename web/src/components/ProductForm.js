@@ -14,7 +14,7 @@ import Button from "./Button";
 import { RegisterFormCss } from "./RegisterFormCss";
 import { authContext } from "../contexts/AuthContext";
 // import { Link } from "react-router-dom";
-import MainLogo from "./../images/MainLogo";
+import MainLogo from "./../svg/MainLogo";
 import { FORM_PRODUCT_VALIDATION } from "./../validationService/Yupvalidation";
 import "../App.css";
 import rtlPlugin from "stylis-plugin-rtl";

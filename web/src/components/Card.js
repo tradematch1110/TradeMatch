@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext, useLayoutEffect } from "react";
+import { authContext } from "./../contexts/AuthContext";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardContent from "@mui/material/CardContent";
@@ -22,10 +23,20 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import { grid } from "@mui/system";
 import ReportIcon from "@mui/icons-material/Report";
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+import { addFavoriteProductToUser } from "../services/api";
+const AutoPlaySwipeableViews = SwipeableViews;
 
 export default function CustomCard(props) {
   const navigate = useNavigate();
+  const {
+    currentUser,
+    setCurrentUser,
+    favouritesProducts,
+    setFavouritesProducts,
+  } = useContext(authContext);
+  const [error, setError] = useState("");
+  const [isFav, setIsFav] = useState("gray");
+
   const randomNumber = () => {
     const generateRandomColor = Math.floor(Math.random() * 16777215).toString(
       16
@@ -82,12 +93,60 @@ export default function CustomCard(props) {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 
+  useLayoutEffect(() => {
+    console.log("props._id: ", props._id);
+    console.log(
+      "favouritesProducts: ",
+      favouritesProducts
+    );
+
+    if (favouritesProducts) {
+      let flag = favouritesProducts.find((id) => props._id == id);
+      if (flag) {
+        setIsFav("red");
+      } else {
+        setIsFav("gray");
+      }
+    } else {
+      setIsFav("gray");
+    }
+    console.log("isFav: ", isFav);
+    console.log("favouritesProducts: ", favouritesProducts);
+  }, [isFav]);
+
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
   const handleStepChange = (step) => {
     setActiveStep(step);
+  };
+
+  const HandleFavourites = async () => {
+    const values = {
+      productId: props._id,
+      userId: currentUser.uid,
+    };
+    console.log("HandleFavourites values", values);
+
+    const res = await addFavoriteProductToUser(values);
+    console.log("res HandleFavourites", res);
+
+    switch (res.statusId) {
+      case 1:
+        // setCategoriesNames(res.value.categoriesNames);
+        console.log(res.value);
+        setFavouritesProducts(res.value.favouritesProducts);
+         setIsFav("red")
+        break;
+      case 2:
+        setError(res);
+        setTimeout(() => {
+          setError("");
+        }, 5000);
+        break;
+      default:
+    }
   };
   return (
     <Grid
@@ -261,7 +320,8 @@ export default function CustomCard(props) {
         <Card style={ulStyleBottom} sx={{ width: 350, height: 50, padding: 1 }}>
           <Grid container justifyContent="left" alignItems="center">
             <FavoriteIcon
-              sx={{ margin: 1, color: "#DE3E16", cursor: "pointer" }}
+              sx={{ margin: 1, color: `${isFav}`, cursor: "pointer" }}
+              onClick={()=>HandleFavourites()}
             />
             <ReportIcon
               sx={{ margin: 1, color: "#CFCC07", cursor: "pointer" }}

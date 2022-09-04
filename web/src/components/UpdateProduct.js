@@ -219,6 +219,8 @@ const UpdateProduct = () => {
 
   useEffect(() => {
     setLoading(true);
+    console.log("formValues: ", formValues);
+
     console.log("formErrors: ", formErrors);
     if (Object.keys(formErrors).length === 0 && isSubmit) {
       console.log("form is valid!!!!");

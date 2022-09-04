@@ -76,14 +76,23 @@ const getUrl = (urlType) => {
     case "products/getProductsPerUser":
       url += "/api/products/getProductsPerUser";
       break;
+    case "products/getFavouritesProductsPerUser":
+      url += "/api/products/getFavouritesProductsPerUser";
+      break;
     case "users/getUserMessages":
       url += "/api/users/getUserMessages";
+      break;
+    case "users/addFavoriteProductToUser":
+      url += "/api/users/addFavoriteProductToUser";
+      break;
+    case "users/getUserFavouritesProducts":
+      url += "/api/users/getUserFavouritesProducts";
       break;
     case "admin/reportMessage":
       url += "/api/admin/reportMessage";
       break;
 
-    //"admin/reportMessage"
+    //"users/getUserFavouritesProducts"
     default:
       result.status = "error";
       result.statusId = 2;
