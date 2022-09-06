@@ -310,7 +310,7 @@ text-align: right;}
 .myProductButton {
   display: grid;
   justify-content: center;
-  width: 350;
+  width: 175;
 }
 
 .myProductButton button {
@@ -318,8 +318,8 @@ text-align: right;}
   align-items: center;
   align-content: center;
   text-align: center;
-  min-width: 350px;
-  max-width: 350px;
+  min-width: 175px;
+  max-width: 175px;
   max-height: 50px;
   color: #fff;
   border: 0;

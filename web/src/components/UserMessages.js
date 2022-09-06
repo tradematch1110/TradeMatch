@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { authContext } from "../contexts/AuthContext";
-import { getUserMessages } from "../services/api";
+import { getProductsByList, getUserMessages } from "../services/api";
 import { Grid } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
@@ -8,21 +8,51 @@ import CardContent from "@mui/material/CardContent";
 import { CardActions, Typography } from "@material-ui/core";
 import { Button } from "@material-ui/core";
 import CustomCard from "./Card";
+import Loader from "./Loader";
+import { getProductById } from "./../services/api";
 
 export default function UserMessages() {
   const { currentUser } = useContext(authContext);
 
   const [messages, setMessages] = useState([]);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState("");
+  const [products, setProducts] = useState([]);
+
+  async function getProducts(list) {
+    console.log("getproduct id -------------------------- :", list);
+    const res = await getProductsByList(list);
+    console.log("resposnd from messages getProduct: ", res);
+    switch (res.statusId) {
+      case 1:
+        setProducts(res.value);
+        setLoading(false);
+        break;
+      case 2:
+        setError(res);
+        setTimeout(() => {
+          setError("");
+        }, 5000);
+        break;
+      default:
+    }
+  }
 
   useEffect(() => {
     // fetch to server
+    setLoading(true);
     async function fetchData(uid, token) {
       const res = await getUserMessages(uid, token);
       console.log("respond from messages: ", res);
       switch (res.statusId) {
         case 1:
+          console.log("res.value -----------", res.value);
           setMessages(res.value);
+          let list = [];
+          res.value.forEach((element) => {
+            list.push(element.productId);
+          });
+          getProducts(list);
           break;
         case 2:
           setError(res);
@@ -38,7 +68,11 @@ export default function UserMessages() {
 
   return (
     <div style={{ paddingTop: 50 }}>
-      {messages &&
+      {error && <h1>{error.message}</h1>}
+      {loading && <Loader />}
+      {!loading &&
+        messages &&
+        products &&
         messages.map((message, index) => {
           return (
             <Grid
@@ -48,6 +82,7 @@ export default function UserMessages() {
               xs={12}
               direction="row"
               className="message"
+              key={index + Math.random(5000000 * 5).toString()}
             >
               <h1>
                 {currentUser.firstName} {message.message}
@@ -64,8 +99,9 @@ export default function UserMessages() {
                 justifyContent="center"
                 className="create"
                 xs={12}
+                key={Math.random(5000000 * 5).toString()}
               >
-                <CustomCard {...message.product} />
+                <CustomCard {...products[index]} />
               </Grid>
             </Grid>
           );

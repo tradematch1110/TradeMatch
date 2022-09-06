@@ -18,6 +18,17 @@ export const addFavoriteProductToUser = async (values) => {
   return await helper(url, method, headerToken, data);
 };
 
+export const removeFavoriteProductFromUser = async (values) => {
+  const url = "users/removeFavoriteProductFromUser";
+  const method = "post";
+  const headerToken = null;
+  const data = values;
+  return await helper(url, method, headerToken, data);
+};
+
+
+//getProductsByList
+
 export const getUserFavouritesProducts = async (uid, accessToken) => {
   const url = "users/getUserFavouritesProducts";
   const method = "post";
@@ -81,6 +92,23 @@ export const getAllProducts = async () => {
   const data = null;
   return await helper(url, method, headerToken, data);
 };
+export const getProductsByList = async (list) => {
+  const url = "products/getProductsByList";
+  const method = "post";
+  const headerToken = null;
+  const data = { productsIds: list };
+  return await helper(url, method, headerToken, data);
+};
+
+export const deleteProduct = async (id) => {
+  const url = "products/deleteProduct";
+  const method = "post";
+  const headerToken = null;
+  const data = { _id: id };
+  return await helper(url, method, headerToken, data);
+};
+
+// deleteProduct
 
 export const getProductById = async (id) => {
   const url = "products/getProductById";
@@ -114,7 +142,6 @@ export const getFavouritesProductsPerUser = async (fp) => {
   return await helper(url, method, headerToken, data);
 };
 
-//getProductsPerUser
 export const getAuthToken = async (sessionId) => {
   const url = "session";
   const method = "post";

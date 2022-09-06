@@ -4,7 +4,7 @@
     2. handle routing
 */
 
-import React, { useContext } from "react";
+import React, { useContext, useLayoutEffect } from "react";
 // import NotFound from './../NotFound'
 import Home from "./Home";
 import Login from "./Login";
@@ -21,7 +21,14 @@ import ReportMessage from "./ReportMessage";
 import FavouritesProducts from "./FavouritesProducts";
 
 const Main = () => {
-  const { currentUser } = useContext(authContext);
+  const { currentUser, setCurrentUser } = useContext(authContext);
+
+  useLayoutEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (user) {
+      setCurrentUser(user);
+    }
+  }, []);
   return (
     <div>
       <Routes>
@@ -39,37 +46,51 @@ const Main = () => {
             )
           }
         ></Route>
-        <Route
-          path="/user_messages"
-          element={currentUser ? <UserMessages /> : <Navigate to="/login" />}
-        ></Route>
-        <Route
-          path="/product"
-          element={currentUser ? <Product /> : <Navigate to="/login" />}
-        ></Route>
-        <Route
-          path="/myProduct"
-          element={currentUser ? <MyProducts /> : <Navigate to="/login" />}
-        ></Route>
-        <Route
-          path="/favouritesProducts"
-          element={
-            currentUser ? <FavouritesProducts /> : <Navigate to="/login" />
-          }
-        ></Route>
-        <Route
-          path="/updateProduct"
-          element={
-            currentUser ? <UpdateProduct /> : <Navigate to="/updateProduct" />
-          }
-        ></Route>
-        <Route
-          path="/report_message"
-          element={
-            currentUser ? <ReportMessage /> : <Navigate to="/report_message" />
-          }
-          report_message
-        ></Route>
+        {currentUser && (
+          <>
+            <Route
+              path="/user_messages"
+              element={
+                currentUser ? <UserMessages /> : <Navigate to="/login" />
+              }
+            ></Route>
+            <Route
+              path="/product"
+              element={currentUser ? <Product /> : <Navigate to="/login" />}
+            ></Route>
+            <Route
+              path="/myProduct"
+              element={currentUser ? <MyProducts /> : <Navigate to="/login" />}
+            ></Route>
+            <Route
+              path="/favouritesProducts"
+              element={
+                currentUser ? <FavouritesProducts /> : <Navigate to="/login" />
+              }
+            ></Route>
+            <Route
+              path="/updateProduct"
+              element={
+                currentUser ? (
+                  <UpdateProduct />
+                ) : (
+                  <Navigate to="/updateProduct" />
+                )
+              }
+            ></Route>
+            <Route
+              path="/report_message"
+              element={
+                currentUser ? (
+                  <ReportMessage />
+                ) : (
+                  <Navigate to="/report_message" />
+                )
+              }
+              report_message
+            ></Route>
+          </>
+        )}
       </Routes>
     </div>
   );

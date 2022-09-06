@@ -14,8 +14,10 @@ function AuthContextProvider({ children }) {
   // init the context values
   const [currentUser, setCurrentUser] = useState();
   const [favouritesProducts, setFavouritesProducts] = useState();
+  const [userMessages, setUserMessages] = useState();
 
-  useEffect(() => {
+
+  useLayoutEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
     if (user) {
       setCurrentUser(user);
@@ -41,8 +43,9 @@ function AuthContextProvider({ children }) {
   }, [currentUser]);
 
   console.log("------------ context update-----------------");
+
   console.log("currentUser: ", currentUser);
-  console.log("currentUser: ", favouritesProducts);
+  console.log("favouritesProducts: ", favouritesProducts);
 
   // int the values in order to pass them in the provider
   const value = {

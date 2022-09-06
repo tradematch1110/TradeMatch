@@ -226,7 +226,9 @@ export default function Header() {
                 onClick={() => navigate("/user_messages")}
               >
                 <Badge
-                  badgeContent={currentUser && currentUser.messages.length}
+                  badgeContent={
+                    currentUser.messages && currentUser.messages.length
+                  }
                   color="error"
                 >
                   <MailIcon />

@@ -45,30 +45,17 @@ export default function MyProducts() {
       {!loading && (
         <Grid item container justifyContent="center" className="create" xs={12}>
           <h1>המוצרים שלי</h1>
-          <Grid item container justifyContent="center" xs={12} direction="row">
+          <Grid item container justifyContent="center" xs={12} direction="row" spacing={5}>
             {products &&
               products.map((product, index) => (
                 <>
                   <CustomCard
                     {...product}
-                    key={index + Math.random((5000000)*5).toString() + product._id}
-                    id={product.date.toString()}
+                    key={
+                      index + Math.random(5000000 * 5).toString() + product._id
+                    }
+                    // id={product.date.toString()}
                   />
-                  <div
-                    key={Math.random(5000000).toString()}
-                    className="myProductButton"
-                  >
-                    <button
-                      key={
-                        index + Math.random(5000000).toString() + product._id
-                      }
-                      onClick={() =>
-                        navigate(`/updateProduct?name=${product._id}`)
-                      }
-                    >
-                      עריכת מוצר
-                    </button>
-                  </div>
                 </>
               ))}
           </Grid>

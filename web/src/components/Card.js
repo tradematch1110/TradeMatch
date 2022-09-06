@@ -21,12 +21,19 @@ import { useNavigate } from "react-router-dom";
 import IconButton, { IconButtonProps } from "@mui/material/IconButton";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
-import { grid } from "@mui/system";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import ReportIcon from "@mui/icons-material/Report";
-import { addFavoriteProductToUser } from "../services/api";
+import {
+  addFavoriteProductToUser,
+  deleteProduct,
+  removeFavoriteProductFromUser,
+} from "../services/api";
+import { useLocation } from "react-router-dom";
 const AutoPlaySwipeableViews = SwipeableViews;
 
 export default function CustomCard(props) {
+  const location = useLocation();
   const navigate = useNavigate();
   const {
     currentUser,
@@ -95,10 +102,7 @@ export default function CustomCard(props) {
 
   useLayoutEffect(() => {
     console.log("props._id: ", props._id);
-    console.log(
-      "favouritesProducts: ",
-      favouritesProducts
-    );
+    console.log("favouritesProducts: ", favouritesProducts);
 
     if (favouritesProducts) {
       let flag = favouritesProducts.find((id) => props._id == id);
@@ -122,31 +126,76 @@ export default function CustomCard(props) {
     setActiveStep(step);
   };
 
+  const handleDelete = async () => {
+    const flag = window.confirm("האם אתה בטוח שברצונך למחוק לצמיתות מוצר זה?");
+    console.log(flag);
+    if (flag) {
+      const res = await deleteProduct(props._id);
+      console.log("res deleteProduct", res);
+
+      switch (res.statusId) {
+        case 1:
+          // setCategoriesNames(res.value.categoriesNames);
+          console.log(res.value);
+          navigate(`/myProduct`);
+          break;
+        case 2:
+          setError(res);
+          setTimeout(() => {
+            setError("");
+          }, 5000);
+          break;
+        default:
+      }
+    }
+  };
+
   const HandleFavourites = async () => {
     const values = {
       productId: props._id,
       userId: currentUser.uid,
     };
     console.log("HandleFavourites values", values);
-
-    const res = await addFavoriteProductToUser(values);
+    let res;
+    if (isFav === "gray") {
+      res = await addFavoriteProductToUser(values);
+       switch (res.statusId) {
+         case 1:
+           // setCategoriesNames(res.value.categoriesNames);
+           console.log(res.value);
+           setFavouritesProducts(res.value.favouritesProducts);
+           setIsFav("red");
+           break;
+         case 2:
+           setError(res);
+           setTimeout(() => {
+             setError("");
+           }, 5000);
+           break;
+         default:
+       }
+    }
+    else {
+      res = await removeFavoriteProductFromUser(values);
+      switch (res.statusId) {
+        case 1:
+          // setCategoriesNames(res.value.categoriesNames);
+          console.log(res.value);
+          setFavouritesProducts(res.value.favouritesProducts);
+          setIsFav("gray");
+          break;
+        case 2:
+          setError(res);
+          setTimeout(() => {
+            setError("");
+          }, 5000);
+          break;
+        default:
+      }
+    }
     console.log("res HandleFavourites", res);
 
-    switch (res.statusId) {
-      case 1:
-        // setCategoriesNames(res.value.categoriesNames);
-        console.log(res.value);
-        setFavouritesProducts(res.value.favouritesProducts);
-         setIsFav("red")
-        break;
-      case 2:
-        setError(res);
-        setTimeout(() => {
-          setError("");
-        }, 5000);
-        break;
-      default:
-    }
+    
   };
   return (
     <Grid
@@ -319,10 +368,27 @@ export default function CustomCard(props) {
       {
         <Card style={ulStyleBottom} sx={{ width: 350, height: 50, padding: 1 }}>
           <Grid container justifyContent="left" alignItems="center">
-            <FavoriteIcon
-              sx={{ margin: 1, color: `${isFav}`, cursor: "pointer" }}
-              onClick={()=>HandleFavourites()}
-            />
+            {location.pathname === "/myProduct" && (
+              <>
+                <EditIcon
+                  sx={{ margin: 1, color: "GrayText", cursor: "pointer" }}
+                  onClick={() => {
+                    navigate(`/updateProduct?name=${props._id}`);
+                  }}
+                />
+                <DeleteForeverIcon
+                  sx={{ margin: 1, color: "GrayText", cursor: "pointer" }}
+                  onClick={handleDelete}
+                />
+              </>
+            )}
+
+            {
+              <FavoriteIcon
+                sx={{ margin: 1, color: `${isFav}`, cursor: "pointer" }}
+                onClick={() => HandleFavourites()}
+              />
+            }
             <ReportIcon
               sx={{ margin: 1, color: "#CFCC07", cursor: "pointer" }}
               onClick={() => {

@@ -63,7 +63,12 @@ export default function SideBar() {
           <ListItemIcon style={{ justifyContent: "right" }}>
             <CloseIcon
               onClick={toggleDrawer(anchor, false)}
-              style={{ color: "#666A", marginRight:15, marginTop: 5, fontSize:28 }}
+              style={{
+                color: "#666A",
+                marginRight: 15,
+                marginTop: 5,
+                fontSize: 28,
+              }}
             />
           </ListItemIcon>
         </ListItem>
@@ -100,7 +105,7 @@ export default function SideBar() {
       {currentUser && (
         <List>
           <ListItem disablePadding>
-            <ListItemButton onClick={() => navigate("/myProduct")}>
+            <ListItemButton onClick={() => navigate("/favouritesProducts")}>
               <ListItemText
                 primary={"המועדפים שלי"}
                 style={{ textAlign: "right" }}

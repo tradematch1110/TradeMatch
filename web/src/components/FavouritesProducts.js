@@ -10,15 +10,18 @@ export default function FavouritesProducts() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState("");
   const [products, setProducts] = useState("");
-  const { currentUser } = useContext(authContext);
+  const { currentUser, setCurrentUser, favouritesProducts } = useContext(
+    authContext
+  );
   const navigate = useNavigate();
 
+  
   useLayoutEffect(() => {
     async function fetchData() {
       setLoading(true);
-        const res = await getFavouritesProductsPerUser(
-          currentUser.favouritesProducts
-        );
+      const res = await getFavouritesProductsPerUser(
+        favouritesProducts
+      );
       switch (res.statusId) {
         case 1:
           setProducts(res.value);
@@ -35,7 +38,7 @@ export default function FavouritesProducts() {
         default:
       }
     }
-  if (currentUser.favouritesProducts) fetchData();
+    if (favouritesProducts) fetchData();
   }, [error]);
 
   return (
@@ -44,8 +47,8 @@ export default function FavouritesProducts() {
       {loading && <Loader />}
       {!loading && (
         <Grid item container justifyContent="center" className="create" xs={12}>
-          <h1>המוצרים שלי</h1>
-          <Grid item container justifyContent="center" xs={12} direction="row">
+          <h1>המועדפים שלי</h1>
+          <Grid item container justifyContent="center" xs={12} direction="row" spacing={5}>
             {products &&
               products.map((product, index) => (
                 <>
@@ -56,23 +59,10 @@ export default function FavouritesProducts() {
                     }
                     id={product.date.toString()}
                   />
-                  <div
-                    key={Math.random(5000000).toString()}
-                    className="myProductButton"
-                  >
-                    <button
-                      key={
-                        index + Math.random(5000000).toString() + product._id
-                      }
-                      onClick={() =>
-                        navigate(`/updateProduct?name=${product._id}`)
-                      }
-                    >
-                      הסר מהמועדפים
-                    </button>
-                  </div>
+                  
                 </>
               ))}
+               {!products && <h2>רשימת המועדפים שלך ריקה תתחיל לתת בלייקים</h2>}
           </Grid>
         </Grid>
       )}

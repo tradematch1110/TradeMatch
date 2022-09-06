@@ -213,8 +213,8 @@ const CreateProduct = () => {
     } else {
       let url = process.env.REACT_APP_API || "";
       base64.crossOrigin = "Anonymous";
-      base64.src = url + "?not-from-cache-please";
-
+      base64.src = url + " ?not-from-cache-please";
+      console.log("handleimage base 64: ", base64);
       base64.name = Math.floor(Math.random() * 5000000000 + 1) + base64.name;
       console.log("typeof(base64):", typeof base64);
       switch (index) {
