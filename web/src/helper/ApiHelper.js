@@ -55,6 +55,12 @@ const getUrl = (urlType) => {
     case "users/login":
       url += "/api/users/login";
       break;
+    case "users/editUser":
+      url += "/api/users/editUser";
+      break;
+    case "users/deleteUser":
+      url += "/api/users/deleteUser";
+      break;
     case "getCategoriesNames":
       url += "/api/categories/getCategoriesNames";
       break;

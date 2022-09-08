@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect, useLayoutEffect } from "react";
 import { authContext } from "../contexts/AuthContext";
 import { getProductsByList, getUserMessages } from "../services/api";
 import { Grid } from "@mui/material";
@@ -12,7 +12,7 @@ import Loader from "./Loader";
 import { getProductById } from "./../services/api";
 
 export default function UserMessages() {
-  const { currentUser } = useContext(authContext);
+  const { currentUser, userMessages } = useContext(authContext);
 
   const [messages, setMessages] = useState([]);
   const [error, setError] = useState("");
@@ -38,42 +38,28 @@ export default function UserMessages() {
     }
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     // fetch to server
+    console.log("userMessages component:", userMessages);
     setLoading(true);
-    async function fetchData(uid, token) {
-      const res = await getUserMessages(uid, token);
-      console.log("respond from messages: ", res);
-      switch (res.statusId) {
-        case 1:
-          console.log("res.value -----------", res.value);
-          setMessages(res.value);
-          let list = [];
-          res.value.forEach((element) => {
-            list.push(element.productId);
-          });
-          getProducts(list);
-          break;
-        case 2:
-          setError(res);
-          setTimeout(() => {
-            setError("");
-          }, 5000);
-          break;
-        default:
-      }
+    let list = [];
+    if (userMessages && currentUser) {
+      userMessages.forEach((element) => {
+        list.push(element.productId);
+      });
+      getProducts(list);
     }
-    if (currentUser) fetchData(currentUser.uid, currentUser.accessToken);
-  }, [currentUser]);
+  }, [currentUser, userMessages]);
 
   return (
     <div style={{ paddingTop: 50 }}>
       {error && <h1>{error.message}</h1>}
       {loading && <Loader />}
       {!loading &&
-        messages &&
-        products &&
-        messages.map((message, index) => {
+        products.length>0 &&
+        currentUser &&
+        userMessages &&
+        userMessages.map((message, index) => {
           return (
             <Grid
               item

@@ -3,6 +3,7 @@
 import React, { useContext, createContext, useState, useEffect } from "react";
 import { useLayoutEffect } from "react";
 import { getUserFavouritesProducts } from "../services/api";
+import { getUserMessages } from "./../services/api";
 
 export const authContext = createContext();
 
@@ -15,7 +16,6 @@ function AuthContextProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
   const [favouritesProducts, setFavouritesProducts] = useState();
   const [userMessages, setUserMessages] = useState();
-
 
   useLayoutEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
@@ -42,10 +42,34 @@ function AuthContextProvider({ children }) {
     if (currentUser) fetchData();
   }, [currentUser]);
 
+  useEffect(() => {
+    // fetch to server
+    async function fetchData(uid, token) {
+      const res = await getUserMessages(uid, token);
+      console.log("respond from messages: ", res);
+      switch (res.statusId) {
+        case 1:
+          setUserMessages(res.value);
+          // let list = [];
+          // res.value.forEach((element) => {
+          //   list.push(element.productId);
+          // });
+          // getProducts(list);
+          break;
+        case 2:
+          console.log(res.value);
+          break;
+        default:
+      }
+    }
+    if (currentUser) fetchData(currentUser.uid, currentUser.accessToken);
+  }, [currentUser]);
+
   console.log("------------ context update-----------------");
 
   console.log("currentUser: ", currentUser);
   console.log("favouritesProducts: ", favouritesProducts);
+  console.log("userMessages: ", userMessages);
 
   // int the values in order to pass them in the provider
   const value = {
@@ -53,6 +77,8 @@ function AuthContextProvider({ children }) {
     setCurrentUser,
     favouritesProducts,
     setFavouritesProducts,
+    userMessages,
+    setUserMessages,
   };
   // return Auth Context Provider
   return <authContext.Provider value={value}>{children}</authContext.Provider>;

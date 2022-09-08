@@ -87,6 +87,8 @@ router.post("/login", async (req, res) => {
         {
           firstName: user.firstName,
           lastName: user.lastName,
+          email: user.email,
+          phoneNumber: user.phoneNumber,
           uid: user._id.toString(),
           message: "User login successfuly",
           messages: user.messages,
@@ -144,7 +146,15 @@ router.post(
   "/getUserFavouritesProducts",
   userController.getUserFavouritesProducts
 );
+router.post(
+  "/removeFavoriteProductFromUser",
+  userController.removeFavoriteProductFromUser
+);
+router.post("/editUser", userController.editUser);
+router.post("/deleteUser", userController.deleteUser);
 
-// getUserFavouritesProducts
+
+
+// deleteUser
 
 module.exports = router;

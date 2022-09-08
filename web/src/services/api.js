@@ -53,6 +53,22 @@ export const loginUser = async (formValues) => {
   return await helper(url, method, headerToken, data);
 };
 
+export const editUser = async (formValues) => {
+  const url = "users/editUser";
+  const method = "post";
+  const headerToken = null;
+  const data = formValues;
+  return await helper(url, method, headerToken, data);
+};
+
+export const deleteUser = async (id) => {
+  const url = "users/deleteUser";
+  const method = "post";
+  const headerToken = null;
+  const data = {_id: id};
+  return await helper(url, method, headerToken, data);
+};
+
 export const getUserMessages = async (uid, accessToken) => {
   const url = "users/getUserMessages";
   const method = "post";
@@ -99,6 +115,8 @@ export const getProductsByList = async (list) => {
   const data = { productsIds: list };
   return await helper(url, method, headerToken, data);
 };
+
+
 
 export const deleteProduct = async (id) => {
   const url = "products/deleteProduct";

@@ -114,8 +114,8 @@ export default function CustomCard(props) {
     } else {
       setIsFav("gray");
     }
-    console.log("isFav: ", isFav);
-    console.log("favouritesProducts: ", favouritesProducts);
+    // console.log("isFav: ", isFav);
+    // console.log("favouritesProducts: ", favouritesProducts);
   }, [isFav]);
 
   const handleBack = () => {

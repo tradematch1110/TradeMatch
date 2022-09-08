@@ -39,7 +39,7 @@ export default function FavouritesProducts() {
       }
     }
     if (favouritesProducts) fetchData();
-  }, [error]);
+  }, [favouritesProducts]);
 
   return (
     <>

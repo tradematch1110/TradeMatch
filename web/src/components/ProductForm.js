@@ -95,12 +95,6 @@ const ProductForm = () => {
   const [selectedMainReplaceable, setSelectedMainReplaceable] = useState("");
 
   // setSelectedMain
-  const {
-    currentUserName,
-    setCurrentUserName,
-    isLogged,
-    setIsLogged,
-  } = useContext(authContext);
   const [categoriesNames, setCategoriesNames] = useState("");
   const [subCategories, setSubCategories] = useState("");
   const [replaceSubCategories, setReplaceSubCategories] = useState("");

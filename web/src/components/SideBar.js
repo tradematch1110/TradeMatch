@@ -119,7 +119,7 @@ export default function SideBar() {
       )}
       <List>
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton onClick={() => navigate("/PersonalArea")}>
             <ListItemText
               primary={"אזור אישי"}
               style={{ textAlign: "right" }}

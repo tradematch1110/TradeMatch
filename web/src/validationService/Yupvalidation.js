@@ -28,8 +28,27 @@ export const FORM_REGISTER_VALIDATION = Yup.object().shape({
     .matches(/[a-zA-Z0-9]/, "אותיות באנגלית"),
 });
 
+export const FORM_UPDATEUSER_VALIDATION = Yup.object().shape({
+         firstName: Yup.string()
+           .min(2, "מינימום 2 אותיות")
+           .max(20, "מקסימום 20 אותיות")
+           .matches(onlyHebrewPattern, "אותיות בעברית בלבד")
+           .required("שדה חובה"),
+         lastName: Yup.string()
+           .min(2, "מינימום 2 אותיות")
+           .max(20, "מקסימום 20 אותיות")
+           .matches(onlyHebrewPattern, "אותיות בעברית בלבד")
+           .required("שדה חובה"),
+         email: Yup.string()
+           .email("כתובת מייל אינה תקינה")
+           .required("שדה חובה"),
+         phoneNumber: Yup.string()
+           .matches(ValidPhoneIsrael, "מספר פלאפון לא תקין")
+           .required("שדה חובה"),
+       });
 
 
+// FORM_UPDATEUSER_VALIDATION
 /////////////////////FORM_LOGIN_VALIDATION//////////////////////////
 
 export const FORM_LOGIN_VALIDATION = Yup.object().shape({

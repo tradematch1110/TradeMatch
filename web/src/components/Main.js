@@ -19,6 +19,7 @@ import UpdateProduct from "./UpdateProduct";
 import AboutUs from "./AboutUs";
 import ReportMessage from "./ReportMessage";
 import FavouritesProducts from "./FavouritesProducts";
+import PersonalArea from './PersonalArea';
 
 const Main = () => {
   const { currentUser, setCurrentUser } = useContext(authContext);
@@ -78,6 +79,13 @@ const Main = () => {
                 )
               }
             ></Route>
+            <Route
+              path="/PersonalArea"
+              element={
+                currentUser ? <PersonalArea /> : <Navigate to="/PersonalArea" />
+              }
+            ></Route>
+
             <Route
               path="/report_message"
               element={

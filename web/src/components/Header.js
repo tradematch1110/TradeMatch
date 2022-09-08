@@ -69,7 +69,12 @@ export default function Header() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [isDrawer, setIsDrawer] = React.useState(false);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-  const { currentUser, setCurrentUser } = React.useContext(authContext);
+  const {
+    currentUser,
+    setCurrentUser,
+    userMessages,
+    favouritesProducts,
+  } = React.useContext(authContext);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -206,16 +211,28 @@ export default function Header() {
             )}
             {currentUser && (
               <Hidden smDown>
-                <FavoriteIcon
-                  onClick={() => navigate("/favouritesProducts")}
+                <Badge
+                  badgeContent={favouritesProducts && favouritesProducts.length}
                   style={{
-                    color: "#ff4d4d",
+                    color: "#ffffff",
                     marginTop: 10,
                     marginLeft: 10,
-                    fontSize: 25,
+                    fontSize: 30,
+                    fontWeight:700,
                     cursor: "pointer",
                   }}
-                />
+                >
+                  <FavoriteIcon
+                    onClick={() => navigate("/favouritesProducts")}
+                    style={{
+                      color: "#ff4d4d",
+                      marginTop: -5,
+                      marginLeft: 5,
+                      fontSize: 35,
+                      cursor: "pointer",
+                    }}
+                  ></FavoriteIcon>
+                </Badge>
               </Hidden>
             )}
             {currentUser && (
@@ -226,9 +243,7 @@ export default function Header() {
                 onClick={() => navigate("/user_messages")}
               >
                 <Badge
-                  badgeContent={
-                    currentUser.messages && currentUser.messages.length
-                  }
+                  badgeContent={userMessages && userMessages.length}
                   color="error"
                 >
                   <MailIcon />

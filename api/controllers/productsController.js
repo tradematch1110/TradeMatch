@@ -6,7 +6,7 @@ const { forEach, forIn } = require("lodash");
 
 const getAllProducts = async (req, res) => {
   const products = await Product.find();
-  var result = [];
+  let result = [];
   products.forEach((product) => {
     let temp = { ...product }._doc;
     // delete temp._id;
@@ -44,7 +44,7 @@ const getProductsPerUser = async (req, res) => {
       message: "No Products for this user.",
     });
   }
-  var result = [];
+  let result = [];
   products.forEach((product) => {
     let temp = { ...product }._doc;
     // delete temp._id;
@@ -93,7 +93,7 @@ const getFavouritesProductsPerUser = async (req, res) => {
       message: "No favouritesProducts for this user.",
     });
   }
-  var result = [];
+  let result = [];
   products.forEach((product) => {
     let temp = { ...product }._doc;
     // delete temp._id;
@@ -137,7 +137,7 @@ const getProductsByCategoryAndSubCategory = async (req, res) => {
       message: "No Product exist in this category.",
     });
   }
-  var result = [];
+  let result = [];
   products.forEach((product) => {
     let temp = { ...product }._doc;
     // delete temp._id;
@@ -168,6 +168,48 @@ const getProductById = async (req, res) => {
   }
   res.send(product);
 };
+
+const getProductsByList = async (req, res) => {
+  if (!req.body.productsIds) {
+    return res.status(400).send({
+      status: "error",
+      message: "Bad request.",
+    });
+  }
+  console.log("req.body.productsIds: ", req.body.productsIds);
+  let list = req.body.productsIds;
+  console.log("list: ", list);
+  
+  // let obj_ids = list.map(function (id) {
+  //   return mongoose.Types.ObjectId(id);
+  // });
+  // console.log("obj_ids ", obj_ids);
+
+  const products = await Product.find({ _id: { $in: req.body.productsIds } });
+  if (!products) {
+    return res.status(400).send({
+      status: "error",
+      message: "Products not exist.",
+    });
+  }
+  let result = [];
+  products.forEach((product) => {
+    let temp = { ...product }._doc;
+    // delete temp._id;
+    // delete temp.id;
+    // delete temp.createdAt;
+    // delete temp.updatedAt;
+    delete temp.user.message;
+    delete temp.user.messages;
+    delete temp.user.accessToken;
+    delete temp.__v;
+    result.push(temp);
+  });
+
+  res.status(200);
+  res.send(result);
+}
+
 
 const createProduct = async (req, res) => {
   console.log("req.body:", req.body);
@@ -263,6 +305,26 @@ const updateProduct = async (req, res) => {
   res.send(result);
 };
 
+const deleteProduct = async (req, res) => {
+    if (!req.body._id) {
+      return res.status(400).send({
+        status: "error",
+        message: "Bad request.",
+      });
+    }
+
+  const result = await Product.deleteOne({ _id: `${req.body._id}` });
+  if (!result) {
+    return res.status(400).send({
+      status: "error",
+      message: "Product not exist.",
+    });
+  }
+  const remove = await removeProductIdFromAllCollections(req.body._id);
+  res.status(200);
+  res.send({ status: "Ok", message: "Product deleted successfuly." });
+}
+
 async function isMatchProduct(product) {
   const products = await Product.find({
     $or: [
@@ -315,17 +377,28 @@ async function isMatchProduct(product) {
             console.log("----------- full match ------------------");
 
             fullMatchProducts.push(currentProductKey);
-            const resMessage1 = await setUserMessage(
+            const sendMessageOtherUser = await setUserMessage(
               currentProductKey.user.uid,
-              product,
+              currentProductKey._id,
               "נמצאה התאמה מלאה עבורך"
             );
+            const sendMessageToOwner = await setUserMessage(
+              product.user.uid,
+              product._id,
+              "נמצאה התאמה מלאה עבורך"
+            );
+
           } else {
             console.log("------------ part match -----------------");
             partMatchProducts.push(currentProductKey);
-            const resMessage2 = await setUserMessage(
+            const sendMessageOtherUser = await setUserMessage(
               currentProductKey.user.uid,
-              product,
+              currentProductKey._id,
+              "נמצאה התאמה חלקית עבורך"
+            );
+            const sendMessageToOwner = await setUserMessage(
+              product.user.uid,
+              product._id,
               "נמצאה התאמה חלקית עבורך"
             );
           }
@@ -345,9 +418,11 @@ async function isMatchProduct(product) {
   };
 }
 
-async function setUserMessage(uid, product, message) {
+async function setUserMessage(uid, productId, message) {
+
+
   const message1 = {
-    product: product,
+    productId: productId.toString(),
     message: message,
     date: new Date(),
     isread: false,
@@ -365,13 +440,49 @@ async function setUserMessage(uid, product, message) {
   // console.log("update :", update);
 }
 
+
+async function removeProductIdFromAllCollections(productId) {
+  // const usersWithMessages = await User.find({ messages: { $in: productId } });
+  // const usersWithFavouritesProducts = await User.find({favouritesProducts: { $in: productId }});
+
+  console.log(
+    "---------------------removeProductIdFromAllCollections------- before------------------------- "
+  );
+
+  // console.log("usersWithMessages: ", usersWithMessages);
+  // console.log("usersWithFavouritesProducts: ", usersWithFavouritesProducts);
+
+  // usersWithMessages.forEach((user) => {
+  //    user.update({ _id: user._id }, { $pull: { messages: { $in: productId } } });
+  // });
+
+  // usersWithFavouritesProducts.forEach((user) => {
+  const userfff = await User.updateMany({
+    $pull: { favouritesProducts: { $in: productId } },
+  });
+  const usermmm = await User.updateMany({
+    $pull: { "messages": { "productId": productId } }, 
+  });
+
+  //  { $pull: { results: { $elemMatch: { score: 8 , item: "B" } } } }
+
+  console.log(
+    "---------------------removeProductIdFromAllCollections---  after----------------------------- "
+  );
+
+  console.log("usersWithMessages: ", usermmm);
+  console.log("usersWithFavouritesProducts: ", userfff);
+}
+// removeProductIdFromAllCollections("631752e94233370936eb49b8");
+
 module.exports = {
   getAllProducts,
   getProductById,
   getProductsPerUser,
   getFavouritesProductsPerUser,
   getProductsByCategoryAndSubCategory,
+  getProductsByList,
   createProduct,
   updateProduct,
-  
+  deleteProduct
 };

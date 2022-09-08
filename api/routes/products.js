@@ -17,8 +17,9 @@ router.post(
   "/getFavouritesProductsPerUser",
   productsController.getFavouritesProductsPerUser
 );
-
-//   getFavouritesProductsPerUser,
+router.post("/deleteProduct", productsController.deleteProduct);
+router.post("/getProductsByList", productsController.getProductsByList);
+//   getProductsByList,
 
 module.exports = router;
 
