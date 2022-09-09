@@ -26,6 +26,7 @@ const { Category } = require("./models/category");
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser({ limit: "50mb" }));
 app.use(express.json());
 app.use(cors());
 
@@ -1100,5 +1101,5 @@ app.get("/add-category", (req, res) => {
 require("./startup/routes")(app);
 require("./startup/db")(app);
 require("./startup/isdocker")();
-// require("./startup/logging")();
+// require("./startup/logging")(); 
 

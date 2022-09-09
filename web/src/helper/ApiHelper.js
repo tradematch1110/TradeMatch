@@ -132,33 +132,19 @@ const getInitParam = (method, token, data) => {
       break;
     case "post":
       const body = data ? JSON.stringify(data) : "";
-      let headers = new Headers();
-
-      headers.append("Content-Type", "application/json");
-      headers.append("Accept", "application/json");
-      headers.append(
-        "Authorization",
-        "Basic " + "Access-Control-Allow-Headers",
-        "X-Requested-With, Content-Type, Accept, Origin, Authorization"
-      );
-      headers.append(
-        "Access-Control-Allow-Origin",
-        process.env.REACT_APP_API || ""
-      );
-      headers.append("Authorization", "Bearer " + token);
       initParam = {
         method: "POST",
         dataType: "json",
-        headers: headers,
-        // headers: {
-        //   "Content-Type": "application/json",
-        //   "Accept": "application/json",
-        //   "Access-Control-Allow-Origin": "*",
-        //   "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept, Origin, Authorization",
-        //   "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-        //   'Access-Control-Allow-Credentials': true,
-        //   "Authorization": "Bearer " + token,
-        // },
+        mode: 'cors',
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+          "Access-Control-Allow-Origin": '*',
+          "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept, Origin, Authorization",
+          "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+          'Access-Control-Allow-Credentials': true,
+          "Authorization": "Bearer " + token,
+        },
         body: body,
       };
       break;

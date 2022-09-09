@@ -219,15 +219,15 @@ const CreateProduct = () => {
       console.log("typeof(base64):", typeof base64);
       switch (index) {
         case 1:
-          imagesSelcted.image1 = base64;
+          imagesSelcted.image1 = base64.base64;
           setImage1(true);
           break;
         case 2:
-          imagesSelcted.image2 = base64;
+          imagesSelcted.image2 = base64.base64;
           setImage2(true);
           break;
         case 3:
-          imagesSelcted.image3 = base64;
+          imagesSelcted.image3 = base64.base64;
           setImage3(true);
           break;
       }
@@ -273,7 +273,7 @@ const CreateProduct = () => {
             <div className="product_form">
               <h1>המוצר שלך</h1>
 
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit} encType="multipart/form-data">
                 <div className="divWrapper">
                   <label>שם המוצר</label>
                   <input
@@ -326,7 +326,7 @@ const CreateProduct = () => {
                     {image1 && (
                       <div>
                         <img
-                          src={imagesSelcted.image1.base64}
+                          src={imagesSelcted.image1}
                           alt=""
                           height="200px"
                           width="200px"
@@ -352,7 +352,7 @@ const CreateProduct = () => {
                     {image2 && (
                       <div>
                         <img
-                          src={imagesSelcted.image2.base64}
+                          src={imagesSelcted.image2}
                           alt=""
                           height="200px"
                           width="200px"
@@ -378,7 +378,7 @@ const CreateProduct = () => {
                     {image3 && (
                       <div>
                         <img
-                          src={imagesSelcted.image3.base64}
+                          src={imagesSelcted.image3}
                           alt=""
                           height="200px"
                           width="200px"

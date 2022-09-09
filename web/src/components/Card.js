@@ -84,9 +84,11 @@ export default function CustomCard(props) {
   });
   useEffect(() => {
     if (props.images) {
-      props.images.image1 && images.push(props.images.image1.base64);
-      props.images.image2 && images.push(props.images.image2.base64);
-      props.images.image3 && images.push(props.images.image3.base64);
+      console.log("props.images.image1;", props.images.image1);
+
+      props.images.image1 && images.push(props.images.image1);
+      props.images.image2 && images.push(props.images.image2);
+      props.images.image3 && images.push(props.images.image3);
     } else {
       images.push(NoImagePlaceholder);
     }
@@ -159,23 +161,22 @@ export default function CustomCard(props) {
     let res;
     if (isFav === "gray") {
       res = await addFavoriteProductToUser(values);
-       switch (res.statusId) {
-         case 1:
-           // setCategoriesNames(res.value.categoriesNames);
-           console.log(res.value);
-           setFavouritesProducts(res.value.favouritesProducts);
-           setIsFav("red");
-           break;
-         case 2:
-           setError(res);
-           setTimeout(() => {
-             setError("");
-           }, 5000);
-           break;
-         default:
-       }
-    }
-    else {
+      switch (res.statusId) {
+        case 1:
+          // setCategoriesNames(res.value.categoriesNames);
+          console.log(res.value);
+          setFavouritesProducts(res.value.favouritesProducts);
+          setIsFav("red");
+          break;
+        case 2:
+          setError(res);
+          setTimeout(() => {
+            setError("");
+          }, 5000);
+          break;
+        default:
+      }
+    } else {
       res = await removeFavoriteProductFromUser(values);
       switch (res.statusId) {
         case 1:
@@ -194,8 +195,6 @@ export default function CustomCard(props) {
       }
     }
     console.log("res HandleFavourites", res);
-
-    
   };
   return (
     <Grid
