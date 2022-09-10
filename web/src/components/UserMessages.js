@@ -53,7 +53,7 @@ export default function UserMessages() {
 
   return (
     <>
-      <div style={{ paddingTop: 50 }}>
+      <div style={{ paddingTop: 50, marginBottom: 100 }}>
         {error && <h1>{error.message}</h1>}
         {loading && <Loader />}
         {!loading &&
@@ -71,15 +71,20 @@ export default function UserMessages() {
                 className="message"
                 key={index + Math.random(5000000 * 5).toString()}
               >
-                <h1>
-                  {currentUser.firstName} {message.message}
-                </h1>
-                <h1>
-                  התקבלה ב: {new Date(message.date).toLocaleDateString("en-GB")}{" "}
-                  {`${new Date(message.date).getHours()}:${new Date(
-                    message.date
-                  ).getMinutes()}`}
-                </h1>
+                <Grid container item direction="column">
+                  <h1>
+                    {currentUser.firstName} {message.message}
+                  </h1>
+                </Grid>
+                <Grid container item direction="column">
+                  <h1>
+                    התקבלה ב:{" "}
+                    {new Date(message.date).toLocaleDateString("en-GB")}{" "}
+                    {`${new Date(message.date).getHours()}:${new Date(
+                      message.date
+                    ).getMinutes()}`}
+                  </h1>
+                </Grid>
                 <Grid
                   item
                   container
@@ -115,7 +120,6 @@ export default function UserMessages() {
           >
             <h1>טרם התקבלו עבורך הודעות!</h1>
           </Grid>
-          
         </Grid>
       )}
     </>

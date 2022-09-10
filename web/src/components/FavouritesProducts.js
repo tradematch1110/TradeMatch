@@ -46,9 +46,9 @@ export default function FavouritesProducts() {
       {error && <h1>{error}</h1>}
       {loading && <Loader />}
       {!loading && (
-        <Grid item container justifyContent="center" className="create" xs={12}>
+        <Grid item container justifyContent="center" className="create" xs={12} style={{marginTop: 50, marginBottom: 100} }>
           <h1>המועדפים שלי</h1>
-          <Grid item container justifyContent="center" xs={12} direction="row" spacing={5}>
+          <Grid item container justifyContent="center" xs={12} direction="row">
             {products &&
               products.map((product, index) => (
                 <>

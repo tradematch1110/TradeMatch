@@ -827,12 +827,25 @@ const UpdateProduct = () => {
                   <h1>המוצר שלך נקלט בהצלחה במערכת!!!</h1>
 
                   {!displayForm && (fullMatchProducts || partMatchProducts) && (
-                    <div>
+                    <Grid
+                      item
+                      container
+                      justifyContent="center"
+                      className="create"
+                      xs={12}
+                      style={{ marginTop: 30, marginBottom: 100 }}
+                    >
                       {fullMatchProducts.length > 0 && (
                         <h2>התאמה מלאה עבורך</h2>
                       )}
 
-                      <div>
+                      <Grid
+                        item
+                        container
+                        justifyContent="center"
+                        xs={12}
+                        direction="row"
+                      >
                         {fullMatchProducts &&
                           fullMatchProducts.map((product, index) => {
                             return (
@@ -843,9 +856,15 @@ const UpdateProduct = () => {
                               />
                             );
                           })}
-                      </div>
+                      </Grid>
                       {/* partMatchProducts */}
-                      <div>
+                      <Grid
+                        item
+                        container
+                        justifyContent="center"
+                        xs={12}
+                        direction="row"
+                      >
                         {partMatchProducts.length > 0 && (
                           <h2>התאמה חלקית עבורך</h2>
                         )}
@@ -860,8 +879,8 @@ const UpdateProduct = () => {
                               />
                             );
                           })}
-                      </div>
-                    </div>
+                      </Grid>
+                    </Grid>
                   )}
                 </Grid>
                 <Grid
