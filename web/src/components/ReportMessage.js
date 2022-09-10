@@ -101,7 +101,9 @@ export default function ReportMessage() {
             <div className="product_form">
               <form onSubmit={handleSubmit}>
                 <div className="divWrapper" style={{ height: 200 }}>
-                  <label> כתוב את הודעתך !</label>
+                  {id && <label>דווח לנו על המוצר</label>}
+                  {!id  && <label> כתוב לנו את הודעתך !</label>}
+
                   <br />
                   <textarea
                     style={{ height: 150 }}

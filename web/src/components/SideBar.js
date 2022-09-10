@@ -18,7 +18,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
 import { authContext } from "../contexts/AuthContext";
 import CloseIcon from "@mui/icons-material/Close";
-import MailIcon  from '@mui/icons-material/Mail';
+import MailIcon from "@mui/icons-material/Mail";
 export default function SideBar() {
   // const ulStyle = {
   //     text-align: right;
@@ -28,10 +28,13 @@ export default function SideBar() {
     setCurrentUser("");
     localStorage.removeItem("user", {});
   };
+  const handleRegister = () => {
+    navigate("/register");
+  };
   const handleLogin = () => {
     navigate("/login");
   };
-  // };
+  // handleRgister
   const navigate = useNavigate();
   const [state, setState] = useState({
     top: false,
@@ -165,11 +168,26 @@ export default function SideBar() {
                 onClick={handleLogin}
               />
             )}
+
             <ListItemIcon style={{ justifyContent: "left" }}>
               <LogoutIcon style={{ color: "#AD3242" }} />
             </ListItemIcon>
           </ListItemButton>
         </ListItem>
+        {!currentUser && (
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemText
+                primary={"הרשם"}
+                style={{ textAlign: "right" }}
+                onClick={handleRegister}
+              />
+              <ListItemIcon style={{ justifyContent: "left" }}>
+                <LogoutIcon style={{ color: "#AD8842" }} />
+              </ListItemIcon>
+            </ListItemButton>
+          </ListItem>
+        )}
       </List>
       <Divider />
       <List>

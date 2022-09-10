@@ -84,8 +84,8 @@ export default function EditAnimal() {
         <h1
           style={{
             marginTop: 200,
-            maxWidth: "800px",
-            minWidth: "360px",
+            maxWidth: "90%",
+            minWidth: "340px",
             padding: 20,
           }}
         >
@@ -96,9 +96,10 @@ export default function EditAnimal() {
       {!loading && !successMessage && currentUser && (
         <Container
           style={{
-            maxWidth: "800px",
-            minWidth: "360px",
-            padding: 20,
+            maxWidth: "90%",
+            minWidth: "340px",
+            marginBottom: 150,
+            
           }}
         >
           <h1
@@ -113,8 +114,8 @@ export default function EditAnimal() {
           </h1>
           <Row
             style={{
-              maxWidth: "800px",
-              minWidth: "360px",
+              maxWidth: "90%",
+              minWidth: "340px",
               color: "#0EACCB",
               fontWeight: "600",
             }}
