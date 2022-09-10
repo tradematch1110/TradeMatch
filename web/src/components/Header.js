@@ -108,6 +108,10 @@ export default function Header() {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
+  const handleHomeClick = () => {
+    navigate(`/`);
+    window.location.reload(false);
+  };
 
   const menuId = "primary-search-account-menu";
   const renderMenu = (
@@ -148,8 +152,7 @@ export default function Header() {
           <Typography
             variant="h6"
             noWrap
-            component={Link}
-            to="/"
+            onClick={handleHomeClick}
             sx={{
               display: {
                 // xs: "none",
@@ -160,6 +163,7 @@ export default function Header() {
                 fontFamily: "ruby",
                 fontWeight: 700,
                 fontSize: 28,
+                cursor: "pointer"
               },
             }}
           >

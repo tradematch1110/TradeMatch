@@ -70,15 +70,16 @@ const getFavouritesProductsPerUser = async (req, res) => {
       message: "Bad request.",
     });
   }
-  let products =  [];
+  let products = [];
 
   for (const id in req.body.favouritesProducts) {
     console.log("id in loop: ", req.body.favouritesProducts[id]);
     let res = await Product.find({ _id: `${req.body.favouritesProducts[id]}` });
     console.log("res in loop: ", res);
-    if(res){
-    products.push(res[0]);}
-    res=null;
+    if (res) {
+      products.push(res[0]);
+    }
+    res = null;
   }
   console.log("products: ", products);
 
@@ -106,7 +107,7 @@ const getFavouritesProductsPerUser = async (req, res) => {
     delete temp.__v;
     result.push(temp);
   });
-    console.log("result: ", result);
+  console.log("result: ", result);
 
   res.status(200);
   res.send(result);
@@ -176,10 +177,14 @@ const getProductsByList = async (req, res) => {
       message: "Bad request.",
     });
   }
-  console.log("req.body.productsIds: ", req.body.productsIds);
+  // console.log("req.body.productsIds: ", req.body.productsIds);
   let list = req.body.productsIds;
+  console.log(
+    "------------------------- getProductsByList ---------------------------------"
+  );
+
   console.log("list: ", list);
-  
+
   // let obj_ids = list.map(function (id) {
   //   return mongoose.Types.ObjectId(id);
   // });
@@ -192,6 +197,8 @@ const getProductsByList = async (req, res) => {
       message: "Products not exist.",
     });
   }
+  console.log("products: ", products);
+
   let result = [];
   products.forEach((product) => {
     let temp = { ...product }._doc;
@@ -208,8 +215,7 @@ const getProductsByList = async (req, res) => {
 
   res.status(200);
   res.send(result);
-}
-
+};
 
 const createProduct = async (req, res) => {
   console.log("req.body:", req.body);
@@ -306,12 +312,12 @@ const updateProduct = async (req, res) => {
 };
 
 const deleteProduct = async (req, res) => {
-    if (!req.body._id) {
-      return res.status(400).send({
-        status: "error",
-        message: "Bad request.",
-      });
-    }
+  if (!req.body._id) {
+    return res.status(400).send({
+      status: "error",
+      message: "Bad request.",
+    });
+  }
 
   const result = await Product.deleteOne({ _id: `${req.body._id}` });
   if (!result) {
@@ -323,7 +329,7 @@ const deleteProduct = async (req, res) => {
   const remove = await removeProductIdFromAllCollections(req.body._id);
   res.status(200);
   res.send({ status: "Ok", message: "Product deleted successfuly." });
-}
+};
 
 async function isMatchProduct(product) {
   const products = await Product.find({
@@ -387,7 +393,6 @@ async function isMatchProduct(product) {
               product._id,
               "נמצאה התאמה מלאה עבורך"
             );
-
           } else {
             console.log("------------ part match -----------------");
             partMatchProducts.push(currentProductKey);
@@ -419,8 +424,6 @@ async function isMatchProduct(product) {
 }
 
 async function setUserMessage(uid, productId, message) {
-
-
   const message1 = {
     productId: productId.toString(),
     message: message,
@@ -439,7 +442,6 @@ async function setUserMessage(uid, productId, message) {
 
   // console.log("update :", update);
 }
-
 
 async function removeProductIdFromAllCollections(productId) {
   // const usersWithMessages = await User.find({ messages: { $in: productId } });
@@ -461,7 +463,7 @@ async function removeProductIdFromAllCollections(productId) {
     $pull: { favouritesProducts: { $in: productId } },
   });
   const usermmm = await User.updateMany({
-    $pull: { "messages": { "productId": productId } }, 
+    $pull: { messages: { productId: productId } },
   });
 
   //  { $pull: { results: { $elemMatch: { score: 8 , item: "B" } } } }
@@ -484,5 +486,5 @@ module.exports = {
   getProductsByList,
   createProduct,
   updateProduct,
-  deleteProduct
+  deleteProduct,
 };

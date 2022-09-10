@@ -44,8 +44,15 @@ export default function MyProducts() {
       {loading && <Loader />}
       {!loading && (
         <Grid item container justifyContent="center" className="create" xs={12}>
-          <h1>המוצרים שלי</h1>
-          <Grid item container justifyContent="center" xs={12} direction="row" spacing={5}>
+          <h1 style={{ marginTop: 30}}>המוצרים שלי</h1>
+          <Grid
+            item
+            container
+            justifyContent="center"
+            xs={12}
+            direction="row"
+            style={{ marginTop: 30, marginBottom: 100 }}
+          >
             {products &&
               products.map((product, index) => (
                 <>

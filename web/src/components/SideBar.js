@@ -18,6 +18,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
 import { authContext } from "../contexts/AuthContext";
 import CloseIcon from "@mui/icons-material/Close";
+import MailIcon  from '@mui/icons-material/Mail';
 export default function SideBar() {
   // const ulStyle = {
   //     text-align: right;
@@ -117,19 +118,36 @@ export default function SideBar() {
           </ListItem>
         </List>
       )}
-      <List>
-        <ListItem disablePadding>
-          <ListItemButton onClick={() => navigate("/PersonalArea")}>
-            <ListItemText
-              primary={"אזור אישי"}
-              style={{ textAlign: "right" }}
-            />
-            <ListItemIcon style={{ justifyContent: "left" }}>
-              <AccountCircleIcon />
-            </ListItemIcon>
-          </ListItemButton>
-        </ListItem>
-      </List>
+      {currentUser && (
+        <List>
+          <ListItem disablePadding>
+            <ListItemButton onClick={() => navigate("/PersonalArea")}>
+              <ListItemText
+                primary={"אזור אישי"}
+                style={{ textAlign: "right" }}
+              />
+              <ListItemIcon style={{ justifyContent: "left" }}>
+                <AccountCircleIcon />
+              </ListItemIcon>
+            </ListItemButton>
+          </ListItem>
+        </List>
+      )}
+      {currentUser && (
+        <List>
+          <ListItem disablePadding>
+            <ListItemButton onClick={() => navigate("/user_messages")}>
+              <ListItemText
+                primary={"ההודעות שלי"}
+                style={{ textAlign: "right" }}
+              />
+              <ListItemIcon style={{ justifyContent: "left" }}>
+                <MailIcon style={{ color: "#B119DE" }} />
+              </ListItemIcon>
+            </ListItemButton>
+          </ListItem>
+        </List>
+      )}
       <List>
         <ListItem disablePadding>
           <ListItemButton>
@@ -166,7 +184,7 @@ export default function SideBar() {
       </List>
       <List>
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton onClick={() => navigate("/report_message")}>
             <ListItemText primary={"צור קשר"} style={{ textAlign: "right" }} />
             <ListItemIcon style={{ justifyContent: "left" }}>
               <ContactMailIcon />

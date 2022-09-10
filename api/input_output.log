@@ -24541,3 +24541,9 @@ error: PayloadTooLargeError: request entity too large
     at C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:284:7
     at Function.process_params (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:335:12)
     at next (C:\Users\Kaldi\Documents\tradematch\api\node_modules\express\lib\router\index.js:275:10) 
+error: ReferenceError: Product is not defined
+    at deleteUser (C:\Users\Kaldi\Documents\tradematch\api\controllers\userController.js:175:20)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: TypeError: Product.delete is not a function
+    at deleteUser (C:\Users\Kaldi\Documents\tradematch\api\controllers\userController.js:178:32)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 

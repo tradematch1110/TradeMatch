@@ -42,7 +42,7 @@ export default function CustomCard(props) {
     setFavouritesProducts,
   } = useContext(authContext);
   const [error, setError] = useState("");
-  const [isFav, setIsFav] = useState("gray");
+  const [isFav, setIsFav] = useState("white");
 
   const randomNumber = () => {
     const generateRandomColor = Math.floor(Math.random() * 16777215).toString(
@@ -57,7 +57,6 @@ export default function CustomCard(props) {
     borderTopRightRadius: 5,
     borderBottomLeftRadius: 0,
     borderBottomRightRadius: 0,
-    height: 630,
   };
 
   const ulStyleBottom = {
@@ -66,6 +65,10 @@ export default function CustomCard(props) {
   };
 
   const [images, setImages] = useState([]);
+  const [image1, setImage1] = useState();
+  const [image2, setImage2] = useState();
+  const [image3, setImage3] = useState();
+
   const [cardValues, setCardValues] = useState({
     userAbbreviations:
       props.user.firstName.charAt(0) + "." + props.user.lastName.charAt(0),
@@ -81,22 +84,32 @@ export default function CustomCard(props) {
     replaceableSubCategoryNo2: props.replaceableSubCategoryNo2,
     replaceableCategoryNo3: props.replaceableCategoryNo3,
     replaceableSubCategoryNo3: props.replaceableSubCategoryNo3,
+    firstName: props.user.firstName,
+    email: props.user.email,
+    phoneNumber: props.user.phoneNumber,
   });
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (props.images) {
       console.log("props.images.image1;", props.images.image1);
+      setImage1(props.images.image1);
+      setImage2(props.images.image2);
+      setImage3(props.images.image3);
 
       props.images.image1 && images.push(props.images.image1);
       props.images.image2 && images.push(props.images.image2);
       props.images.image3 && images.push(props.images.image3);
     } else {
-      images.push(NoImagePlaceholder);
+            setImage1(NoImagePlaceholder);
+
+      // images.push(NoImagePlaceholder);
     }
+    console.log("cardValues card component :  ",  cardValues);
   }, [images]);
 
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = cardValues.images && cardValues.images.length / 2;
+  
+  const maxSteps = images && images.length / 2;
   // console.log("emptyImage: ",  emptyImage);
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -111,10 +124,10 @@ export default function CustomCard(props) {
       if (flag) {
         setIsFav("red");
       } else {
-        setIsFav("gray");
+        setIsFav("white");
       }
     } else {
-      setIsFav("gray");
+      setIsFav("white");
     }
     // console.log("isFav: ", isFav);
     // console.log("favouritesProducts: ", favouritesProducts);
@@ -140,6 +153,8 @@ export default function CustomCard(props) {
           // setCategoriesNames(res.value.categoriesNames);
           console.log(res.value);
           navigate(`/myProduct`);
+          setCardValues(null)
+          window.location.reload(false);
           break;
         case 2:
           setError(res);
@@ -159,7 +174,7 @@ export default function CustomCard(props) {
     };
     console.log("HandleFavourites values", values);
     let res;
-    if (isFav === "gray") {
+    if (isFav === "white" && currentUser.email !== props.user.email) {
       res = await addFavoriteProductToUser(values);
       switch (res.statusId) {
         case 1:
@@ -230,18 +245,6 @@ export default function CustomCard(props) {
             subheader={cardValues && cardValues.date}
           />
           <Box sx={{ width: 350, flexGrow: 1 }}>
-            {/* <Paper
-        square
-        elevation={0}
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          height: 50,
-          pl: 2,
-          bgcolor: 'background.default',
-        }}
-      >
-      </Paper> */}
             <AutoPlaySwipeableViews
               axis={theme.direction === "rtl" ? "x-reverse" : "x"}
               index={activeStep}
@@ -249,7 +252,7 @@ export default function CustomCard(props) {
               enableMouseEvents
               key={activeStep + Math.random(10)}
             >
-              {cardValues.images.map((step, index) => (
+              {images.map((step, index) => (
                 <div key={step + index} id={index}>
                   {Math.abs(activeStep - index) <= 2 ? (
                     <Box
@@ -266,16 +269,16 @@ export default function CustomCard(props) {
                       }}
                       key={index + Math.floor(Math.random(10000))}
                       src={
-                        cardValues.images[index] && cardValues.images[index]
+                        images[index] && images[index]
                         //  || emptyImage
                       }
+                      loading="lazy"
                     />
                   ) : null}
                 </div>
               ))}
             </AutoPlaySwipeableViews>
-
-            {cardValues.images.length > 2 && (
+            {images.length > 2 && location.pathname !== "/" && (
               <MobileStepper
                 style={{ justifyContent: "center" }}
                 steps={maxSteps}
@@ -362,21 +365,57 @@ export default function CustomCard(props) {
                   cardValues.replaceableSubCategoryNo3}
             </Typography>
           </CardContent>
+          {location.pathname === "/updateProduct" ||
+            location.pathname === "/create_product" ||
+            (location.pathname === "/user_messages" && (
+              <CardContent>
+                <Typography
+                  variant="body1"
+                  color="text.secondary"
+                  style={{ fontSize: "16px", color: "black" }}
+                >
+                  <Typography className="cardTitle" component="span">
+                    {cardValues.firstName}
+                  </Typography>{" "}
+                </Typography>
+                <Typography
+                  variant="body1"
+                  color="text.secondary"
+                  style={{ fontSize: "16px", color: "black" }}
+                >
+                  <Typography className="cardTitle" component="span">
+                    {cardValues.phoneNumber}
+                  </Typography>{" "}
+                </Typography>
+                <Typography
+                  variant="body1"
+                  color="text.secondary"
+                  style={{ fontSize: "16px", color: "black" }}
+                >
+                  <Typography className="cardTitle" component="span">
+                    {cardValues.email}
+                  </Typography>{" "}
+                </Typography>
+              </CardContent>
+            ))}
         </Card>
       )}
       {
-        <Card style={ulStyleBottom} sx={{ width: 350, height: 50, padding: 1 }}>
+        <Card
+          style={ulStyleBottom}
+          sx={{ width: 350, height: 50, padding: 1, background: "#032329" }}
+        >
           <Grid container justifyContent="left" alignItems="center">
             {location.pathname === "/myProduct" && (
               <>
                 <EditIcon
-                  sx={{ margin: 1, color: "GrayText", cursor: "pointer" }}
+                  sx={{ margin: 1, color: "white", cursor: "pointer" }}
                   onClick={() => {
                     navigate(`/updateProduct?name=${props._id}`);
                   }}
                 />
                 <DeleteForeverIcon
-                  sx={{ margin: 1, color: "GrayText", cursor: "pointer" }}
+                  sx={{ margin: 1, color: "white", cursor: "pointer" }}
                   onClick={handleDelete}
                 />
               </>

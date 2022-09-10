@@ -21,12 +21,12 @@ code {
 
 /* create new blog form */
 .create {
-  background: #eaf2f4;
   text-align: center;
   justify-content: center;
   margin: 30px;
   max-width: 430px;
   width: 100%;
+
 }
 .create form{
   direction: rtl;
@@ -43,7 +43,7 @@ code {
 }
 
 .create h1 {
-  font-size: 48px;
+  font-size: xx-large;
   font-weight: 700;
   color: #0EACCB;
   margin-bottom: 20px;
@@ -51,6 +51,16 @@ code {
 .create h2 {
   font-size: 20px;
   color: #0EACCB;
+  margin-bottom: 20px;
+}
+.create h3 {
+  font-size: 28px;
+  color: #1c7486;
+  margin-bottom: 20px;
+}
+.create h4 {
+  font-size: 20px;
+  color: #1c7486;
   margin-bottom: 20px;
 }
 
@@ -154,7 +164,7 @@ text-align: right;}
   transform: translateX(-5px); */
 }
 .iconButton {
-    transform: translate(-5px, 4px);
+    transform: translate(-5px, -2px);
 }
 .card {
   color: #fff;
@@ -293,6 +303,7 @@ text-align: right;}
   color: #fff;
   border: 0;
   padding: 8px;
+  margin: 10px;
   border-radius: 8px;
   font-weight: 700;
   font-size: large;

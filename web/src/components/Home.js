@@ -127,7 +127,14 @@ export default function Home() {
       {error && <h1>{error}</h1>}
       {loading && <Loader />}
       {!loading && (
-        <Grid item container justifyContent="center" className="create" xs={12}>
+        <Grid
+          item
+          container
+          justifyContent="center"
+          className="create"
+          xs={12}
+          style={{ marginBottom: 100 }}
+        >
           <Grid
             direction={"row"}
             item

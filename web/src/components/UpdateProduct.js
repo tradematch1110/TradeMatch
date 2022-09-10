@@ -421,10 +421,11 @@ const UpdateProduct = () => {
           container
           justifyContent="center"
           xs={12}
+          style={{ marginBottom: 100, marginTop: 50 }}
         >
           {displayForm && (
             <div className="product_form">
-              <h1> עדכן את המוצר שלך</h1>
+              <h1 style={{ marginTop: 50 }}> עדכן את המוצר שלך</h1>
 
               <form onSubmit={handleSubmit}>
                 <div className="divWrapper">
@@ -479,7 +480,7 @@ const UpdateProduct = () => {
                     {image1 && (
                       <div>
                         <img
-                          src={imagesSelcted.image1.base64}
+                          src={imagesSelcted.image1}
                           alt=""
                           height="200px"
                           width="200px"
@@ -505,7 +506,7 @@ const UpdateProduct = () => {
                     {image2 && (
                       <div>
                         <img
-                          src={imagesSelcted.image2.base64}
+                          src={imagesSelcted.image2}
                           alt=""
                           height="200px"
                           width="200px"
@@ -531,7 +532,7 @@ const UpdateProduct = () => {
                     {image3 && (
                       <div>
                         <img
-                          src={imagesSelcted.image3.base64}
+                          src={imagesSelcted.image3}
                           alt=""
                           height="200px"
                           width="200px"
@@ -800,7 +801,7 @@ const UpdateProduct = () => {
                     </button>
                   </div>
                 )}{" "}
-                <button>הוסף</button>
+                <button>עדכן מוצר</button>
                 <br></br>
                 <br></br>
               </form>
@@ -808,44 +809,76 @@ const UpdateProduct = () => {
           )}
           {!displayForm && (
             <>
-              <h2>המוצר שלך נקלט בהצלחה במערכת!!!</h2>
-              {fullMatchProducts === "" && partMatchProducts === "" && (
-                <h2>לא נמצאה התאמה עבורך ... נודיע לך בהמשך!</h2>
-              )}
+              <Grid
+                item
+                container
+                justifyContent="center"
+                className="create"
+                xs={12}
+              >
+                <Grid
+                  item
+                  container
+                  justifyContent="center"
+                  xs={12}
+                  direction="row"
+                  style={{ marginTop: 50 }}
+                >
+                  <h1>המוצר שלך נקלט בהצלחה במערכת!!!</h1>
 
-              {!displayForm && (fullMatchProducts || partMatchProducts) && (
-                <div>
-                  {fullMatchProducts.length > 0 && <h2>התאמה מלאה עבורך</h2>}
+                  {!displayForm && (fullMatchProducts || partMatchProducts) && (
+                    <div>
+                      {fullMatchProducts.length > 0 && (
+                        <h2>התאמה מלאה עבורך</h2>
+                      )}
 
-                  <div>
-                    {fullMatchProducts &&
-                      fullMatchProducts.map((product, index) => {
-                        return (
-                          <CustomCard
-                            {...product}
-                            key={index}
-                            id={product.date.toString()}
-                          />
-                        );
-                      })}
-                  </div>
-                  {/* partMatchProducts */}
-                  <div>
-                    {partMatchProducts.length > 0 && <h2>התאמה חלקית עבורך</h2>}
+                      <div>
+                        {fullMatchProducts &&
+                          fullMatchProducts.map((product, index) => {
+                            return (
+                              <CustomCard
+                                {...product}
+                                key={index}
+                                id={product.date.toString()}
+                              />
+                            );
+                          })}
+                      </div>
+                      {/* partMatchProducts */}
+                      <div>
+                        {partMatchProducts.length > 0 && (
+                          <h2>התאמה חלקית עבורך</h2>
+                        )}
 
-                    {partMatchProducts &&
-                      partMatchProducts.map((product, index) => {
-                        return (
-                          <CustomCard
-                            {...product}
-                            key={index}
-                            id={product.date.toString()}
-                          />
-                        );
-                      })}
-                  </div>
-                </div>
-              )}
+                        {partMatchProducts &&
+                          partMatchProducts.map((product, index) => {
+                            return (
+                              <CustomCard
+                                {...product}
+                                key={index}
+                                id={product.date.toString()}
+                              />
+                            );
+                          })}
+                      </div>
+                    </div>
+                  )}
+                </Grid>
+                <Grid
+                  item
+                  container
+                  justifyContent="center"
+                  className="create"
+                  xs={12}
+                >
+                  {fullMatchProducts.length === 0 &&
+                    partMatchProducts.length === 0 && (
+                      <h2 style={{ marginTop: 50 }}>
+                        לא נמצאה התאמה עבורך ... נודיע לך בהמשך!
+                      </h2>
+                    )}
+                </Grid>
+              </Grid>
             </>
           )}
         </Grid>

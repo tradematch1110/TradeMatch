@@ -52,46 +52,72 @@ export default function UserMessages() {
   }, [currentUser, userMessages]);
 
   return (
-    <div style={{ paddingTop: 50 }}>
-      {error && <h1>{error.message}</h1>}
-      {loading && <Loader />}
-      {!loading &&
-        products.length>0 &&
-        currentUser &&
-        userMessages &&
-        userMessages.map((message, index) => {
-          return (
-            <Grid
-              item
-              container
-              justifyContent="center"
-              xs={12}
-              direction="row"
-              className="message"
-              key={index + Math.random(5000000 * 5).toString()}
-            >
-              <h1>
-                {currentUser.firstName} {message.message}
-              </h1>
-              <h1>
-                התקבלה ב: {new Date(message.date).toLocaleDateString("en-GB")}{" "}
-                {`${new Date(message.date).getHours()}:${new Date(
-                  message.date
-                ).getMinutes()}`}
-              </h1>
+    <>
+      <div style={{ paddingTop: 50 }}>
+        {error && <h1>{error.message}</h1>}
+        {loading && <Loader />}
+        {!loading &&
+          products.length > 0 &&
+          currentUser &&
+          userMessages &&
+          userMessages.map((message, index) => {
+            return (
               <Grid
                 item
                 container
                 justifyContent="center"
-                className="create"
                 xs={12}
-                key={Math.random(5000000 * 5).toString()}
+                direction="row"
+                className="message"
+                key={index + Math.random(5000000 * 5).toString()}
               >
-                <CustomCard {...products[index]} />
+                <h1>
+                  {currentUser.firstName} {message.message}
+                </h1>
+                <h1>
+                  התקבלה ב: {new Date(message.date).toLocaleDateString("en-GB")}{" "}
+                  {`${new Date(message.date).getHours()}:${new Date(
+                    message.date
+                  ).getMinutes()}`}
+                </h1>
+                <Grid
+                  item
+                  container
+                  justifyContent="center"
+                  className="create"
+                  xs={12}
+                  key={Math.random(5000000 * 5).toString()}
+                >
+                  <CustomCard {...products[index]} />
+                </Grid>
               </Grid>
-            </Grid>
-          );
-        })}
-    </div>
+            );
+          })}
+        {loading && <Loader />}
+      </div>
+      {!loading && products.length === 0 && currentUser && userMessages && (
+        <Grid
+          item
+          container
+          justifyContent="center"
+          className="create"
+          xs={12}
+          style={{ marginTop: 50 }}
+        >
+          <Grid
+            item
+            container
+            justifyContent="center"
+            xs={12}
+            direction="row"
+            spacing={5}
+            style={{ marginTop: 50 }}
+          >
+            <h1>טרם התקבלו עבורך הודעות!</h1>
+          </Grid>
+          
+        </Grid>
+      )}
+    </>
   );
 }

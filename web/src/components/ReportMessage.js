@@ -53,7 +53,7 @@ export default function ReportMessage() {
       console.log("form is valid!!!!");
       setLoading(true);
       formValues.reportingUserId = currentUser.uid;
-      formValues.productId = id;
+      formValues.productId = id || "No product id";
       //   formValues.token = currentUser.accessToken;
       // fetch to server
       console.log("formValues with after adding values: ", formValues);
@@ -99,10 +99,9 @@ export default function ReportMessage() {
         >
           {displayForm && (
             <div className="product_form">
-              {id && <p>{id}</p>}
               <form onSubmit={handleSubmit}>
                 <div className="divWrapper" style={{ height: 200 }}>
-                  <label> כתוב את הודעתך יא מלשין!!!</label>
+                  <label> כתוב את הודעתך !</label>
                   <br />
                   <textarea
                     style={{ height: 150 }}
@@ -120,7 +119,20 @@ export default function ReportMessage() {
               </form>
             </div>
           )}
-          {!displayForm && <h2>הודעתך נקלטה בהצלחה במערכת</h2>}
+        </Grid>
+      )}
+      {!displayForm && (
+        <Grid item container justifyContent="center" className="create" xs={12}>
+          <Grid
+            item
+            container
+            justifyContent="center"
+            xs={12}
+            direction="row"
+            style={{ marginTop: 50 }}
+          >
+            <h1>הודעתך נקלטה בהצלחה במערכת</h1>
+          </Grid>
         </Grid>
       )}
     </>

@@ -96,7 +96,6 @@ export default function EditAnimal() {
       {!loading && !successMessage && currentUser && (
         <Container
           style={{
-            marginTop: 50,
             maxWidth: "800px",
             minWidth: "360px",
             padding: 20,
@@ -114,6 +113,8 @@ export default function EditAnimal() {
           </h1>
           <Row
             style={{
+              maxWidth: "800px",
+              minWidth: "360px",
               color: "#0EACCB",
               fontWeight: "600",
             }}
@@ -181,52 +182,38 @@ export default function EditAnimal() {
                 <Grid container item justifyContent="center">
                   <Button
                     style={{
-                      background: "#0EACCB",
                       fontWeight: "600",
                       width: 180,
                       alignContent: "center",
                       marginTop: 20,
                     }}
                     type="submit"
+                    variant="success"
                   >
-                    עדכן פרטים
+                    עדכן פרטיי משתמש
                   </Button>
                 </Grid>
                 <br></br>
                 <br></br>
+                <Grid container item justifyContent="center">
+                  <Button
+                    style={{
+                      fontWeight: "600",
+                      width: 180,
+                      marginBottom: 20,
+                      alignContent: "center",
+                    }}
+                    variant="danger"
+                    onClick={handleDeleteUser}
+                  >
+                    מחק משתמש
+                  </Button>
+                </Grid>
               </Form>
             </Col>
             <br></br>
             <br></br>
             <br></br>
-          </Row>
-          <Row
-            style={{
-              color: "#0EACCB",
-              fontWeight: "600",
-            }}
-            className="justify-content-md-center"
-          >
-            <Col
-              style={{
-                boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
-              }}
-            >
-              <Grid container item justifyContent="center">
-                <Button
-                  style={{
-                    fontWeight: "600",
-                    width: 180,
-                    alignContent: "center",
-                    margin: 50,
-                  }}
-                  variant="warning"
-                  onClick={handleDeleteUser}
-                >
-                  מחק משתמש
-                </Button>
-              </Grid>
-            </Col>
           </Row>
         </Container>
       )}

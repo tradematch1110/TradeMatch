@@ -1,4 +1,5 @@
 const { User } = require("./../models/user");
+const { Product } = require("../models/product");
 
 const _ = require("lodash");
 
@@ -171,7 +172,11 @@ const deleteUser = async (req, res) => {
     });
   }
   const user = await User.deleteOne({ _id: `${req.body._id}` });
-
+  let remove;
+  
+  if(user){
+  remove = await Product.deleteMany({ "user.uid": `${req.body._id}` });
+  }
   console.log("user: ", user);
   if (!user) {
     return res.status(400).send({
