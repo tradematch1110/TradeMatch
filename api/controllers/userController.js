@@ -9,6 +9,33 @@ const getUserMessages = async (req, res) => {
   res.status(200);
   res.send(user.messages);
 };
+const deleteUserMessages = async (req, res) => {
+ console.log("deleteUserMessages:", req.body);
+ const productId = req.body.productId;
+ const userId = req.body.userId;
+
+ if (!productId || !userId) {
+   return res.status(400).send({
+     status: "error",
+     message: "Bad request",
+   });
+ }
+
+ const filter = { _id: userId };
+ //{ $push: { friends: objFriends  } }
+ const update = { $pull: { messages: { productId: productId } }};
+
+ let user = await User.findOneAndUpdate(filter, update, {
+   new: true,
+ });
+ console.log(
+   "--------------- deleteUserMessages update ----------------------"
+ );
+ console.log("user: ", user);
+ res.status(200);
+ res.send(user);
+};
+
 
 const getUserFavouritesProducts = async (req, res) => {
   const user = await User.findOne({ _id: req.body.uid });
@@ -196,4 +223,5 @@ module.exports = {
   getUserById,
   editUser,
   deleteUser,
+  deleteUserMessages,
 };

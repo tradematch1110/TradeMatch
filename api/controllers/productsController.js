@@ -471,19 +471,10 @@ async function setUserMessage(uid, productId, message) {
 }
 
 async function removeProductIdFromAllCollections(productId) {
-  // const usersWithMessages = await User.find({ messages: { $in: productId } });
-  // const usersWithFavouritesProducts = await User.find({favouritesProducts: { $in: productId }});
 
   console.log(
     "---------------------removeProductIdFromAllCollections------- before------------------------- "
   );
-
-  // console.log("usersWithMessages: ", usersWithMessages);
-  // console.log("usersWithFavouritesProducts: ", usersWithFavouritesProducts);
-
-  // usersWithMessages.forEach((user) => {
-  //    user.update({ _id: user._id }, { $pull: { messages: { $in: productId } } });
-  // });
 
   // usersWithFavouritesProducts.forEach((user) => {
   const userfff = await User.updateMany({

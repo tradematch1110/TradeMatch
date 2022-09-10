@@ -152,6 +152,8 @@ router.post(
 );
 router.post("/editUser", userController.editUser);
 router.post("/deleteUser", userController.deleteUser);
+router.post("/deleteUserMessages", userController.deleteUserMessages);
+
 
 
 

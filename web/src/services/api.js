@@ -26,7 +26,6 @@ export const removeFavoriteProductFromUser = async (values) => {
   return await helper(url, method, headerToken, data);
 };
 
-
 //getProductsByList
 
 export const getUserFavouritesProducts = async (uid, accessToken) => {
@@ -65,7 +64,7 @@ export const deleteUser = async (id) => {
   const url = "users/deleteUser";
   const method = "post";
   const headerToken = null;
-  const data = {_id: id};
+  const data = { _id: id };
   return await helper(url, method, headerToken, data);
 };
 
@@ -76,6 +75,16 @@ export const getUserMessages = async (uid, accessToken) => {
   const data = { uid: uid };
   return await helper(url, method, headerToken, data);
 };
+
+export const deleteUserMessages = async (uid, productId) => {
+  const url = "users/deleteUserMessages";
+  const method = "post";
+  const headerToken = null;
+  const data = { userId: uid, productId: productId };
+  return await helper(url, method, headerToken, data);
+};
+
+// deleteUserMessages
 
 export const getCategoriesNames = async () => {
   const url = "getCategoriesNames";
@@ -116,8 +125,6 @@ export const getProductsByList = async (list) => {
   return await helper(url, method, headerToken, data);
 };
 
-
-
 export const deleteProduct = async (id) => {
   const url = "products/deleteProduct";
   const method = "post";
@@ -125,8 +132,6 @@ export const deleteProduct = async (id) => {
   const data = { _id: id };
   return await helper(url, method, headerToken, data);
 };
-
-// deleteProduct
 
 export const getProductById = async (id) => {
   const url = "products/getProductById";

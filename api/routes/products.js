@@ -19,24 +19,7 @@ router.post(
 );
 router.post("/deleteProduct", productsController.deleteProduct);
 router.post("/getProductsByList", productsController.getProductsByList);
-//   getProductsByList,
+//   deleteUserMessages,
 
 module.exports = router;
 
-// router.get("/:name", (req, res) => {
-//   if (companiesNames.find((element) => element === req.params.name)) {
-//     companiesProcessor
-//       .getCompanyByName(req.params.name)
-//       .then((result) => {
-//         res.status(200);
-//         res.send(result);
-//       })
-//       .catch((err) => {
-//         res.status(400);
-//         res.send(err);
-//       });
-//   } else {
-//     res.send("company name no exist");
-//     res.status(400);
-//   }
-// });
