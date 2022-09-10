@@ -3,7 +3,7 @@ import { allCategories, categoriesNames } from "../resourcees/categories";
 import SelectCategories from "./SelectCategories";
 import { Grid } from "@mui/material";
 import { authContext } from "./../contexts/AuthContext";
-import { createProduct } from "../services/api";
+import { createProduct, getUserMessages } from "../services/api";
 import FileBase64 from "react-file-base64";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
@@ -28,7 +28,7 @@ const CreateProduct = () => {
     replaceableSubCategoryNo3: "",
   };
   const navigate = useNavigate();
-  const { currentUser } = useContext(authContext);
+  const { currentUser, setUserMessages } = useContext(authContext);
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
@@ -86,13 +86,13 @@ const CreateProduct = () => {
             // setCategoriesNames(res.value.categoriesNames);
             // console.log(res);
             setDisplayForm(false);
-            if (res.value.matchResult.fullMatchProducts)
+            if (res.value.matchResult.fullMatchProducts) {
               setFullMatchProducts(res.value.matchResult.fullMatchProducts);
+              updateUserMessages();
+            }
             if (res.value.matchResult.partMatchProducts)
               setPartMatchProducts(res.value.matchResult.partMatchProducts);
-            setTimeout(() => {
-              // navigate("/");
-            }, 1000);
+            updateUserMessages();
             setLoading(false);
             break;
           case 2:
@@ -198,6 +198,20 @@ const CreateProduct = () => {
         setSubCategoriesNames3(subCategory.subCategories);
       }
     });
+  };
+  const updateUserMessages = async () => {
+    const res = await getUserMessages(currentUser.uid);
+    switch (res.statusId) {
+      case 1:
+        setUserMessages(res.value);
+        break;
+      case 2:
+        setTimeout(() => {
+          setError("");
+        }, 5000);
+        break;
+      default:
+    }
   };
 
   const handleImages = (base64, index) => {
@@ -682,10 +696,17 @@ const CreateProduct = () => {
                       xs={12}
                       style={{ marginTop: 30, marginBottom: 100 }}
                     >
-                      {fullMatchProducts.length > 0 && (
-                        <h2>התאמה מלאה עבורך</h2>
-                      )}
-
+                      <Grid
+                        item
+                        container
+                        justifyContent="center"
+                        xs={12}
+                        direction="column"
+                      >
+                        {fullMatchProducts.length > 0 && (
+                          <h2>התאמה מלאה עבורך</h2>
+                        )}
+                      </Grid>
                       <Grid
                         item
                         container
@@ -712,10 +733,17 @@ const CreateProduct = () => {
                         xs={12}
                         direction="row"
                       >
-                        {partMatchProducts.length > 0 && (
-                          <h2>התאמה חלקית עבורך</h2>
-                        )}
-
+                        <Grid
+                          item
+                          container
+                          justifyContent="center"
+                          xs={12}
+                          direction="column"
+                        >
+                          {partMatchProducts.length > 0 && (
+                            <h2>התאמה חלקית עבורך</h2>
+                          )}
+                        </Grid>
                         {partMatchProducts &&
                           partMatchProducts.map((product, index) => {
                             return (

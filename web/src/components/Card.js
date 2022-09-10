@@ -278,44 +278,47 @@ export default function CustomCard(props) {
                 </div>
               ))}
             </AutoPlaySwipeableViews>
-            {images.length > 2 && location.pathname !== "/" && (
-              <MobileStepper
-                style={{ justifyContent: "center" }}
-                steps={maxSteps}
-                position="static"
-                activeStep={activeStep}
-                nextButton={
-                  <Button
-                    variant="text"
-                    size="small"
-                    onClick={handleNext}
-                    disabled={activeStep === maxSteps - 1}
-                  >
-                    הבא
-                    {theme.direction === "ltr" ? (
-                      <KeyboardArrowLeft />
-                    ) : (
-                      <KeyboardArrowRight />
-                    )}
-                  </Button>
-                }
-                backButton={
-                  <Button
-                    variant="text"
-                    size="small"
-                    onClick={handleBack}
-                    disabled={activeStep === 0}
-                  >
-                    {theme.direction === "ltr" ? (
-                      <KeyboardArrowRight />
-                    ) : (
-                      <KeyboardArrowLeft />
-                    )}
-                    קודם
-                  </Button>
-                }
-              />
-            )}
+            {images.length > 2 &&
+              location.pathname !== "/" &&
+              location.pathname !==
+                "/myProduct" && (
+                  <MobileStepper
+                    style={{ justifyContent: "center" }}
+                    steps={maxSteps}
+                    position="static"
+                    activeStep={activeStep}
+                    nextButton={
+                      <Button
+                        variant="text"
+                        size="small"
+                        onClick={handleNext}
+                        disabled={activeStep === maxSteps - 1}
+                      >
+                        הבא
+                        {theme.direction === "ltr" ? (
+                          <KeyboardArrowLeft />
+                        ) : (
+                          <KeyboardArrowRight />
+                        )}
+                      </Button>
+                    }
+                    backButton={
+                      <Button
+                        variant="text"
+                        size="small"
+                        onClick={handleBack}
+                        disabled={activeStep === 0}
+                      >
+                        {theme.direction === "ltr" ? (
+                          <KeyboardArrowRight />
+                        ) : (
+                          <KeyboardArrowLeft />
+                        )}
+                        קודם
+                      </Button>
+                    }
+                  />
+                )}
           </Box>
           <CardContent>
             <Typography

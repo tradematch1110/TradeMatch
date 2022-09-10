@@ -282,13 +282,16 @@ const updateProduct = async (req, res) => {
       },
     }
   );
+
   if (!product) {
     return res.status(400).send({
       status: "error",
       message: "Product not exist.",
     });
   }
-  let matchResult = await isMatchProduct(product);
+  const tempProduct = await Product.findOne({ _id: `${req.body._id}` });
+
+  let matchResult = await isMatchProduct(tempProduct);
   console.log("matchResult: ", matchResult);
 
   //   console.log("product :", product);
@@ -352,16 +355,34 @@ async function isMatchProduct(product) {
           { subCategory: product.replaceableSubCategoryNo3 },
         ],
       },
+      {
+        $and: [{ category: product.replaceableCategoryNo1 }],
+      },
+
+      {
+        $and: [{ category: product.replaceableCategoryNo2 }],
+      },
+
+      {
+        $and: [{ category: product.replaceableCategoryNo3 }],
+      },
     ],
   });
   let fullMatchProducts = [];
   let partMatchProducts = [];
+  console.log("--------- match product from db  --------");
+  console.log("products: ", products);
+  console.log("product.user.uid: ", product.user.uid);
 
   for (const key in products) {
     if (Object.hasOwnProperty.call(products, key)) {
       const currentProductKey = products[key];
-      if (product.user.uid !== currentProductKey.user.uid) {
-        console.log("--------- match product from db  --------");
+      console.log(
+        "**************************** currentProductKey in  loop************************************"
+      );
+      console.log("currentProductKey: ", currentProductKey);
+      if (product.user.uid !== currentProductKey._id.toString()) {
+        console.log("currentProductKey.user.uid: ", currentProductKey.user.uid);
 
         console.log(
           currentProductKey.category,
@@ -369,28 +390,34 @@ async function isMatchProduct(product) {
           currentProductKey.subCategory
         );
         if (
-          product.category === currentProductKey.replaceableCategoryNo1 ||
-          product.category === currentProductKey.replaceableCategoryNo2 ||
-          product.category === currentProductKey.replaceableCategoryNo3
+          product.replaceableCategoryNo1 === currentProductKey.category ||
+          product.replaceableCategoryNo2 === currentProductKey.category ||
+          product.replaceableCategoryNo3 === currentProductKey.category
         ) {
+          console.log(
+            "product.replaceableSubCategoryNo1: ",
+            product.replaceableSubCategoryNo1,
+            "currentProductKey.SubCategory: ",
+            currentProductKey.subCategory
+          );
           if (
-            product.subCategory ===
-              currentProductKey.replaceableSubCategoryNo1 ||
-            product.subCategory ===
-              currentProductKey.replaceableSubCategoryNo2 ||
-            product.subCategory === currentProductKey.replaceableSubCategoryNo3
+            product.replaceableSubCategoryNo1 ===
+              currentProductKey.subCategory ||
+            product.replaceableSubCategoryNo2 ===
+              currentProductKey.subCategory ||
+            product.replaceableSubCategoryNo3 === currentProductKey.subCategory
           ) {
             console.log("----------- full match ------------------");
 
             fullMatchProducts.push(currentProductKey);
             const sendMessageOtherUser = await setUserMessage(
               currentProductKey.user.uid,
-              currentProductKey._id,
+              product._id,
               "נמצאה התאמה מלאה עבורך"
             );
             const sendMessageToOwner = await setUserMessage(
               product.user.uid,
-              product._id,
+              currentProductKey._id,
               "נמצאה התאמה מלאה עבורך"
             );
           } else {
@@ -398,12 +425,12 @@ async function isMatchProduct(product) {
             partMatchProducts.push(currentProductKey);
             const sendMessageOtherUser = await setUserMessage(
               currentProductKey.user.uid,
-              currentProductKey._id,
+              product._id,
               "נמצאה התאמה חלקית עבורך"
             );
             const sendMessageToOwner = await setUserMessage(
               product.user.uid,
-              product._id,
+              currentProductKey._id,
               "נמצאה התאמה חלקית עבורך"
             );
           }

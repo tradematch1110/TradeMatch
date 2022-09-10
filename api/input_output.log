@@ -24547,3 +24547,7 @@ error: ReferenceError: Product is not defined
 error: TypeError: Product.delete is not a function
     at deleteUser (C:\Users\Kaldi\Documents\tradematch\api\controllers\userController.js:178:32)
     at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: TypeError: Cannot read properties of undefined (reading 'uid')
+    at isMatchProduct (C:\Users\Kaldi\Documents\tradematch\api\controllers\productsController.js:361:50)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async updateProduct (C:\Users\Kaldi\Documents\tradematch\api\controllers\productsController.js:291:21) 
