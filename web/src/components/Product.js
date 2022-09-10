@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import CustomCard from "./Card";
 import { useLocation } from "react-router-dom";
 import { getProductById } from "../services/api";
-import { identifier } from "stylis";
 import Loader from './Loader';
 import { Grid } from '@mui/material';
 
@@ -44,16 +43,16 @@ export default function Product() {
       {error && <h1>{error}</h1>}
       {loading && <Loader />}
       {!loading && (
-        <Grid item container justifyContent="center" className="create" xs={12}>
-          <h1>עמוד מוצר</h1>
-          <Grid
-            item
-            container
-            justifyContent="center"
-            xs={12}
-            direction="row"
-            spacing={5}
-          >
+        <Grid
+          item
+          container
+          justifyContent="center"
+          className="create"
+          xs={12}
+          style={{ marginBottom: 100 }}
+        >
+          <h1 style={{ marginTop: 30 }}>עמוד מוצר</h1>
+          <Grid item container justifyContent="center" xs={12} direction="row">
             {product && <CustomCard {...product} />}
           </Grid>
         </Grid>

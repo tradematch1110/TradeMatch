@@ -32,12 +32,16 @@ const Main = () => {
   }, []);
   return (
     <div>
-
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/about_us" element={<AboutUs />}></Route>
+        <Route
+          path="/product"
+          element={<Product />}
+        ></Route>
+
         <Route
           path="/create_product"
           element={
@@ -55,10 +59,6 @@ const Main = () => {
               element={
                 currentUser ? <UserMessages /> : <Navigate to="/login" />
               }
-            ></Route>
-            <Route
-              path="/product"
-              element={currentUser ? <Product /> : <Navigate to="/login" />}
             ></Route>
             <Route
               path="/myProduct"
