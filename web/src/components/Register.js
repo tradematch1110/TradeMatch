@@ -147,6 +147,7 @@ const Register = () => {
             maxwidth="xs"
             item
             justifyContent="center"
+            style={{ marginBottom: 100 }}
           >
             <Grid direction="column" container item xs={12} md={6}>
               {isReg && (
