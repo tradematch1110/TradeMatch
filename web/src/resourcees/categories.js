@@ -911,4 +911,9 @@ allCategories.forEach((category) => {
   tempCategoriesNames.push(category.name);
 });
 
+// export let allProducts = [];
+// allCategories.forEach((category) => {
+//   allProducts.push(category.subCategories);
+// });
+
 export const categoriesNames = tempCategoriesNames

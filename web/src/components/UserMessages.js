@@ -86,7 +86,7 @@ export default function UserMessages() {
       getProducts(list);
     }
   }, [currentUser, userMessages]);
-
+  let pick;
   return (
     <>
       <div style={{ paddingTop: 50, marginBottom: 100 }}>
@@ -116,9 +116,9 @@ export default function UserMessages() {
                   <h1>
                     התקבלה ב:{" "}
                     {new Date(message.date).toLocaleDateString("en-GB")}{" "}
-                    {`${new Date(message.date).getHours()}:${new Date(
-                      message.date
-                    ).getMinutes()}`}
+                    {`${new Date(message.date)
+                      .toLocaleTimeString()
+                      .replace(/:\d+ /, " ")}`}
                   </h1>
                 </Grid>
                 <Grid
@@ -129,7 +129,11 @@ export default function UserMessages() {
                   xs={12}
                   key={Math.random(5000000 * 5).toString()}
                 >
-                  <CustomCard {...products[index]} />
+                  <CustomCard
+                    {...products.find(
+                      (product) => product._id.toString() === message.productId
+                    )}
+                  />
                 </Grid>
                 <Grid container item justifyContent="center">
                   <Button

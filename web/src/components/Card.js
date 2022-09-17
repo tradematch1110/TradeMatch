@@ -18,9 +18,7 @@ import { autoPlay } from "react-swipeable-views-utils";
 import { Grid } from "@mui/material";
 import NoImagePlaceholder from "../images/NoImagePlaceholder.png";
 import { useNavigate } from "react-router-dom";
-import IconButton, { IconButtonProps } from "@mui/material/IconButton";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import ShareIcon from "@mui/icons-material/Share";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import ReportIcon from "@mui/icons-material/Report";
@@ -30,6 +28,8 @@ import {
   removeFavoriteProductFromUser,
 } from "../services/api";
 import { useLocation } from "react-router-dom";
+import Tooltip from "@mui/material/Tooltip";
+
 const AutoPlaySwipeableViews = SwipeableViews;
 
 export default function CustomCard(props) {
@@ -71,26 +71,27 @@ export default function CustomCard(props) {
 
   const [cardValues, setCardValues] = useState({
     userAbbreviations:
+      props.user &&
       props.user.firstName.charAt(0) + "." + props.user.lastName.charAt(0),
-    produectTitle: props.produectTitle,
-    date: new Date(props.date).toLocaleDateString("en-GB"),
-    images: images,
-    descriptions: props.descriptions,
-    category: props.category,
-    subCategory: props.subCategory,
-    replaceableCategoryNo1: props.replaceableCategoryNo1,
-    replaceableSubCategoryNo1: props.replaceableSubCategoryNo1,
-    replaceableCategoryNo2: props.replaceableCategoryNo2,
-    replaceableSubCategoryNo2: props.replaceableSubCategoryNo2,
-    replaceableCategoryNo3: props.replaceableCategoryNo3,
-    replaceableSubCategoryNo3: props.replaceableSubCategoryNo3,
-    firstName: props.user.firstName,
-    email: props.user.email,
-    phoneNumber: props.user.phoneNumber,
+    produectTitle: props.user && props.produectTitle,
+    date: props.user && new Date(props.date).toLocaleDateString("en-GB"),
+    images: props.user && images,
+    descriptions: props.user && props.descriptions,
+    category: props.user && props.category,
+    subCategory: props.user && props.subCategory,
+    replaceableCategoryNo1: props.user && props.replaceableCategoryNo1,
+    replaceableSubCategoryNo1: props.user && props.replaceableSubCategoryNo1,
+    replaceableCategoryNo2: props.user && props.replaceableCategoryNo2,
+    replaceableSubCategoryNo2: props.user && props.replaceableSubCategoryNo2,
+    replaceableCategoryNo3: props.user && props.replaceableCategoryNo3,
+    replaceableSubCategoryNo3: props.user && props.replaceableSubCategoryNo3,
+    firstName: props.user && props.user.firstName,
+    email: props.user && props.user.email,
+    phoneNumber: props.user && props.user.phoneNumber,
   });
   useLayoutEffect(() => {
     if (props.images) {
-      console.log("props.images.image1;", props.images.image1);
+      // console.log("props.images.image1;", props.images.image1);
       setImage1(props.images.image1);
       setImage2(props.images.image2);
       setImage3(props.images.image3);
@@ -99,16 +100,16 @@ export default function CustomCard(props) {
       props.images.image2 && images.push(props.images.image2);
       props.images.image3 && images.push(props.images.image3);
     } else {
-            setImage1(NoImagePlaceholder);
+      setImage1(NoImagePlaceholder);
 
       // images.push(NoImagePlaceholder);
     }
-    console.log("cardValues card component :  ",  cardValues);
+    console.log("cardValues card component :  ", cardValues);
   }, [images]);
 
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  
+
   const maxSteps = images && images.length / 2;
   // console.log("emptyImage: ",  emptyImage);
   const handleNext = () => {
@@ -153,7 +154,7 @@ export default function CustomCard(props) {
           // setCategoriesNames(res.value.categoriesNames);
           console.log(res.value);
           navigate(`/myProduct`);
-          setCardValues(null)
+          setCardValues(null);
           window.location.reload(false);
           break;
         case 2:
@@ -280,45 +281,44 @@ export default function CustomCard(props) {
             </AutoPlaySwipeableViews>
             {images.length > 2 &&
               location.pathname !== "/" &&
-              location.pathname !==
-                "/myProduct" && (
-                  <MobileStepper
-                    style={{ justifyContent: "center" }}
-                    steps={maxSteps}
-                    position="static"
-                    activeStep={activeStep}
-                    nextButton={
-                      <Button
-                        variant="text"
-                        size="small"
-                        onClick={handleNext}
-                        disabled={activeStep === maxSteps - 1}
-                      >
-                        הבא
-                        {theme.direction === "ltr" ? (
-                          <KeyboardArrowLeft />
-                        ) : (
-                          <KeyboardArrowRight />
-                        )}
-                      </Button>
-                    }
-                    backButton={
-                      <Button
-                        variant="text"
-                        size="small"
-                        onClick={handleBack}
-                        disabled={activeStep === 0}
-                      >
-                        {theme.direction === "ltr" ? (
-                          <KeyboardArrowRight />
-                        ) : (
-                          <KeyboardArrowLeft />
-                        )}
-                        קודם
-                      </Button>
-                    }
-                  />
-                )}
+              location.pathname !== "/myProduct" && (
+                <MobileStepper
+                  style={{ justifyContent: "center" }}
+                  steps={maxSteps}
+                  position="static"
+                  activeStep={activeStep}
+                  nextButton={
+                    <Button
+                      variant="text"
+                      size="small"
+                      onClick={handleNext}
+                      disabled={activeStep === maxSteps - 1}
+                    >
+                      הבא
+                      {theme.direction === "ltr" ? (
+                        <KeyboardArrowLeft />
+                      ) : (
+                        <KeyboardArrowRight />
+                      )}
+                    </Button>
+                  }
+                  backButton={
+                    <Button
+                      variant="text"
+                      size="small"
+                      onClick={handleBack}
+                      disabled={activeStep === 0}
+                    >
+                      {theme.direction === "ltr" ? (
+                        <KeyboardArrowRight />
+                      ) : (
+                        <KeyboardArrowLeft />
+                      )}
+                      קודם
+                    </Button>
+                  }
+                />
+              )}
           </Box>
           <CardContent>
             <Typography
@@ -411,31 +411,40 @@ export default function CustomCard(props) {
           <Grid container justifyContent="left" alignItems="center">
             {location.pathname === "/myProduct" && (
               <>
-                <EditIcon
-                  sx={{ margin: 1, color: "white", cursor: "pointer" }}
-                  onClick={() => {
-                    navigate(`/updateProduct?name=${props._id}`);
-                  }}
-                />
-                <DeleteForeverIcon
-                  sx={{ margin: 1, color: "white", cursor: "pointer" }}
-                  onClick={handleDelete}
-                />
+                <Tooltip title="ערוך מוצר" arrow dark>
+                  <EditIcon
+                    sx={{ margin: 1, color: "white", cursor: "pointer" }}
+                    onClick={() => {
+                      navigate(`/updateProduct?name=${props._id}`);
+                    }}
+                  />
+                </Tooltip>
+                <Tooltip title="מחק מוצר" arrow>
+                  <DeleteForeverIcon
+                    sx={{ margin: 1, color: "white", cursor: "pointer" }}
+                    onClick={handleDelete}
+                  />
+                </Tooltip>
               </>
             )}
-
-            {
-              <FavoriteIcon
-                sx={{ margin: 1, color: `${isFav}`, cursor: "pointer" }}
-                onClick={() => HandleFavourites()}
-              />
-            }
-            <ReportIcon
-              sx={{ margin: 1, color: "#CFCC07", cursor: "pointer" }}
-              onClick={() => {
-                navigate(`/report_message?id=${props._id}`);
-              }}
-            />
+            {location.pathname !== "/myProduct" && (
+              <>
+                <Tooltip title="הוסף למועדפים" arrow>
+                  <FavoriteIcon
+                    sx={{ margin: 1, color: `${isFav}`, cursor: "pointer" }}
+                    onClick={() => HandleFavourites()}
+                  />
+                </Tooltip>
+                <Tooltip title="דווח על המוצר" arrow>
+                  <ReportIcon
+                    sx={{ margin: 1, color: "#CFCC07", cursor: "pointer" }}
+                    onClick={() => {
+                      navigate(`/report_message?id=${props._id}`);
+                    }}
+                  />
+                </Tooltip>
+              </>
+            )}
           </Grid>
         </Card>
       }

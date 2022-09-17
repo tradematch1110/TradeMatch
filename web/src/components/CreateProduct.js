@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import CustomCard from "./Card";
 import { getProductById } from "./../services/api";
 import Loader from "./Loader";
+import SearchDialog from "./SearchDialog";
 
 const CreateProduct = () => {
   const initialValues = {
@@ -48,6 +49,7 @@ const CreateProduct = () => {
   const [displayForm, setDisplayForm] = useState(true);
   const [partMatchProducts, setPartMatchProducts] = useState("");
   const [fullMatchProducts, setFullMatchProducts] = useState("");
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -405,9 +407,11 @@ const CreateProduct = () => {
                   {/* <ImageUpload setImages={setImages} /> */}
                 </div>
                 <div className="optionWrapper">
-                  <h3> איפיון המוצר</h3>
+                  <div style={{display: "flex", alignItems: "baseline"}}>
+                    <h3> איפיון המוצר</h3>
+                    <SearchDialog/>
+                  </div>
                   <label> קטגוריה ראשית</label>
-
                   <select
                     name="category"
                     placeholder="קטגוריה ראשית"
@@ -428,7 +432,6 @@ const CreateProduct = () => {
                     })}
                   </select>
                   <p>{formErrors.category}</p>
-
                   {subCategoriesNames && (
                     <div>
                       <label>קטגוריה משנית</label>

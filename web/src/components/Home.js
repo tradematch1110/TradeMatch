@@ -1,4 +1,10 @@
-import React, { useEffect, useState, useLayoutEffect, useContext } from "react";
+import React, {
+  useEffect,
+  useState,
+  useLayoutEffect,
+  useContext,
+  useRef,
+} from "react";
 import { Grid } from "@mui/material";
 import CustomCard from "./Card";
 import {
@@ -11,13 +17,18 @@ import Loader from "./Loader";
 import { authContext } from "./../contexts/AuthContext";
 
 export default function Home() {
+  // console.log(allProducts);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState("");
+  const [textValue, setTextValue] = useState("");
+
   const [products, setProducts] = useState("");
   const [filterdProducts, setFilterdProducts] = useState("");
   const [category, setCategory] = useState("");
   const [subCategory, setSubCategory] = useState("");
   const [subCategorySelected, setSubCategorySelected] = useState("");
+  //textValue
+  const searchRef = useRef();
   const {
     currentUser,
     setCurrentUser,
@@ -44,7 +55,21 @@ export default function Home() {
       }
     });
   };
-
+  const handleFreeSearch = async (value) => {
+    console.log(value);
+    let subCategories = allCategories.find((category) =>
+      category.subCategories.find((name) => name.includes(value))
+    );
+    let result;
+    if (subCategories) {
+      result = subCategories.subCategories.find((name) => name.match(value));
+    }
+    if (subCategories){
+      setTextValue(
+        `קטגוריה ראשית: ${subCategories.name}, קטגוריה משנית:  ${result}`
+      );}
+      console.log(textValue)
+  };
   const handleSearch = async () => {
     if (!category) return;
     const data = { category: category, subCategory: subCategory };
@@ -121,7 +146,6 @@ export default function Home() {
     fetchData();
   }, [error]);
 
-
   return (
     <>
       {error && <h1>{error}</h1>}
@@ -142,6 +166,7 @@ export default function Home() {
             justifyContent="center"
             xs={12}
             className="searchBar"
+            style={{paddingTop:30}}
           >
             <Grid
               direction={"column"}
@@ -171,6 +196,7 @@ export default function Home() {
                 })}
               </select>
             </Grid>
+
             <Grid
               direction={"column"}
               item
@@ -198,22 +224,7 @@ export default function Home() {
                   })}
               </select>
             </Grid>
-            {/* <Grid
-          direction={"column"}
-          item
-          container
-          xs={12}
-          md={2}
-          className="searchBar"
-        >
-          <input
-            name="search"
-            placeholder="חיפוש"
-            // value={category}
-            onChange={handleChange}
-            onClick={(e) => handleCategory(e.target.value)}
-          ></input>
-        </Grid> */}
+
             <Grid
               direction={"column"}
               item
@@ -221,6 +232,7 @@ export default function Home() {
               xs={12}
               md={2}
               className="searchBar"
+              style={{ background: "white", margin: 5 }}
             >
               <button
                 name="search"
@@ -238,6 +250,7 @@ export default function Home() {
               xs={12}
               md={2}
               className="searchBar"
+              style={{ background: "white", margin: 5 }}
             >
               <button
                 name="searchClear"
@@ -246,6 +259,48 @@ export default function Home() {
               >
                 נקה
               </button>
+            </Grid>
+
+            <Grid
+              direction={"column"}
+              item
+              container
+              xs={12}
+              md={2}
+              className="searchBar"
+            >
+              <input
+                type="text"
+                name="search"
+                placeholder={"חיפוש חופשי"}
+                ref={searchRef}
+                onKeyUp={(e) => handleFreeSearch(e.target.value)}
+              ></input>
+            </Grid>
+            <Grid
+              direction={"row"}
+              item
+              container
+              justifyContent="center"
+              xs={12}
+              className="searchBar"
+            >
+              <Grid
+                direction={"column"}
+                item
+                container
+                alignItems="center"
+                xs={12}
+                className="searchBar"
+                style={{
+                  marginBottom: { xs: 40, md: 30 },
+                  maxWidth: "80%",
+                  height: 35,
+                  borderRadius: 5,
+                }}
+              >
+                {textValue && <h2 style={{ color: "white" }}>{textValue}</h2>}
+              </Grid>
             </Grid>
           </Grid>
           {/* {error && <p>{error}<p/>}  */}

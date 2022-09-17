@@ -24584,3 +24584,665 @@ error: MongoServerError: $in needs an array
     at TLSSocket.ondata (node:internal/streams/readable:754:22)
     at TLSSocket.emit (node:events:526:28)
     at addChunk (node:internal/streams/readable:315:12) 
+error: TypeError: Cannot read properties of undefined (reading 'user')
+    at C:\Users\Kaldi\Documents\tradematch\api\controllers\productsController.js:105:17
+    at Array.forEach (<anonymous>)
+    at getFavouritesProductsPerUser (C:\Users\Kaldi\Documents\tradematch\api\controllers\productsController.js:98:12)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: TypeError: Cannot read properties of undefined (reading 'user')
+    at C:\Users\Kaldi\Documents\tradematch\api\controllers\productsController.js:105:17
+    at Array.forEach (<anonymous>)
+    at getFavouritesProductsPerUser (C:\Users\Kaldi\Documents\tradematch\api\controllers\productsController.js:98:12)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: TypeError: Cannot read properties of null (reading 'favouritesProducts')
+    at getUserFavouritesProducts (C:\Users\Kaldi\Documents\tradematch\api\controllers\userController.js:44:17)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: TypeError: Cannot read properties of null (reading 'messages')
+    at getUserMessages (C:\Users\Kaldi\Documents\tradematch\api\controllers\userController.js:10:17)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: TypeError: Cannot read properties of null (reading 'messages')
+    at getUserMessages (C:\Users\Kaldi\Documents\tradematch\api\controllers\userController.js:10:17)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: TypeError: Cannot read properties of null (reading 'favouritesProducts')
+    at getUserFavouritesProducts (C:\Users\Kaldi\Documents\tradematch\api\controllers\userController.js:44:17)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: connection <monitor> to 15.184.163.20:27017 closed
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongoNetworkError: connection 21 to 15.184.163.20:27017 closed
+    at Connection.handleIssue (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\cmap\connection.js:121:23)
+    at TLSSocket.<anonymous> (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\cmap\connection.js:62:39)
+    at TLSSocket.emit (node:events:526:28)
+    at node:net:687:12
+    at TCP.done (node:_tls_wrap:580:7) 
+error: MongoNetworkError: connection 24 to 15.184.163.20:27017 closed
+    at Connection.handleIssue (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\cmap\connection.js:121:23)
+    at TLSSocket.<anonymous> (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\cmap\connection.js:62:39)
+    at TLSSocket.emit (node:events:526:28)
+    at node:net:687:12
+    at TCP.done (node:_tls_wrap:580:7) 
+error: MongoNetworkError: connection 23 to 15.184.163.20:27017 closed
+    at Connection.handleIssue (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\cmap\connection.js:121:23)
+    at TLSSocket.<anonymous> (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\cmap\connection.js:62:39)
+    at TLSSocket.emit (node:events:526:28)
+    at node:net:687:12
+    at TCP.done (node:_tls_wrap:580:7) 
+error: MongoNetworkError: connection 22 to 15.184.163.20:27017 closed
+    at Connection.handleIssue (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\cmap\connection.js:121:23)
+    at TLSSocket.<anonymous> (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongodb\lib\cmap\connection.js:62:39)
+    at TLSSocket.emit (node:events:526:28)
+    at node:net:687:12
+    at TCP.done (node:_tls_wrap:580:7) 
+error: MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+error: MongooseServerSelectionError: getaddrinfo ENOTFOUND cluster0-shard-00-02.uki4p.mongodb.net
+    at Function.Model.$wrapCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\model.js:4944:32)
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4562:21
+    at C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at model.Query.exec (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4561:10)
+    at model.Query.Query.then (C:\Users\Kaldi\Documents\tradematch\api\node_modules\mongoose\lib\query.js:4644:15)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
