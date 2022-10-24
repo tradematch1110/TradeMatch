@@ -45,6 +45,7 @@ const getProductsPerUser = async (req, res) => {
     });
   }
   let result = [];
+  console.log("products per user: ", products);
   products.forEach((product) => {
     let temp = { ...product }._doc;
     // delete temp._id;

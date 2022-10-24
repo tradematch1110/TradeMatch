@@ -22,29 +22,50 @@ export default function SearchDialog() {
   };
   const [searchTextValue, setsearchTextValue] = useState("");
 
-  const handleFreeSearch = async (value) => {
-    console.log("value: ", value.toUpperCase());
-    let subCategories = allCategories.find((category) =>
-      category.subCategories.find((name) => name.includes(value))
-    );
-
-    let result;
-    if (subCategories) {
-      result = subCategories.subCategories.find((name) => {
-        english.test(name)
-          ? name.toUpperCase().startsWith(value.toUpperCase())
-          : name.startsWith(value);
-      });
-    }
-    if (subCategories && result) {
-      setsearchTextValue(
-        `\n קטגוריה ראשית: ${subCategories.name} 
-        \n קטגוריה משנית: ${result}`
+    const handleFreeSearch = async (value) => {
+      console.log(value);
+      let subCategories = allCategories.find((category) =>
+        category.subCategories.find((name) => name.includes(value))
       );
-    }
-    console.log("searchTextValue:", searchTextValue);
-    if (!value) setsearchTextValue("");
-  };
+      let result;
+      if (subCategories) {
+        result = subCategories.subCategories.find((name) => name.match(value));
+      }
+      if (subCategories) {
+        setsearchTextValue(
+          `קטגוריה ראשית: ${subCategories.name}, קטגוריה משנית:  ${result}`
+        );
+      }
+      console.log(searchTextValue);
+    };
+
+  // const handleFreeSearch = async (value) => {
+  //   console.log("value: ", value.toUpperCase());
+  //   let subCategories = allCategories.find((category) =>
+  //     category.subCategories.find((name) => name.includes(value))
+  //   );
+
+  //   let result;
+  //   if (subCategories) {
+  //     result = subCategories.subCategories.find((name) => {
+  //       english.test(name)
+  //         ? name.toUpperCase().startsWith(value.toUpperCase())
+  //         : name.startsWith(value);
+  //     });
+  //   }
+
+  //   if (subCategories && result) {
+  //     setsearchTextValue(
+  //       `\n קטגוריה ראשית: ${subCategories.name} 
+  //       \n קטגוריה משנית: ${result}`
+  //     );
+  //   }
+  //   console.log("subCategories:", subCategories);
+  //   console.log("result:", result);
+
+  //   console.log("searchTextValue:", searchTextValue);
+  //   if (!value) setsearchTextValue("");
+  // };
   return (
     <div>
       <Tooltip title="צריך עזרה לאפיין את המוצר שלך? לחץ כאן!" arrow>
@@ -86,7 +107,8 @@ export default function SearchDialog() {
             {searchTextValue && (
               <h6
                 style={{
-                  color: "gray",
+                  marginTop: 10,
+                  color: "blue",
                   whiteSpace: "pre-wrap",
                 }}
               >
