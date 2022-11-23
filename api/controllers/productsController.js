@@ -219,7 +219,7 @@ const getProductsByList = async (req, res) => {
 };
 
 const createProduct = async (req, res) => {
-  console.log("req.body:", req.body);
+  // console.log("req.body:", req.body);
 
   const product = new Product(
     _.pick(req.body, [
@@ -372,7 +372,7 @@ async function isMatchProduct(product) {
   let fullMatchProducts = [];
   let partMatchProducts = [];
   console.log("--------- match product from db  --------");
-  console.log("products: ", products);
+  // console.log("products: ", products);
   console.log("product.user.uid: ", product.user.uid);
 
   for (const key in products) {
@@ -381,8 +381,9 @@ async function isMatchProduct(product) {
       console.log(
         "**************************** currentProductKey in  loop************************************"
       );
-      console.log("currentProductKey: ", currentProductKey);
-      if (product.user.uid !== currentProductKey._id.toString()) {
+      // console.log("currentProductKey: ", currentProductKey);
+      // if (product.user.uid !== currentProductKey._id.toString()) {
+      if (product.user.uid !== currentProductKey.user.uid) {
         console.log("currentProductKey.user.uid: ", currentProductKey.user.uid);
 
         console.log(
@@ -466,13 +467,12 @@ async function setUserMessage(uid, productId, message) {
     new: true,
   });
   console.log("--------------- setUserMessage update ----------------------");
-  console.log("doc: ", doc);
+  // console.log("doc: ", doc);
 
   // console.log("update :", update);
 }
 
 async function removeProductIdFromAllCollections(productId) {
-
   console.log(
     "---------------------removeProductIdFromAllCollections------- before------------------------- "
   );
