@@ -1,14 +1,10 @@
-import React, { useContext, useState, useEffect, useLayoutEffect } from "react";
+import React, { useContext, useState, useLayoutEffect } from "react";
 import { authContext } from "../contexts/AuthContext";
 import { getProductsByList, getUserMessages } from "../services/api";
 import { Grid } from "@mui/material";
-import Card from "@mui/material/Card";
-import CardHeader from "@mui/material/CardHeader";
-import CardContent from "@mui/material/CardContent";
-import { CardActions, Typography } from "@material-ui/core";
 import CustomCard from "./Card";
 import Loader from "./Loader";
-import { getProductById, deleteUserMessages } from "./../services/api";
+import { deleteUserMessages } from "./../services/api";
 import { Button } from "react-bootstrap";
 
 export default function UserMessages() {
@@ -86,7 +82,6 @@ export default function UserMessages() {
       getProducts(list);
     }
   }, [currentUser, userMessages]);
-  let pick;
   return (
     <>
       <div style={{ paddingTop: 50, marginBottom: 100 }}>

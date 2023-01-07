@@ -73,9 +73,9 @@ export default function EditAnimal() {
       default:
     }
   };
-  const handleChange = (e) => {
-    console.log("e.target.value: ", e.target);
-  };
+  // const handleChange = (e) => {
+  //   console.log("e.target.value: ", e.target);
+  // };
   return (
     <>
       {" "}

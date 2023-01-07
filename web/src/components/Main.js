@@ -9,7 +9,7 @@ import React, { useContext, useLayoutEffect } from "react";
 import Home from "./Home";
 import Login from "./Login";
 import Register from "./Register";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import CreateProduct from "./CreateProduct";
 import UserMessages from "./UserMessages";
 import Product from "./Product";
@@ -37,10 +37,7 @@ const Main = () => {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/about_us" element={<AboutUs />}></Route>
-        <Route
-          path="/product"
-          element={<Product />}
-        ></Route>
+        <Route path="/product" element={<Product />}></Route>
 
         <Route
           path="/create_product"
@@ -100,6 +97,7 @@ const Main = () => {
             ></Route>
           </>
         )}
+        <Route path="*" element={<Home />} />
       </Routes>
     </div>
   );

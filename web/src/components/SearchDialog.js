@@ -9,7 +9,8 @@ import DialogTitle from "@mui/material/DialogTitle";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import Tooltip from "@mui/material/Tooltip";
 import { Grid } from "@material-ui/core";
-const english = /^[A-Za-z0-9]*$/;
+
+
 export default function SearchDialog() {
   const [open, setOpen] = React.useState(false);
 

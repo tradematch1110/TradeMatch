@@ -45,7 +45,7 @@ const getProductsPerUser = async (req, res) => {
     });
   }
   let result = [];
-  console.log("products per user: ", products);
+  // console.log("products per user: ", products);
   products.forEach((product) => {
     let temp = { ...product }._doc;
     // delete temp._id;
@@ -64,7 +64,7 @@ const getProductsPerUser = async (req, res) => {
 };
 
 const getFavouritesProductsPerUser = async (req, res) => {
-  console.log("req.body.favouritesProducts: ", req.body.favouritesProducts);
+  // console.log("req.body.favouritesProducts: ", req.body.favouritesProducts);
   if (!req.body.favouritesProducts) {
     return res.status(400).send({
       status: "error",
@@ -74,15 +74,15 @@ const getFavouritesProductsPerUser = async (req, res) => {
   let products = [];
 
   for (const id in req.body.favouritesProducts) {
-    console.log("id in loop: ", req.body.favouritesProducts[id]);
+    // console.log("id in loop: ", req.body.favouritesProducts[id]);
     let res = await Product.find({ _id: `${req.body.favouritesProducts[id]}` });
-    console.log("res in loop: ", res);
+    // console.log("res in loop: ", res);
     if (res) {
       products.push(res[0]);
     }
     res = null;
   }
-  console.log("products: ", products);
+  // console.log("products: ", products);
 
   // req.body.favouritesProducts.forEach(productId =>  {
   //     let product =  await Product.find({ _id: `${productId}` });
@@ -108,7 +108,7 @@ const getFavouritesProductsPerUser = async (req, res) => {
     delete temp.__v;
     result.push(temp);
   });
-  console.log("result: ", result);
+  // console.log("result: ", result);
 
   res.status(200);
   res.send(result);
@@ -184,7 +184,7 @@ const getProductsByList = async (req, res) => {
     "------------------------- getProductsByList ---------------------------------"
   );
 
-  console.log("list: ", list);
+  // console.log("list: ", list);
 
   // let obj_ids = list.map(function (id) {
   //   return mongoose.Types.ObjectId(id);
@@ -198,7 +198,7 @@ const getProductsByList = async (req, res) => {
       message: "Products not exist.",
     });
   }
-  console.log("products: ", products);
+  // console.log("products: ", products);
 
   let result = [];
   products.forEach((product) => {
@@ -240,7 +240,7 @@ const createProduct = async (req, res) => {
     ])
   );
   let matchResult = await isMatchProduct(product);
-  console.log("matchResult: ", matchResult);
+  // console.log("matchResult: ", matchResult);
 
   //   console.log("product :", product);
   try {
@@ -256,7 +256,7 @@ const createProduct = async (req, res) => {
     matchResult: matchResult,
   };
   console.log("--------------- result ----------------------");
-  console.log(result);
+  console.log(result.message);
 
   res.status(200);
   res.send(result);
@@ -293,7 +293,7 @@ const updateProduct = async (req, res) => {
   const tempProduct = await Product.findOne({ _id: `${req.body._id}` });
 
   let matchResult = await isMatchProduct(tempProduct);
-  console.log("matchResult: ", matchResult);
+  // console.log("matchResult: ", matchResult);
 
   //   console.log("product :", product);
   // try {
@@ -337,6 +337,9 @@ const deleteProduct = async (req, res) => {
 
 async function isMatchProduct(product) {
   const products = await Product.find({
+    /*  Search for the products that match what you are 
+        looking for in both the main category and the secondary category.
+        Or just that the main category fits */
     $or: [
       {
         $and: [
@@ -392,15 +395,15 @@ async function isMatchProduct(product) {
           currentProductKey.subCategory
         );
         if (
-          product.replaceableCategoryNo1 === currentProductKey.category ||
-          product.replaceableCategoryNo2 === currentProductKey.category ||
-          product.replaceableCategoryNo3 === currentProductKey.category
+          product.category === currentProductKey.replaceableCategoryNo1 ||
+          product.category === currentProductKey.replaceableCategoryNo2 ||
+          product.category === currentProductKey.replaceableCategoryNo3
         ) {
           console.log(
-            "product.replaceableSubCategoryNo1: ",
-            product.replaceableSubCategoryNo1,
-            "currentProductKey.SubCategory: ",
-            currentProductKey.subCategory
+            "product.category: ",
+            product.category,
+            "currentProductKey.replaceableCategoryNo1: ",
+            currentProductKey.replaceableCategoryNo1
           );
           if (
             product.replaceableSubCategoryNo1 ===
@@ -410,6 +413,29 @@ async function isMatchProduct(product) {
             product.replaceableSubCategoryNo3 === currentProductKey.subCategory
           ) {
             console.log("----------- full match ------------------");
+
+            console.log(
+              "1 ",
+              product.subCategory ===
+                currentProductKey.replaceableSubCategoryNo1
+            );
+            console.log("product.subCategory", product.subCategory);
+            console.log(
+              "currentProductKey.replaceableSubCategoryNo1",
+              currentProductKey.replaceableSubCategoryNo1
+            );
+            console.log(
+              "---------------------------------------------------------------------------------"
+            );
+            console.log("product", product);
+            console.log(
+              "---------------------------------------------------------------------------------"
+            );
+
+            console.log("currentProductKey", currentProductKey);
+            console.log(
+              "---------------------------------------------------------------------------------"
+            );
 
             fullMatchProducts.push(currentProductKey);
             const sendMessageOtherUser = await setUserMessage(
@@ -443,8 +469,18 @@ async function isMatchProduct(product) {
 
   //   }
   console.log("--------------- after filter ----------------------");
-  console.log("fullMatchProducts: ", fullMatchProducts);
-  console.log("partMatchProducts: ", partMatchProducts);
+  console.log(" ******** fullMatchProducts: *********** ");
+  if (fullMatchProducts) {
+    fullMatchProducts.forEach((p) => {
+      console.log("p.produectTitle: ", p.produectTitle);
+    });
+  }
+  console.log(" ******** partMatchProducts: ***********");
+  if (partMatchProducts) {
+    partMatchProducts.forEach((p) => {
+      console.log("p.produectTitle: ", p.produectTitle);
+    });
+  }
 
   return {
     fullMatchProducts: fullMatchProducts,

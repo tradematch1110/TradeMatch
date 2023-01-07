@@ -1,7 +1,7 @@
-import React, { useState, useContext, useLayoutEffect, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { Formik, Form } from "formik";
 // import CircularIndeterminate from "./common/Circular";
-import { Grid, Hidden } from "@mui/material";
+import { Grid } from "@mui/material";
 import Textfield from "./TextFeild/index1";
 import Button from "./Button";
 import { authContext } from "../contexts/AuthContext";
@@ -53,7 +53,6 @@ const Login = () => {
     console.log(isRtl);
   }, [isRtl]);
   const navigate = useNavigate();
-  const classes = useStyles();
 
   // initialize context
 
@@ -71,7 +70,7 @@ const Login = () => {
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState("");
-  const { currentUser, setCurrentUser } = useContext(authContext);
+  const { setCurrentUser } = useContext(authContext);
   // route consts
   //   const history = useHistory();
   //   const location = useLocation();

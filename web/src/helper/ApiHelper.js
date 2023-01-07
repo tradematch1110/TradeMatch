@@ -45,8 +45,10 @@ export const helper = async (urlType, method, token, data) => {
   }
 };
 // handle and build url for the request
+
 const getUrl = (urlType) => {
   // define the url start (production || devaloper)
+  
   let url = process.env.REACT_APP_API || "";
   switch (urlType) {
     case "users/register":

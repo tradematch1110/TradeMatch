@@ -3,25 +3,18 @@ import { Grid } from "@mui/material";
 import CustomCard from "./Card";
 import { getFavouritesProductsPerUser } from "../services/api";
 import { authContext } from "./../contexts/AuthContext";
-import { useNavigate } from "react-router-dom";
 import Loader from "./Loader";
 
 export default function FavouritesProducts() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState("");
   const [products, setProducts] = useState("");
-  const { currentUser, setCurrentUser, favouritesProducts } = useContext(
-    authContext
-  );
-  const navigate = useNavigate();
+  const { favouritesProducts } = useContext(authContext);
 
-  
   useLayoutEffect(() => {
     async function fetchData() {
       setLoading(true);
-      const res = await getFavouritesProductsPerUser(
-        favouritesProducts
-      );
+      const res = await getFavouritesProductsPerUser(favouritesProducts);
       switch (res.statusId) {
         case 1:
           setProducts(res.value);
@@ -46,7 +39,14 @@ export default function FavouritesProducts() {
       {error && <h1>{error}</h1>}
       {loading && <Loader />}
       {!loading && (
-        <Grid item container justifyContent="center" className="create" xs={12} style={{marginTop: 50, marginBottom: 100} }>
+        <Grid
+          item
+          container
+          justifyContent="center"
+          className="create"
+          xs={12}
+          style={{ marginTop: 50, marginBottom: 100 }}
+        >
           <h1>המועדפים שלי</h1>
           <Grid item container justifyContent="center" xs={12} direction="row">
             {products &&
@@ -59,10 +59,9 @@ export default function FavouritesProducts() {
                     }
                     id={product.date.toString()}
                   />
-                  
                 </>
               ))}
-               {!products && <h2>רשימת המועדפים שלך ריקה תתחיל לתת בלייקים</h2>}
+            {!products && <h2>רשימת המועדפים שלך ריקה תתחיל לתת בלייקים</h2>}
           </Grid>
         </Grid>
       )}

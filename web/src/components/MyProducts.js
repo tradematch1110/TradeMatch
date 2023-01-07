@@ -11,7 +11,6 @@ export default function MyProducts() {
   const [loading, setLoading] = useState("");
   const [products, setProducts] = useState("");
   const { currentUser } = useContext(authContext);
-  const navigate = useNavigate();
 
   useEffect(() => {
   },[])

@@ -1,14 +1,12 @@
-import React, { useState, useContext, useLayoutEffect, useEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { allCategories, categoriesNames } from "../resourcees/categories";
-import SelectCategories from "./SelectCategories";
 import { Grid } from "@mui/material";
 import { authContext } from "./../contexts/AuthContext";
 import { getUserMessages, updateProduct } from "../services/api";
 import FileBase64 from "react-file-base64";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
-import { useNavigate } from "react-router-dom";
 import CustomCard from "./Card";
 import { getProductById } from "./../services/api";
 import Loader from "./Loader";
@@ -28,7 +26,6 @@ const UpdateProduct = () => {
     replaceableCategoryNo3: "",
     replaceableSubCategoryNo3: "",
   };
-  const navigate = useNavigate();
   const { currentUser, setUserMessages } = useContext(authContext);
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});

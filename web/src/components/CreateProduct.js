@@ -1,6 +1,5 @@
-import React, { useState, useContext, useLayoutEffect, useEffect } from "react";
+import React, { useState, useContext , useEffect } from "react";
 import { allCategories, categoriesNames } from "../resourcees/categories";
-import SelectCategories from "./SelectCategories";
 import { Grid } from "@mui/material";
 import { authContext } from "./../contexts/AuthContext";
 import { createProduct, getUserMessages } from "../services/api";
@@ -9,7 +8,6 @@ import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import { useNavigate } from "react-router-dom";
 import CustomCard from "./Card";
-import { getProductById } from "./../services/api";
 import Loader from "./Loader";
 import SearchDialog from "./SearchDialog";
 
@@ -28,7 +26,6 @@ const CreateProduct = () => {
     replaceableCategoryNo3: "",
     replaceableSubCategoryNo3: "",
   };
-  const navigate = useNavigate();
   const { currentUser, setUserMessages } = useContext(authContext);
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
@@ -418,6 +415,7 @@ const CreateProduct = () => {
                     value={formValues.category}
                     onChange={handleChange}
                     onClick={(e) => handleCategory(e.target.value)}
+                    
                   >
                     <option value="" disabled>
                       קטגוריה ראשית

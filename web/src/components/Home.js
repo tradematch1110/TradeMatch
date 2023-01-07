@@ -1,8 +1,6 @@
 import React, {
   useEffect,
   useState,
-  useLayoutEffect,
-  useContext,
   useRef,
 } from "react";
 import { Grid } from "@mui/material";
@@ -10,11 +8,9 @@ import CustomCard from "./Card";
 import {
   getAllProducts,
   getProductsByCategoryAndSubCategory,
-  getUserFavouritesProducts,
 } from "./../services/api";
 import { allCategories, categoriesNames } from "../resourcees/categories";
 import Loader from "./Loader";
-import { authContext } from "./../contexts/AuthContext";
 
 export default function Home() {
   // console.log(allProducts);
@@ -29,12 +25,6 @@ export default function Home() {
   const [subCategorySelected, setSubCategorySelected] = useState("");
   //textValue
   const searchRef = useRef();
-  const {
-    currentUser,
-    setCurrentUser,
-    favouritesProducts,
-    setFavouritesProducts,
-  } = useContext(authContext);
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (name === "category") setCategory(value);
@@ -121,6 +111,7 @@ export default function Home() {
       default:
     }
   };
+  
   useEffect(() => {
     async function fetchData() {
       setLoading(true);
@@ -320,7 +311,7 @@ export default function Home() {
                 id={filterdProduct.date.toString()}
               />
             ))}
-          {filterdProducts && filterdProducts.length == 0 && (
+          {filterdProducts && filterdProducts.length === 0 && (
             <h1>לא נמצאו תוצאות עבור מוצר זה</h1>
           )}
         </Grid>

@@ -1,12 +1,10 @@
-import React, { useState, useEffect, useContext, useLayoutEffect } from "react";
+import React, { useState, useContext, useLayoutEffect, useEffect } from "react";
 import { authContext } from "./../contexts/AuthContext";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardContent from "@mui/material/CardContent";
-import CardActions from "@mui/material/CardActions";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
-import { red } from "@mui/material/colors";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MobileStepper from "@mui/material/MobileStepper";
@@ -14,7 +12,6 @@ import Button from "@mui/material/Button";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
-import { autoPlay } from "react-swipeable-views-utils";
 import { Grid } from "@mui/material";
 import NoImagePlaceholder from "../images/NoImagePlaceholder.png";
 import { useNavigate } from "react-router-dom";
@@ -35,12 +32,9 @@ const AutoPlaySwipeableViews = SwipeableViews;
 export default function CustomCard(props) {
   const location = useLocation();
   const navigate = useNavigate();
-  const {
-    currentUser,
-    setCurrentUser,
-    favouritesProducts,
-    setFavouritesProducts,
-  } = useContext(authContext);
+  const { currentUser, favouritesProducts, setFavouritesProducts } = useContext(
+    authContext
+  );
   const [error, setError] = useState("");
   const [isFav, setIsFav] = useState("white");
 
@@ -89,22 +83,19 @@ export default function CustomCard(props) {
     email: props.user && props.user.email,
     phoneNumber: props.user && props.user.phoneNumber,
   });
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (props.images) {
       // console.log("props.images.image1;", props.images.image1);
       setImage1(props.images.image1);
       setImage2(props.images.image2);
       setImage3(props.images.image3);
-
       props.images.image1 && images.push(props.images.image1);
       props.images.image2 && images.push(props.images.image2);
       props.images.image3 && images.push(props.images.image3);
     } else {
-      setImage1(NoImagePlaceholder);
-
-      // images.push(NoImagePlaceholder);
+      images.push(NoImagePlaceholder);
     }
-    console.log("cardValues card component :  ", cardValues);
+    // console.log("cardValues card component :  ", cardValues);
   }, [images]);
 
   const theme = useTheme();

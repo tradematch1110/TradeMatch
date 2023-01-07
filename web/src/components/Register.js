@@ -1,14 +1,12 @@
-import React, { useState, useContext, useLayoutEffect, useEffect } from "react";
+import React, { useState } from "react";
 import { Formik, Form } from "formik";
 import { registerNewUser } from "../services/api";
-import { FormGlobalStyle } from "./FormGlobalStyle";
 // import CircularIndeterminate from "./common/Circular";
-import { Grid, Hidden } from "@mui/material";
+import { Grid } from "@mui/material";
 import Textfield from "./TextFeild/index1";
 import Button from "./Button";
 // import { useHistory, useLocation } from "react-router";
 import { RegisterFormCss } from "./RegisterFormCss";
-import { authContext } from "../contexts/AuthContext";
 // import { Link } from "react-router-dom";
 import MainLogo from "./../svg/MainLogo";
 import { FORM_REGISTER_VALIDATION } from "./../validationService/Yupvalidation";
@@ -57,7 +55,6 @@ const Register = () => {
     console.log(isRtl);
   }, [isRtl]);
 
-  const classes = useStyles();
 
   // initialize context
 
